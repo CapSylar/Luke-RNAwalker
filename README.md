@@ -1,2 +1,5 @@
 # Luke-RNAwalker
-RNA diff and patching tool
+RNA sequences differencing and patching tool
+
+##Authors
+JB , AK and RK
