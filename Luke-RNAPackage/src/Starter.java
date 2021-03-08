@@ -1,7 +1,12 @@
 import org.w3c.dom.Document;
+import org.w3c.dom.Element;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
 import java.io.File;
 import java.util.*;
 
@@ -11,14 +16,15 @@ public class Starter {
     static int COST_DELETE = 1;
     static int COST_INSERT = 1;
 
+
     public static void main(String args[]) throws Exception
     {
         // using DOM parser
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance() ;
         DocumentBuilder builder = factory.newDocumentBuilder() ;
 
-        Document doc = builder.parse( new File("testseq.txt")) ;
-        Document doc1 = builder.parse( new File ("testseq2.txt") ) ;
+        Document doc = builder.parse( new File("testseq.xml")) ;
+        Document doc1 = builder.parse( new File ("testseq2.xml") ) ;
 
         String RNAseq1 = doc.getElementsByTagName("sequence").item(0).getTextContent().replaceAll("[\n ]" , "" ) ;
         String RNAseq2 = doc1.getElementsByTagName("sequence").item(0).getTextContent().replaceAll("[\n ]" , "" ) ;
@@ -53,7 +59,12 @@ public class Starter {
                 int delete = dp[i-1][j][0] + COST_DELETE ;
                 int insert = dp[i][j-1][0] + COST_INSERT ;
 
-                if ( update <= delete ) // WTF is this i know
+                // TODO: rewrite this section for the love of god
+
+                /* by changing the order of the comparisons we could prioritize certain operations later, we could pick the ops
+                * that are the easiest on the program in terms of speed */
+
+                if ( update <= delete )
                 {
                     if ( update <= insert )
                     {
@@ -111,7 +122,7 @@ public class Starter {
 
         // start at last cell and backtrack
 
-        ArrayList<String> editScript =  new ArrayList<>() ;
+        ArrayList<EditOP> editScript =  new ArrayList<>() ;
 
         int i = RNAseq1.length();
         int j = RNAseq2.length();
@@ -122,15 +133,22 @@ public class Starter {
             switch (dp[i][j][1] )
             {
                 case 0:
-                    editScript.add(new String("Delete{Source[" + i +  "]}"));
+//                    editScript.add(("Delete{Source[" + i +  "]}"));
+//                      editScript.add("D" + i);
+                      editScript.add( new EditOP( OP_TYPE.DELETE , i , 0 ) ) ;
                     --i ;
                     break ;
                 case 1:
-                    editScript.add(new String("Update{Source[" + i +  "],Sink["+j+"]}" ));
+                    if ( dp[i-1][j-1][0] != dp[i][j][0] ) // check if this update costs anything
+//                        editScript.add(("Update{Source[" + i +  "],Sink["+j+"]}" ));
+//                        editScript.add("U" + i + "X" +j ); // X for separation
+                          editScript.add( new EditOP( OP_TYPE.UPDATE , i , j )) ;
                     --i ; --j ;
                     break ;
                 case 2:
-                    editScript.add(new String( "Insert{Sink[" + j + "] , " + i + "}" ));
+//                    editScript.add(( "Insert{Sink[" + j + "] , " + i + "}" ));
+//                      editScript.add( "I" + j + "X" + i );
+                      editScript.add( new EditOP( OP_TYPE.INSERT , i , j ));
                     --j ;
                     break ;
             }
@@ -140,8 +158,11 @@ public class Starter {
 
         System.out.println("edit script") ;
 
-        for ( int k = 0 ; k < editScript.size() ; ++k )
-            System.out.println( editScript.get(k) ) ;
+//        for ( int k = 0 ; k < editScript.size() ; ++k )
+//            System.out.println( editScript.get(k) ) ;
+
+
+        CreateDiffScriptXML( editScript );
 
         // for scripts
         // string indices start at 1
@@ -152,7 +173,7 @@ public class Starter {
 
     public static int CostUpdate ( char old_v , char new_v )
     {
-        HashMap<Character,String> equivalences = new HashMap<>() ; // TODO: built every time nonononono
+        HashMap<Character,String> equivalences = new HashMap<>() ; // TODO: built every time nonononono, fine for now
         equivalences.put('R' , new String("GA") ) ;
         equivalences.put('M' , new String("AC") ) ;
         equivalences.put('S' , new String("GC") ) ;
@@ -170,6 +191,98 @@ public class Starter {
         }
 
         return COST_UPDATE ;
+    }
+
+    public static void CreateDiffScriptXML ( ArrayList<EditOP> script ) throws Exception
+    {
+        // parse the script
+
+        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance() ;
+        DocumentBuilder builder = factory.newDocumentBuilder() ;
+
+        Document diffDoc = builder.newDocument() ;
+        Element root = diffDoc.createElement("Diff") ;
+        diffDoc.appendChild( root );
+
+        Element scriptRoot = diffDoc.createElement("EditScript");
+        root.appendChild(scriptRoot);
+
+        // create elements under diff script for every entry in script
+
+        for ( int i = 0 ; i < script.size() ; ++i )
+        {
+            scriptRoot.appendChild(script.get(i).toXMLElement(diffDoc));
+        }
+
+        // save XML DOM to file
+
+        TransformerFactory transformerFactory = TransformerFactory.newInstance() ;
+        Transformer tranformer = transformerFactory.newTransformer() ;
+
+        DOMSource domSource = new DOMSource(diffDoc);
+        StreamResult streamResult = new StreamResult(new File("SEQdiff.xml")) ;
+
+        tranformer.transform( domSource , streamResult );
+    }
+}
+
+enum OP_TYPE
+{
+    INSERT,
+    DELETE,
+    UPDATE
+} ;
+
+class EditOP
+{
+    int s_index = 0 ;
+    int d_index = 0 ;
+    OP_TYPE type ;
+
+    EditOP ( OP_TYPE type , int s_index , int d_index )
+    {
+        this.type = type ;
+        this.s_index  = s_index ;
+        this.d_index = d_index ;
+    }
+
+    public Element toXMLElement( Document doc )
+    {
+        Element editElement = doc.createElement("default") ; // should not be used
+
+        switch ( type )
+        {
+            case UPDATE:
+                editElement = doc.createElement("Update") ;
+                Element destination = doc.createElement("getIndex");
+                destination.setTextContent(""+this.d_index);
+                Element source = doc.createElement("dropIndex");
+                source.setTextContent("" + this.s_index);
+                editElement.appendChild(destination);
+                editElement.appendChild(source);
+                break;
+            case DELETE:
+                editElement = doc.createElement("Delete");
+                Element delete_index = doc.createElement("index");
+                delete_index.setTextContent(""+this.s_index);
+                editElement.appendChild(delete_index);
+                break;
+            case INSERT:
+                editElement = doc.createElement("Insert");
+                Element getIndex = doc.createElement("getIndex");
+                Element dropIndex = doc.createElement("dropIndex") ;
+
+                getIndex.setTextContent(""+this.d_index);
+                dropIndex.setTextContent(""+this.s_index);
+
+                editElement.appendChild(getIndex);
+                editElement.appendChild(dropIndex);
+                break;
+
+        }
+
+
+        return editElement;
     }
 }
 
