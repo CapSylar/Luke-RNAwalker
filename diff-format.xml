@@ -1,7 +1,9 @@
 <?xml version= "1.0"?>
 <Diff>
     <meta>
-        -- some meta data dunno
+        <!--SourceString and DestinationString hashCodes to identify the sequences that this file refers to-->
+        <SourceString>123123123</SourceString>
+        <DestinationString>123321123</DestinationString>
     </meta>
     <EditScript>
         <Insert>

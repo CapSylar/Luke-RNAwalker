@@ -1,1 +1,33 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><Diff><EditScript><Update><getIndex>1</getIndex><dropIndex>1</dropIndex></Update><Update><getIndex>2</getIndex><dropIndex>2</dropIndex></Update><Update><getIndex>3</getIndex><dropIndex>3</dropIndex></Update><Update><getIndex>4</getIndex><dropIndex>4</dropIndex></Update></EditScript></Diff>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Diff>
+    <EditScript>
+        <Insert>
+            <getIndex>1</getIndex>
+            <dropIndex>0</dropIndex>
+        </Insert>
+        <Insert>
+            <getIndex>2</getIndex>
+            <dropIndex>0</dropIndex>
+        </Insert>
+        <Insert>
+            <getIndex>3</getIndex>
+            <dropIndex>0</dropIndex>
+        </Insert>
+        <Insert>
+            <getIndex>4</getIndex>
+            <dropIndex>0</dropIndex>
+        </Insert>
+        <Insert>
+            <getIndex>5</getIndex>
+            <dropIndex>0</dropIndex>
+        </Insert>
+        <Insert>
+            <getIndex>6</getIndex>
+            <dropIndex>0</dropIndex>
+        </Insert>
+        <Insert>
+            <getIndex>7</getIndex>
+            <dropIndex>0</dropIndex>
+        </Insert>
+    </EditScript>
+</Diff>
