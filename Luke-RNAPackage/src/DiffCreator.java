@@ -132,20 +132,20 @@ public class DiffCreator
                 case 0:
 //                    editScript.add(("Delete{Source[" + i +  "]}"));
 //                      editScript.add("D" + i);
-                    editScript.add( new EditOP( OP_TYPE.DELETE , i , 0 ) ) ;
+                    editScript.add( new EditOP( OP_TYPE.DELETE , i-1 , 0 ) ) ;
                     --i ;
                     break ;
                 case 1:
                     if ( dp[i-1][j-1][0] != dp[i][j][0] ) // check if this update costs anything
 //                        editScript.add(("Update{Source[" + i +  "],Sink["+j+"]}" ));
 //                        editScript.add("U" + i + "X" +j ); // X for separation
-                        editScript.add( new EditOP( OP_TYPE.UPDATE , i , j )) ;
+                        editScript.add( new EditOP( OP_TYPE.UPDATE , i-1 , j-1 )) ;
                     --i ; --j ;
                     break ;
                 case 2:
 //                    editScript.add(( "Insert{Sink[" + j + "] , " + i + "}" ));
 //                      editScript.add( "I" + j + "X" + i );
-                    editScript.add( new EditOP( OP_TYPE.INSERT , i , j ));
+                    editScript.add( new EditOP( OP_TYPE.INSERT , i , j-1 ));
                     --j ;
                     break ;
             }
