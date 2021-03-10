@@ -1,24 +1,69 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <Diff>
     <EditScript>
-        <Update>
-            <getIndex>1</getIndex>
-            <dropIndex>1</dropIndex>
-        </Update>
-        <Update>
+        <Insert>
+            <getIndex>0</getIndex>
+            <dropIndex>0</dropIndex>
+        </Insert>
+        <Insert>
             <getIndex>2</getIndex>
-            <dropIndex>2</dropIndex>
-        </Update>
-        <Delete>
-            <index>3</index>
-        </Delete>
+            <dropIndex>1</dropIndex>
+        </Insert>
         <Insert>
             <getIndex>3</getIndex>
-            <dropIndex>3</dropIndex>
+            <dropIndex>1</dropIndex>
         </Insert>
         <Insert>
             <getIndex>4</getIndex>
-            <dropIndex>4</dropIndex>
+            <dropIndex>1</dropIndex>
+        </Insert>
+        <Insert>
+            <getIndex>5</getIndex>
+            <dropIndex>1</dropIndex>
+        </Insert>
+        <Insert>
+            <getIndex>6</getIndex>
+            <dropIndex>1</dropIndex>
+        </Insert>
+        <Insert>
+            <getIndex>7</getIndex>
+            <dropIndex>1</dropIndex>
+        </Insert>
+        <Insert>
+            <getIndex>8</getIndex>
+            <dropIndex>1</dropIndex>
+        </Insert>
+        <Insert>
+            <getIndex>9</getIndex>
+            <dropIndex>1</dropIndex>
+        </Insert>
+        <Insert>
+            <getIndex>10</getIndex>
+            <dropIndex>1</dropIndex>
+        </Insert>
+        <Insert>
+            <getIndex>11</getIndex>
+            <dropIndex>1</dropIndex>
+        </Insert>
+        <Insert>
+            <getIndex>12</getIndex>
+            <dropIndex>1</dropIndex>
+        </Insert>
+        <Insert>
+            <getIndex>13</getIndex>
+            <dropIndex>1</dropIndex>
+        </Insert>
+        <Insert>
+            <getIndex>14</getIndex>
+            <dropIndex>1</dropIndex>
+        </Insert>
+        <Insert>
+            <getIndex>15</getIndex>
+            <dropIndex>1</dropIndex>
+        </Insert>
+        <Insert>
+            <getIndex>16</getIndex>
+            <dropIndex>1</dropIndex>
         </Insert>
     </EditScript>
 </Diff>

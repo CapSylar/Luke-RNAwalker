@@ -26,6 +26,7 @@ public class patching {
         System.out.println("Source Sequence = " + sourceSeq);
         String destSeq = destDocument.getElementsByTagName("sequence").item(0).getTextContent().trim();
         System.out.println("Destination Sequence = " + destSeq);
+        int sourcel = sourceSeq.length();
 
         NodeList flowList = ESDocument.getElementsByTagName("EditScript");
         for (int i = 0; i < flowList.getLength(); i++) {
@@ -35,7 +36,13 @@ public class patching {
                 if ("Insert".equals(childNode.getNodeName())) {
                     int getIndex = Integer.parseInt(childNode.getChildNodes().item(1).getTextContent());
                     int dropIndex = Integer.parseInt(childNode.getChildNodes().item(3).getTextContent());
-                    sourceSeq = sourceSeq.substring(0,dropIndex) + destSeq.charAt(getIndex) + sourceSeq.substring(dropIndex);
+                    if(dropIndex >= sourcel){
+                        sourceSeq = sourceSeq + destSeq.charAt(getIndex);
+                    }
+                    else {
+                        sourceSeq = sourceSeq.substring(0, dropIndex) + destSeq.charAt(getIndex) + sourceSeq.substring(dropIndex);
+                    }
+                    //System.out.println(sourceSeq);
                 }
                 if("Update".equals(childNode.getNodeName())) {
                     int getIndex = Integer.parseInt(childNode.getChildNodes().item(1).getTextContent());
@@ -53,6 +60,7 @@ public class patching {
             }
         }
         System.out.println("Transformed source sequence = " + sourceSeq);
+        System.out.println("Equal?  "  + sourceSeq.equals(destSeq));
 
     }
 }
