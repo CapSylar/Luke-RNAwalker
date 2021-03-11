@@ -1,0 +1,49 @@
+<?xml encoding="UTF-8"?>
+
+<!ELEMENT Diff (meta,EditScript)>
+<!ATTLIST Diff
+        xmlns CDATA #FIXED ''>
+
+<!ELEMENT meta (SourceString,DestinationString)>
+<!ATTLIST meta
+        xmlns CDATA #FIXED ''>
+
+<!ELEMENT EditScript (Insert+,Update+,Delete+)>
+<!ATTLIST EditScript
+        xmlns CDATA #FIXED ''>
+
+<!ELEMENT SourceString (#PCDATA)>
+<!ATTLIST SourceString
+        xmlns CDATA #FIXED ''>
+
+<!ELEMENT DestinationString (#PCDATA)>
+<!ATTLIST DestinationString
+        xmlns CDATA #FIXED ''>
+
+<!ELEMENT Insert (getIndex,dropIndex)>
+<!ATTLIST Insert
+        xmlns CDATA #FIXED ''>
+
+<!ELEMENT Update (getIndex,updateIndex)>
+<!ATTLIST Update
+        xmlns CDATA #FIXED ''>
+
+<!ELEMENT Delete (index)>
+<!ATTLIST Delete
+        xmlns CDATA #FIXED ''>
+
+<!ELEMENT dropIndex (#PCDATA)>
+<!ATTLIST dropIndex
+        xmlns CDATA #FIXED ''>
+
+<!ELEMENT updateIndex (#PCDATA)>
+<!ATTLIST updateIndex
+        xmlns CDATA #FIXED ''>
+
+<!ELEMENT index (#PCDATA)>
+<!ATTLIST index
+        xmlns CDATA #FIXED ''>
+
+<!ELEMENT getIndex (#PCDATA)>
+<!ATTLIST getIndex
+        xmlns CDATA #FIXED ''>
