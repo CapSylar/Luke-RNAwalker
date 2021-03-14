@@ -8,7 +8,7 @@
 <!ATTLIST meta
         xmlns CDATA #FIXED ''>
 
-<!ELEMENT EditScript (Insert+,Update+,Delete+)>
+<!ELEMENT EditScript (Insert | Update | Delete)*>
 <!ATTLIST EditScript
         xmlns CDATA #FIXED ''>
 
