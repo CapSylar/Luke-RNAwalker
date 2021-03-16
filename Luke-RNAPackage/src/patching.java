@@ -41,7 +41,7 @@ public class patching {
         NodeList editList = ESDocument.getElementsByTagName("EditScript").item(0).getChildNodes(); // should only be one item
 
 
-        /********* DEBUG PRINTS
+        /******* DEBUG PRINTS
         System.out.println(" Child nodes before filtering: " + editList.getLength()) ;
 
         for ( int i = 0 ; i < editList.getLength() ; ++i )
@@ -49,10 +49,10 @@ public class patching {
             System.out.println("entry " + i + " : " + editList.item(i).getNodeName() + " content: " + editList.item(i).getTextContent());
         }
 
-         *//******************************/
+         *****************************/
 
         // fetch operations from the editList and apply them
-
+        int sourceI = 0;
         for ( int i = 0 ; i < editList.getLength() ; ++i )
         {
             Node operation = editList.item(i) ;
@@ -64,26 +64,22 @@ public class patching {
                     {
                         int getIndex = Integer.parseInt(operation.getChildNodes().item(0).getTextContent());
                         int dropIndex = Integer.parseInt(operation.getChildNodes().item(1).getTextContent());
-                        if (dropIndex >= sourcel)
-                        {
-                            sourceSeq = sourceSeq + destSeq.charAt(getIndex);
-                        } else
-                            {
-                            sourceSeq = sourceSeq.substring(0, dropIndex) + destSeq.charAt(getIndex) + sourceSeq.substring(dropIndex);
-                        }
+                        sourceSeq = sourceSeq.substring(0, (dropIndex + sourceI)) + destSeq.charAt(getIndex) + sourceSeq.substring(dropIndex + sourceI);
+                        sourceI++;
                     }
                     break;
 
                 case "Delete":
                     NodeList x = operation.getChildNodes() ;
                     int index = Integer.parseInt(operation.getChildNodes().item(0).getTextContent());
-                    sourceSeq = sourceSeq.substring(0,index) + sourceSeq.substring(index+1);
+                    sourceSeq = sourceSeq.substring(0,(index + sourceI)) + sourceSeq.substring((index+1+sourceI));
+                    sourceI--;
                     break;
 
                 case "Update":
                     int getIndex = Integer.parseInt(operation.getChildNodes().item(0).getTextContent());
                     int dropIndex = Integer.parseInt(operation.getChildNodes().item(1).getTextContent());
-                    sourceSeq = sourceSeq.substring(0,dropIndex) + destSeq.charAt(getIndex) + sourceSeq.substring(dropIndex+1);
+                    sourceSeq = sourceSeq.substring(0,(dropIndex+sourceI)) + destSeq.charAt(getIndex) + sourceSeq.substring((dropIndex+1+sourceI));
                     break;
 
                 default:
