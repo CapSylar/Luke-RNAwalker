@@ -1,0 +1,14 @@
+.CalculateBut {
+    -fx-background-color: white;
+    -fx-text-fill: black;
+    -fx-border-width: 3px;
+    -fx-border-color: #008CBA;
+    -fx-border-style: solid;
+
+
+}
+
+.CalculateBut:hover{
+    -fx-background-color: #008CBA;
+    -fx-text-fill: white;
+}

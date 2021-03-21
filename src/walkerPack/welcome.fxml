@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.web.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="778.0" prefWidth="946.0" styleClass="bodybg" stylesheets="@background.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="walkerPack.Controller">
+   <children>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="227.0" layoutY="66.0" prefHeight="142.0" prefWidth="493.0" text="Welcome to RNA-Walker" textAlignment="CENTER" textFill="#eeecec">
+         <font>
+            <Font name="Tempus Sans ITC" size="39.0" />
+         </font>
+      </Label>
+      <Label layoutX="32.0" layoutY="257.0" prefHeight="219.0" prefWidth="477.0" text="The RNA word referred to an hypothetical stage in the origin of life on earth ~ Sidney Altman" textFill="#fffdfd" wrapText="true">
+         <font>
+            <Font name="Yu Gothic Regular" size="26.0" />
+         </font>
+      </Label>
+      <Button fx:id="GetStarted" layoutX="141.0" layoutY="529.0" mnemonicParsing="false" onAction="#onButtonClicked" prefHeight="78.0" prefWidth="172.0" styleClass="getStarted" stylesheets="@getStartedBut.css" text="Get Started" textAlignment="CENTER">
+         <font>
+            <Font name="Palatino Linotype" size="21.0" />
+         </font>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <effect>
+            <Reflection />
+         </effect>
+      </Button>
+   </children>
+</Pane>
