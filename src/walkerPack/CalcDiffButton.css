@@ -9,6 +9,6 @@
 }
 
 .CalculateBut:hover{
-    -fx-background-color: #008CBA;
+    -fx-background-color: #23272a;
     -fx-text-fill: white;
 }

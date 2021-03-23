@@ -119,5 +119,53 @@ public class Controller {
         // robin you implement the code here to calculate and save as a file.
     }
 
+    @FXML
+    void Seq1BtnClicked() throws Exception{
+        fc.setTitle("file chooser 1");
+        FileArea1.appendText("");
+
+        // set the restrictions to only choose XML files
+        fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("XML file","*.xml"));
+
+
+        // set the selected file or Null in case of nothing selected
+        File file = fc.showOpenDialog(null);
+
+        if(file != null) {
+            FileArea1.appendText(file.getAbsolutePath());
+        }else{
+            FileArea1.appendText("no file has been chosen");
+        }
+
+    }
+
+
+    @FXML
+    void DiffBtnClicked() throws Exception{
+        fc.setTitle("file chooser 2");
+        FileArea2.appendText("");
+
+        // set the restrictions to only choose XML files
+        fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("XML file","*.xml"));
+
+
+        // set the selected file or Null in case of nothing selected
+        File file = fc.showOpenDialog(null);
+
+        if(file != null) {
+            FileArea2.appendText(file.getAbsolutePath());
+        }else{
+            FileArea2.appendText("no file has been chosen");
+        }
+
+    }
+
+
+    @FXML
+    void CalculateOutBtnClicked() throws Exception{
+        System.out.println("clicked");
+        // robin you implement the code here to calculate and save as a file.
+    }
+
 }
 
