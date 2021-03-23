@@ -1,5 +1,6 @@
-.bodybg{
-    -fx-background-image: url('walker-package/backg.jpg');
+.bodybg
+{
+    -fx-background-image: url('backg.jpg');
     -fx-background-size: 100% 100%;
 }
 

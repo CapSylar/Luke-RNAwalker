@@ -41,7 +41,7 @@ public class Controller {
     @FXML
     void onButtonClicked() throws Exception{
 
-         Parent root = FXMLLoader.load(getClass().getResource("walker-package/Calculator.fxml"));
+         Parent root = FXMLLoader.load(getClass().getResource("Calculator.fxml"));
          Stage window = (Stage) GetStarted.getScene().getWindow();
          window.setScene(new Scene(root, 800, 600));
 
@@ -50,14 +50,14 @@ public class Controller {
 
     @FXML
     void calcButtonClicked() throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("walker-package/DiffCalc.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("DiffCalc.fxml"));
         Stage window = (Stage) CalcDiff.getScene().getWindow();
         window.setScene(new Scene(root, 800, 600));
     }
 
     @FXML
     void applyDiffClicked() throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("walker-package/ApplyDiff.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("ApplyDiff.fxml"));
         Stage window = (Stage) ApplyDiff.getScene().getWindow();
         window.setScene(new Scene(root, 800, 600));
     }

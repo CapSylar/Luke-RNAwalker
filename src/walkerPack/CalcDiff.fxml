@@ -4,7 +4,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="657.0" prefWidth="855.0" styleClass="backback" stylesheets="@background2.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="welcome.Controller">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="657.0" prefWidth="855.0" styleClass="backback" stylesheets="@background2.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="walkerPack.Controller">
    <children>
       <Button fx:id="CalcDiff" layoutX="60.0" layoutY="35.0" mnemonicParsing="false" onAction="#calcButtonClicked" prefHeight="73.0" prefWidth="176.0" styleClass="CalculateBut" stylesheets="@CalcDiffButton.css" text="Calculate difference" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" />
       <Button fx:id="ApplyDiff" layoutX="340.0" layoutY="35.0" mnemonicParsing="false" onAction="#applyDiffClicked" prefHeight="73.0" prefWidth="176.0" styleClass="CalculateBut" stylesheets="@CalcDiffButton.css" text="Apply difference" />
