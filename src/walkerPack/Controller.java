@@ -36,8 +36,6 @@ public class Controller {
     FileChooser fc = new FileChooser();
 
 
-
-
     @FXML
     void onButtonClicked() throws Exception{
 

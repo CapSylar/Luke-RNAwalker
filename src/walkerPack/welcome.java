@@ -7,15 +7,15 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
-public class welcome extends Application {
-
+public class welcome extends Application
+{
     @Override
     public void start(Stage primaryStage) throws Exception{
 
-        Parent root = FXMLLoader.load(getClass().getResource("welcome.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("CalculateDiffTab.fxml"));
         primaryStage.setTitle("RNA-Walker");
         primaryStage.getIcons().add(new Image("walkerPack/ICON.png"));
-        primaryStage.setScene(new Scene(root, 946, 778));
+        primaryStage.setScene(new Scene(root));
         primaryStage.setResizable(false);
         primaryStage.show();
     }
