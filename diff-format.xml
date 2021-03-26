@@ -1,0 +1,24 @@
+<?xml version= "1.0"?>
+<Diff>
+    <meta>
+        <!--SourceString and DestinationString hashCodes to identify the sequences that this file refers to-->
+        <SourceString>123123123</SourceString>
+        <DestinationString>123321123</DestinationString>
+    </meta>
+    <EditScript>
+        <Insert>
+            <!-- getIndex:index of char in destination string , dropIndex: index to insert character at ( after this index ) -->
+            <getIndex>3</getIndex>
+            <dropIndex>5</dropIndex>
+        </Insert>
+        <Delete>
+            <!--index to delete from the source string-->
+            <index>2</index>
+        </Delete>
+        <Update>
+            <!-- getIndex: index of char in destination string , updateIndex: index of source sequence which we should update to match char -->
+            <getIndex>2</getIndex>
+            <updateIndex>9</updateIndex>
+        </Update>
+    </EditScript>
+</Diff>
