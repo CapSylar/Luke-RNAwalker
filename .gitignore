@@ -1,10 +1,9 @@
 TODO.txt
 .idea
 javafx-sdk-16
-out
 jfoenix-9.0.10.jar
-
-testseq.xml
-testseq2.xml
 ResultEditScript.xml
 SEQdiff.xml
+/.idea/
+/test-files/
+/out/
