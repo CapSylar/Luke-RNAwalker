@@ -33,13 +33,14 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <JFXButton fx:id="ApplyDiffPaneApplyButton" layoutX="316.0" layoutY="314.0" onAction="#OnApplyDiffPaneApplyButtonPressed" prefHeight="49.0" prefWidth="84.0" text="Apply" />
+                        <JFXButton fx:id="ApplyDiffPaneApplyButton" layoutX="437.0" layoutY="314.0" onAction="#OnApplyDiffPaneApplyButtonPressed" prefHeight="49.0" prefWidth="84.0" styleClass="custom-button" stylesheets="@buttons.css" text="Apply" />
                         <JFXButton fx:id="ApplyDiffPaneBrowseSeqButton" layoutX="50.0" layoutY="145.0" onAction="#OnApplyDiffPaneBrowseSeqButtonPressed" text="Load Seq" />
                         <JFXButton fx:id="ApplyDiffPaneBrowseScriptButton" layoutX="30.0" layoutY="257.0" onAction="#OnApplyDiffPaneBrowseScriptButtonPressed" text="Load Diff Script" />
                         <JFXTextField fx:id="ApplyDiffPaneSeqField" editable="false" layoutX="172.0" layoutY="145.0" prefHeight="26.0" prefWidth="480.0" />
                         <JFXTextField fx:id="ApplyDiffPaneDiffField" editable="false" layoutX="172.0" layoutY="257.0" prefHeight="26.0" prefWidth="480.0" />
-                        <JFXProgressBar fx:id="ApplyDiffPaneProgressBar" layoutX="136.0" layoutY="363.0" prefHeight="20.0" prefWidth="475.0" progress="0.0" />
-                        <Text fx:id="ApplyDiffPaneResultField" layoutX="135.0" layoutY="378.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="476.7294921875" />
+                        <JFXProgressBar fx:id="ApplyDiffPaneProgressBar" layoutX="175.0" layoutY="412.0" prefHeight="33.0" prefWidth="475.0" progress="0.0" />
+                        <Text fx:id="ApplyDiffPaneResultField" layoutX="174.0" layoutY="432.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="476.7294921875" />
+                        <JFXButton fx:id="ApplyDiffPaneSaveButton" layoutX="299.0" layoutY="314.0" onAction="#OnApplyDiffPaneSaveButtonPressed" prefHeight="49.0" prefWidth="140.0" styleClass="custom-button" stylesheets="@buttons.css" text="Save Patched Seq" />
                      </children>
                   </AnchorPane>
                </content>

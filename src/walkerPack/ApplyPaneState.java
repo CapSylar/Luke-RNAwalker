@@ -38,6 +38,8 @@ class ApplyPaneState
 
     public static void applyDiff ()
     {
-
+        DiffApplicator applicator = new DiffApplicator(ApplyPaneState.Seq) ;
+        applicator.applyDiff(Diff); // apply diff on sequence
+        applicator.SavePatchedSequence(ResultingSeq); // save it at location specified
     }
 }

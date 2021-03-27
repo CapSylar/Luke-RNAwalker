@@ -1,10 +1,12 @@
 package walkerPack;
 
 import org.w3c.dom.Document;
+import org.w3c.dom.DocumentType;
 import org.w3c.dom.Element;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.transform.OutputKeys;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
@@ -95,29 +97,29 @@ public class DiffCreator
                     dp[i][j][1] = 2 ;
             }
 
-        System.out.println("RNA seq 1: " + RNAseq1);
-        System.out.println("RNA seq 2: " + RNAseq2);
-
-        for ( int i = 0 ; i < dp.length ; ++i )
-        {
-            for (int j = 0; j < dp[0].length; ++j)
-                System.out.print(dp[i][j][0] + " ");
-            System.out.println();
-        }
-
-        System.out.println("string edit distance is " + dp[RNAseq1.length()][RNAseq2.length()][0] );
+//        System.out.println("RNA seq 1: " + RNAseq1);
+//        System.out.println("RNA seq 2: " + RNAseq2);
+//
+//        for ( int i = 0 ; i < dp.length ; ++i )
+//        {
+//            for (int j = 0; j < dp[0].length; ++j)
+//                System.out.print(dp[i][j][0] + " ");
+//            System.out.println();
+//        }
+//
+//        System.out.println("string edit distance is " + dp[RNAseq1.length()][RNAseq2.length()][0] );
 
 
         // backtrack now or try to
 
-        System.out.println("BACKTRACK MATRIX");
+//        System.out.println("BACKTRACK MATRIX");
 
-        for ( int i = 0 ; i < dp.length ; ++i )
-        {
-            for (int j = 0; j < dp[0].length; ++j)
-                System.out.print(dp[i][j][1] + " ");
-            System.out.println();
-        }
+//        for ( int i = 0 ; i < dp.length ; ++i )
+//        {
+//            for (int j = 0; j < dp[0].length; ++j)
+//                System.out.print(dp[i][j][1] + " ");
+//            System.out.println();
+//        }
 
         // start at last cell and backtrack
 
@@ -127,31 +129,22 @@ public class DiffCreator
         int j = RNAseq2.length();
 
         while ( i != 0 || j != 0 )
-        {
-//            System.out.print( " we are at node i:" + i + " j:" + j + " at weight: " + dp[i][j][0] + " " ) ;
             switch (dp[i][j][1] )
             {
                 case 0:
-//                    editScript.add(("Delete{Source[" + i +  "]}"));
-//                      editScript.add("D" + i);
-                    editScript.add( new EditOP( OP_TYPE.DELETE , i-1 , 0 ) ) ;
+                    editScript.add( new EditOP( OP_TYPE.DELETE , i-1 , '0' ) ) ; // '0' not used
                     --i ;
                     break ;
                 case 1:
                     if ( dp[i-1][j-1][0] != dp[i][j][0] ) // check if this update costs anything
-//                        editScript.add(("Update{Source[" + i +  "],Sink["+j+"]}" ));
-//                        editScript.add("U" + i + "X" +j ); // X for separation
-                        editScript.add( new EditOP( OP_TYPE.UPDATE , i-1 , j-1 )) ;
+                        editScript.add( new EditOP( OP_TYPE.UPDATE , i-1 , RNAseq2.charAt(j-1) )) ;
                     --i ; --j ;
                     break ;
                 case 2:
-//                    editScript.add(( "Insert{Sink[" + j + "] , " + i + "}" ));
-//                      editScript.add( "I" + j + "X" + i );
-                    editScript.add( new EditOP( OP_TYPE.INSERT , i , j-1 ));
+                    editScript.add( new EditOP( OP_TYPE.INSERT , i , RNAseq2.charAt(j-1)));
                     --j ;
                     break ;
             }
-        }
 
         Collections.reverse(editScript) ;
     }
@@ -168,6 +161,7 @@ public class DiffCreator
         DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder() ;
 
         Document diffDoc = builder.newDocument() ;
+        diffDoc.setDocumentURI("asshole");
         Element root = diffDoc.createElement("Diff") ;
         diffDoc.appendChild( root );
 
@@ -198,12 +192,19 @@ public class DiffCreator
 
         // save XML DOM to file
 
-        Transformer tranformer = TransformerFactory.newInstance().newTransformer() ;
 
         DOMSource domSource = new DOMSource(diffDoc);
         StreamResult streamResult = new StreamResult(new File(fileName)) ;
 
-        tranformer.transform( domSource , streamResult );
+
+        Transformer transformer = TransformerFactory.newInstance().newTransformer() ;
+        transformer.setOutputProperty(OutputKeys.INDENT , "yes" );
+
+        DocumentType doctype = diffDoc.getImplementation().createDocumentType("doctype" , "hello" , "DiffScriptDefinition.dtd");
+        transformer.setOutputProperty(OutputKeys.DOCTYPE_PUBLIC, doctype.getPublicId());
+        transformer.setOutputProperty(OutputKeys.DOCTYPE_SYSTEM, doctype.getSystemId());
+
+        transformer.transform( domSource , streamResult );
     }
 
 
@@ -227,15 +228,16 @@ public class DiffCreator
 
     class EditOP
     {
-        int s_index = 0 ;
-        int d_index = 0 ;
+        int s_index = 0 ; // we only index into the source sequence
+        char nucl; // nucleotide, not used in case of delete
+
         OP_TYPE type ;
 
-        EditOP ( OP_TYPE type , int s_index , int d_index )
+        EditOP ( OP_TYPE type , int s_index , char nucl )
         {
             this.type = type ;
             this.s_index  = s_index ;
-            this.d_index = d_index ;
+            this.nucl = nucl ;
         }
 
         public Element toXMLElement( Document doc )
@@ -246,12 +248,12 @@ public class DiffCreator
             {
                 case UPDATE:
                     editElement = doc.createElement("Update") ;
-                    Element destination = doc.createElement("getIndex");
+                    Element nucl = doc.createElement("nucl");
                     Element source = doc.createElement("dropIndex");
-                    editElement.appendChild(destination);
+                    editElement.appendChild(nucl);
                     editElement.appendChild(source);
 
-                    destination.setTextContent(""+this.d_index);
+                    nucl.setTextContent(""+this.nucl);
                     source.setTextContent("" + this.s_index);
                     break;
                 case DELETE:
@@ -263,12 +265,12 @@ public class DiffCreator
                     break;
                 case INSERT:
                     editElement = doc.createElement("Insert");
-                    Element getIndex = doc.createElement("getIndex");
+                    Element getIndex = doc.createElement("nucl");
                     Element dropIndex = doc.createElement("dropIndex") ;
                     editElement.appendChild(getIndex);
                     editElement.appendChild(dropIndex);
 
-                    getIndex.setTextContent(""+this.d_index);
+                    getIndex.setTextContent(""+this.nucl);
                     dropIndex.setTextContent(""+this.s_index);
                     break;
             }

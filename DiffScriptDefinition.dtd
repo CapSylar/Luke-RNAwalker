@@ -20,11 +20,11 @@
 <!ATTLIST DestinationString
         xmlns CDATA #FIXED ''>
 
-<!ELEMENT Insert (getIndex,dropIndex)>
+<!ELEMENT Insert (nucl,dropIndex)>
 <!ATTLIST Insert
         xmlns CDATA #FIXED ''>
 
-<!ELEMENT Update (getIndex,updateIndex)>
+<!ELEMENT Update (nucl,updateIndex)>
 <!ATTLIST Update
         xmlns CDATA #FIXED ''>
 
@@ -44,6 +44,6 @@
 <!ATTLIST index
         xmlns CDATA #FIXED ''>
 
-<!ELEMENT getIndex (#PCDATA)>
-<!ATTLIST getIndex
+<!ELEMENT nucl (#PCDATA)>
+<!ATTLIST nucl
         xmlns CDATA #FIXED ''>

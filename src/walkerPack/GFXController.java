@@ -3,12 +3,8 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXProgressBar;
 import com.jfoenix.controls.JFXTextField;
 import javafx.fxml.FXML;
-import javafx.scene.control.ProgressBar;
 import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
-
-import java.awt.event.ActionEvent;
-import java.io.File;
 
 public class GFXController
 {
@@ -41,8 +37,6 @@ public class GFXController
     @FXML
     private JFXTextField CalculateDiffPaneSequence2Field1;
 
-    @FXML
-    private JFXProgressBar ApplyDiffPaneProgressBar;
 
 
     @FXML
@@ -55,7 +49,7 @@ public class GFXController
 
         if ( append != null )
         {
-            CalculateDiffPaneSequence1Field.appendText(append);
+            CalculateDiffPaneSequence1Field.setText(append);
             DiffPaneState.setSeq1Path(append);
         }
     }
@@ -67,7 +61,7 @@ public class GFXController
 
         if ( append != null )
         {
-            CalculateDiffPaneSequence2Field.appendText(append);
+            CalculateDiffPaneSequence2Field.setText(append);
             DiffPaneState.setSeq2Path(append);
         }
     }
@@ -111,6 +105,13 @@ public class GFXController
     @FXML
     private Text ApplyDiffPaneResultField;
 
+    @FXML
+    private JFXButton ApplyDiffPaneSaveButton;
+
+    @FXML
+    private JFXProgressBar ApplyDiffPaneProgressBar;
+
+
 
     @FXML
     void OnApplyDiffPaneApplyButtonPressed()
@@ -125,7 +126,7 @@ public class GFXController
 
         if ( append != null )
         {
-            ApplyDiffPaneSeqField.appendText(append);
+            ApplyDiffPaneSeqField.setText(append);
             ApplyPaneState.setSeq(append);
         }
     }
@@ -137,8 +138,22 @@ public class GFXController
 
         if ( append != null )
         {
-            ApplyDiffPaneDiffField.appendText(append);
+            ApplyDiffPaneDiffField.setText(append);
             ApplyPaneState.setDiff(append);
         }
     }
+
+    @FXML
+    void OnApplyDiffPaneSaveButtonPressed()
+    {
+        String append = Utilities.SaveFileLocation("Save Location for Patched Sequence");
+
+        if ( append != null )
+        {
+            ApplyPaneState.setResultingSeq(append);
+            ApplyDiffPaneResultField.setText(append);
+        }
+    }
+
+
 }
