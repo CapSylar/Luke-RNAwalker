@@ -10,8 +10,8 @@ import javafx.stage.Stage;
 public class welcome extends Application
 {
     @Override
-    public void start(Stage primaryStage) throws Exception{
-
+    public void start(Stage primaryStage) throws Exception
+    {
         Parent root = FXMLLoader.load(getClass().getResource("CalculateDiffTab.fxml"));
         primaryStage.setTitle("RNA-Walker");
         primaryStage.getIcons().add(new Image("walkerPack/ICON.png"));
