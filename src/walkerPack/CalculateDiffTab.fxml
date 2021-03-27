@@ -47,7 +47,15 @@
             </Tab>
             <Tab text="Settings">
               <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <JFXTextField fx:id="SettingsPaneInsertCostField" layoutX="445.0" layoutY="205.0" prefHeight="26.0" prefWidth="56.0" />
+                        <JFXTextField fx:id="SettingsPaneDeleteCostField" layoutX="445.0" layoutY="337.0" prefHeight="26.0" prefWidth="56.0" />
+                        <JFXTextField fx:id="SettingsPaneUpdateCostField" layoutX="445.0" layoutY="271.0" prefHeight="26.0" prefWidth="56.0" />
+                        <Text layoutX="357.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Insert Cost" />
+                        <Text layoutX="352.0" layoutY="288.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Update Cost" />
+                        <Text layoutX="354.0" layoutY="355.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Delete Cost" />
+                     </children></AnchorPane>
               </content>
             </Tab>
          </tabs>

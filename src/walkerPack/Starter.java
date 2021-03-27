@@ -4,10 +4,10 @@ public class Starter
 {
     public static void main(String args[])
     {
-        welcome.main(args);
+        // load settings manager
+        SettingsManager manager = SettingsManager.load() ; // load settings into app
 
-//        DiffCreator newCreator = new DiffCreator( "testseq.xml" , "testseq2.xml" ) ;
-//        newCreator.BuildDiff(1,1,1);
-//        newCreator.SaveDiffScriptXML("ResultEditScript.xml");
+        GraphicalInterface.currentManager = manager ; // bind manager
+        GraphicalInterface.main(args); // launch graphical interface
     }
 }

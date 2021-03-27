@@ -6,7 +6,6 @@ public class DiffPaneState
     private static String Seq2Path ;
     private static String DiffPath ;
 
-
     public static String getSeq1Path()
     {
         return Seq1Path;
@@ -42,7 +41,8 @@ public class DiffPaneState
         try
         {
             DiffCreator newCreator = new DiffCreator( Seq1Path , Seq2Path );
-            newCreator.BuildDiff(1,1,1); // default costs for now
+            newCreator.BuildDiff(GraphicalInterface.currentManager.getUpdateCost(),GraphicalInterface.currentManager.getDeleteCost()
+                    ,GraphicalInterface.currentManager.getInsertCost()); // pull costs from settings manager that has the update costs
             newCreator.SaveDiffScriptXML(DiffPath);
         }
         catch ( Exception exc )

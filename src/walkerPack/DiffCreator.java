@@ -249,7 +249,7 @@ public class DiffCreator
                 case UPDATE:
                     editElement = doc.createElement("Update") ;
                     Element nucl = doc.createElement("nucl");
-                    Element source = doc.createElement("dropIndex");
+                    Element source = doc.createElement("updateIndex");
                     editElement.appendChild(nucl);
                     editElement.appendChild(source);
 
