@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE Diff SYSTEM "DiffScriptDefinition.dtd">
+<Diff>
+    <meta>
+        <SourceString>c68e2e283162b8b8379a77740aaa8e20</SourceString>
+        <DestinationString>882711e4374e36ab999a950ac5dae669</DestinationString>
+    </meta>
+    <EditScript>
+        <Update>
+            <getIndex>1</getIndex>
+            <updateIndex>1</updateIndex>
+        </Update>
+        <Insert>
+            <getIndex>2</getIndex>
+            <dropIndex>2</dropIndex>
+        </Insert>
+        <Delete>
+            <index>2</index>
+        </Delete>
+        <Delete>
+            <index>3</index>
+        </Delete>
+        <Delete>
+            <index>4</index>
+        </Delete>
+        <Delete>
+            <index>5</index>
+        </Delete>
+        <Delete>
+            <index>6</index>
+        </Delete>
+        <Delete>
+            <index>7</index>
+        </Delete>
+    </EditScript>
+</Diff>
