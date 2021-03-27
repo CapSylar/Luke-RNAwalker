@@ -12,7 +12,8 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class patching {
+public class DiffApplicator
+{
     public static void main(String[] args) throws ParserConfigurationException, IOException, SAXException {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = factory.newDocumentBuilder();
@@ -24,10 +25,10 @@ public class patching {
         factory.setIgnoringElementContentWhitespace(true);
 
         /*
-        * factory.setIgnoringElementContentWhitespace(true) won't work unless the xml doc has a dtd linked, won't work with xsd i tried
-        * it removes all the empty #text nodes while the parser is working through the file, very efficient :)
-        *
-        */
+         * factory.setIgnoringElementContentWhitespace(true) won't work unless the xml doc has a dtd linked, won't work with xsd i tried
+         * it removes all the empty #text nodes while the parser is working through the file, very efficient :)
+         *
+         */
 
         builder = factory.newDocumentBuilder();
         Document ESDocument = builder.parse(new File("seqdiff.xml"));
@@ -42,12 +43,12 @@ public class patching {
 
 
         /******* DEBUG PRINTS
-        System.out.println(" Child nodes before filtering: " + editList.getLength()) ;
+         System.out.println(" Child nodes before filtering: " + editList.getLength()) ;
 
-        for ( int i = 0 ; i < editList.getLength() ; ++i )
-        {
-            System.out.println("entry " + i + " : " + editList.item(i).getNodeName() + " content: " + editList.item(i).getTextContent());
-        }
+         for ( int i = 0 ; i < editList.getLength() ; ++i )
+         {
+         System.out.println("entry " + i + " : " + editList.item(i).getNodeName() + " content: " + editList.item(i).getTextContent());
+         }
 
          *****************************/
 
@@ -61,13 +62,13 @@ public class patching {
             switch (current)
             {
                 case "Insert":
-                    {
-                        int getIndex = Integer.parseInt(operation.getChildNodes().item(0).getTextContent());
-                        int dropIndex = Integer.parseInt(operation.getChildNodes().item(1).getTextContent());
-                        sourceSeq = sourceSeq.substring(0, (dropIndex + sourceI)) + destSeq.charAt(getIndex) + sourceSeq.substring(dropIndex + sourceI);
-                        sourceI++;
-                    }
-                    break;
+                {
+                    int getIndex = Integer.parseInt(operation.getChildNodes().item(0).getTextContent());
+                    int dropIndex = Integer.parseInt(operation.getChildNodes().item(1).getTextContent());
+                    sourceSeq = sourceSeq.substring(0, (dropIndex + sourceI)) + destSeq.charAt(getIndex) + sourceSeq.substring(dropIndex + sourceI);
+                    sourceI++;
+                }
+                break;
 
                 case "Delete":
                     NodeList x = operation.getChildNodes() ;
