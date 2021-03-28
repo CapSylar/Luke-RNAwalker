@@ -14,15 +14,13 @@ import javax.xml.transform.stream.StreamResult;
 import java.io.File;
 import java.math.BigInteger;
 import java.security.MessageDigest;
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
 
 public class DiffCreator
 {
     private String RNAseq1 , RNAseq2 ;
     HashMap<Character,String> NuclEquivs; ;
-    ArrayList<EditOP> editScript;
+    EditScript currentScript = new EditScript();
 
     public DiffCreator( String file1 , String file2 ) throws Exception
     {
@@ -33,8 +31,11 @@ public class DiffCreator
         Document doc1 = builder.parse( new File (file2) ) ;
 
         // save them as strings after stripping them
-        this.RNAseq1 = doc.getElementsByTagName("sequence").item(0).getTextContent().replaceAll("[\n ]" , "" ) ;
-        this.RNAseq2 = doc1.getElementsByTagName("sequence").item(0).getTextContent().replaceAll("[\n ]" , "" ) ;
+        Sequence RNAseq1 = Sequence.fromXML(doc);
+        Sequence RNAseq2 = Sequence.fromXML(doc1);
+
+        this.RNAseq1 = RNAseq1.getSequence();
+        this.RNAseq2 = RNAseq2.getSequence();
 
         this.InitHashMap(); // init the map used for the nucleotide equivalences
     }
@@ -43,11 +44,11 @@ public class DiffCreator
     {
         this.NuclEquivs = new HashMap<>();
 
-        this.NuclEquivs.put('R' , "GA" ) ;
-        this.NuclEquivs.put('M' , "AC" ) ;
-        this.NuclEquivs.put('S' , "GC" ) ;
-        this.NuclEquivs.put('V' , "GAC" ) ;
-        this.NuclEquivs.put('N' , "GUACRMSV" ) ;
+        this.NuclEquivs.put('R' , "RGA" ) ;
+        this.NuclEquivs.put('M' , "MAC" ) ;
+        this.NuclEquivs.put('S' , "SGC" ) ;
+        this.NuclEquivs.put('V' , "VGAC" ) ;
+        this.NuclEquivs.put('N' , "NGUACRMSV" ) ;
         this.NuclEquivs.put('A' , "A" ) ;
         this.NuclEquivs.put('G' , "G" ) ;
         this.NuclEquivs.put('U' , "U" ) ;
@@ -97,33 +98,8 @@ public class DiffCreator
                     dp[i][j][1] = 2 ;
             }
 
-//        System.out.println("RNA seq 1: " + RNAseq1);
-//        System.out.println("RNA seq 2: " + RNAseq2);
-//
-//        for ( int i = 0 ; i < dp.length ; ++i )
-//        {
-//            for (int j = 0; j < dp[0].length; ++j)
-//                System.out.print(dp[i][j][0] + " ");
-//            System.out.println();
-//        }
-//
-//        System.out.println("string edit distance is " + dp[RNAseq1.length()][RNAseq2.length()][0] );
 
-
-        // backtrack now or try to
-
-//        System.out.println("BACKTRACK MATRIX");
-
-//        for ( int i = 0 ; i < dp.length ; ++i )
-//        {
-//            for (int j = 0; j < dp[0].length; ++j)
-//                System.out.print(dp[i][j][1] + " ");
-//            System.out.println();
-//        }
-
-        // start at last cell and backtrack
-
-        this.editScript =  new ArrayList<>() ;
+        currentScript = new EditScript();
 
         int i = RNAseq1.length();
         int j = RNAseq2.length();
@@ -131,22 +107,20 @@ public class DiffCreator
         while ( i != 0 || j != 0 )
             switch (dp[i][j][1] )
             {
-                case 0:
-                    editScript.add( new EditOP( OP_TYPE.DELETE , i-1 , '0' ) ) ; // '0' not used
+                case 0: // delete operation
+                    currentScript.pushFront( new DeleteOperation( i-1 ));
                     --i ;
                     break ;
-                case 1:
+                case 1: // update operation
                     if ( dp[i-1][j-1][0] != dp[i][j][0] ) // check if this update costs anything
-                        editScript.add( new EditOP( OP_TYPE.UPDATE , i-1 , RNAseq2.charAt(j-1) )) ;
+                        currentScript.pushFront( new UpdateOperation(i-1 , RNAseq2.charAt(j-1)));
                     --i ; --j ;
                     break ;
-                case 2:
-                    editScript.add( new EditOP( OP_TYPE.INSERT , i , RNAseq2.charAt(j-1)));
+                case 2: // insert operation
+                    currentScript.pushFront( new InsertOperation( i , RNAseq2.charAt(j-1) ));
                     --j ;
                     break ;
             }
-
-        Collections.reverse(editScript) ;
     }
 
     private Boolean CostUpdate ( char old_v , char new_v )
@@ -161,7 +135,7 @@ public class DiffCreator
         DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder() ;
 
         Document diffDoc = builder.newDocument() ;
-        diffDoc.setDocumentURI("asshole");
+        diffDoc.setDocumentURI("hello");
         Element root = diffDoc.createElement("Diff") ;
         diffDoc.appendChild( root );
 
@@ -180,18 +154,11 @@ public class DiffCreator
         SourceString.setTextContent( this.getMD5(this.RNAseq1));
         DestinationString.setTextContent(this.getMD5(this.RNAseq2));
 
-        Element scriptRoot = diffDoc.createElement("EditScript");
-        root.appendChild(scriptRoot);
+        // "EditScript" Element is returned by the method
 
-        // create elements under diff script for every entry in script
-
-        for ( int i = 0 ; i < this.editScript.size() ; ++i )
-        {
-            scriptRoot.appendChild(this.editScript.get(i).toXMLElement(diffDoc));
-        }
+        root.appendChild(this.currentScript.toXML(diffDoc)) ;
 
         // save XML DOM to file
-
 
         DOMSource domSource = new DOMSource(diffDoc);
         StreamResult streamResult = new StreamResult(new File(fileName)) ;
@@ -217,66 +184,6 @@ public class DiffCreator
         String hashtext = no.toString(16) ; // to hex
 
         return hashtext;
-    }
-
-    enum OP_TYPE
-    {
-        INSERT,
-        DELETE,
-        UPDATE
-    } ;
-
-    class EditOP
-    {
-        int s_index = 0 ; // we only index into the source sequence
-        char nucl; // nucleotide, not used in case of delete
-
-        OP_TYPE type ;
-
-        EditOP ( OP_TYPE type , int s_index , char nucl )
-        {
-            this.type = type ;
-            this.s_index  = s_index ;
-            this.nucl = nucl ;
-        }
-
-        public Element toXMLElement( Document doc )
-        {
-            Element editElement = doc.createElement("default") ; // should not be used
-
-            switch ( type )
-            {
-                case UPDATE:
-                    editElement = doc.createElement("Update") ;
-                    Element nucl = doc.createElement("nucl");
-                    Element source = doc.createElement("updateIndex");
-                    editElement.appendChild(nucl);
-                    editElement.appendChild(source);
-
-                    nucl.setTextContent(""+this.nucl);
-                    source.setTextContent("" + this.s_index);
-                    break;
-                case DELETE:
-                    editElement = doc.createElement("Delete");
-                    Element delete_index = doc.createElement("index");
-                    editElement.appendChild(delete_index);
-
-                    delete_index.setTextContent(""+this.s_index);
-                    break;
-                case INSERT:
-                    editElement = doc.createElement("Insert");
-                    Element getIndex = doc.createElement("nucl");
-                    Element dropIndex = doc.createElement("dropIndex") ;
-                    editElement.appendChild(getIndex);
-                    editElement.appendChild(dropIndex);
-
-                    getIndex.setTextContent(""+this.nucl);
-                    dropIndex.setTextContent(""+this.s_index);
-                    break;
-            }
-
-            return editElement;
-        }
     }
 }
 
