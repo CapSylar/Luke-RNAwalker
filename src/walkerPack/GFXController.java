@@ -9,6 +9,8 @@ import javafx.scene.text.Text;
 
 public class GFXController
 {
+    static int textLimit = 80;
+
     @FXML
     private JFXButton CalculateDiffPaneCalculateDiffButton;
 
@@ -19,10 +21,10 @@ public class GFXController
     private JFXButton CalculateDiffPaneBrowse2Button;
 
     @FXML
-    private JFXTextField CalculateDiffPaneSequence1Field;
+    private Text CalculateDiffPaneSequence1Field;
 
     @FXML
-    private JFXTextField CalculateDiffPaneSequence2Field;
+    private Text CalculateDiffPaneSequence2Field;
 
     @FXML
     private JFXProgressBar CalculateDiffPaneProgressBar;
@@ -35,8 +37,6 @@ public class GFXController
 
     @FXML
     private JFXTextField CalculateDiffPaneSequence2Field1;
-
-
 
     @FXML
     private Text CalculateDiffPaneTextField;
@@ -72,7 +72,10 @@ public class GFXController
 
         if ( append != null )
         {
-            CalculateDiffPaneTextField.setText(append);
+            if ( append.length() > 45 )
+                CalculateDiffPaneTextField.setText( "..." + append.substring(append.length()-40));
+            else
+                CalculateDiffPaneTextField.setText(append);
             DiffPaneState.setDiffPath(append);
         }
     }
@@ -96,10 +99,10 @@ public class GFXController
     private JFXButton ApplyDiffPaneBrowseScriptButton;
 
     @FXML
-    private JFXTextField ApplyDiffPaneSeqField;
+    private Text ApplyDiffPaneSeqField;
 
     @FXML
-    private JFXTextField ApplyDiffPaneDiffField;
+    private Text ApplyDiffPaneDiffField;
 
     @FXML
     private Text ApplyDiffPaneResultField;
@@ -149,8 +152,11 @@ public class GFXController
 
         if ( append != null )
         {
+            if ( append.length() > 45 )
+                ApplyDiffPaneResultField.setText( "..." + append.substring(append.length()-40));
+            else
+                ApplyDiffPaneResultField.setText(append);
             ApplyPaneState.setResultingSeq(append);
-            ApplyDiffPaneResultField.setText(append);
         }
     }
 
