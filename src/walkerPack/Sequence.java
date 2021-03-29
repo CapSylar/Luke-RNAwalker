@@ -2,6 +2,9 @@ package walkerPack;
 
 import org.w3c.dom.*;
 
+import java.math.BigInteger;
+import java.security.MessageDigest;
+
 public class Sequence
 {
     private String sequence;
@@ -82,6 +85,32 @@ public class Sequence
         localRoot.appendChild(sequence);
 
         return localRoot;
+    }
+
+    public String getMD5()
+    {
+        String HashText = null ;
+
+        try
+        {
+            MessageDigest md = MessageDigest.getInstance("MD5") ;
+            byte[] messageDigest = md.digest(this.sequence.getBytes());
+
+            BigInteger no = new BigInteger(1,messageDigest);
+            HashText = no.toString(16) ; // to hex
+        }
+        catch ( Exception excp )
+        {
+            excp.printStackTrace();
+        }
+
+        return HashText;
+    }
+
+    public boolean EqualToHash( String MD5Hash )
+    {
+        // compare the current string to the hash
+        return getMD5().equals(MD5Hash) ;
     }
 
 }

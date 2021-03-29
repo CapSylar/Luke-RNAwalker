@@ -12,13 +12,11 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import java.io.File;
-import java.math.BigInteger;
-import java.security.MessageDigest;
 import java.util.HashMap;
 
 public class DiffCreator
 {
-    private String RNAseq1 , RNAseq2 ;
+    private Sequence RNAsequence1 , RNAsequence2 ;
     HashMap<Character,String> NuclEquivs; ;
     EditScript currentScript = new EditScript();
 
@@ -31,11 +29,8 @@ public class DiffCreator
         Document doc1 = builder.parse( new File (file2) ) ;
 
         // save them as strings after stripping them
-        Sequence RNAseq1 = Sequence.fromXML(doc);
-        Sequence RNAseq2 = Sequence.fromXML(doc1);
-
-        this.RNAseq1 = RNAseq1.getSequence();
-        this.RNAseq2 = RNAseq2.getSequence();
+        this.RNAsequence1 = Sequence.fromXML(doc);
+        this.RNAsequence2 = Sequence.fromXML(doc1);
 
         this.InitHashMap(); // init the map used for the nucleotide equivalences
     }
@@ -57,31 +52,34 @@ public class DiffCreator
 
     void BuildDiff ( int costUpdate , int costDelete , int costInsert ) throws Exception
     {
-        int dp[][][] = new int[RNAseq1.length()+1][RNAseq2.length()+1][2] ;
+        String StringSequence1 = this.RNAsequence1.getSequence() ;
+        String StringSequence2 = this.RNAsequence2.getSequence() ;
+        
+        int dp[][][] = new int[StringSequence1.length()+1][StringSequence2.length()+1][2] ;
 
         // [2] : one for edit distance , 1: to note were we came from , 0 from delete, 1 from update
         // ,2 from insert ( 0-from up , 1-from diagonal , 2-from left )
 
         dp[0][0][0] = 0 ;
 
-        for ( int i = 1 ; i <= RNAseq2.length() ; ++i )
+        for ( int i = 1 ; i <= StringSequence2.length() ; ++i )
         {
             dp[0][i][0] = i ;
             dp[0][i][1] = 2 ; // we came from the left cell
         }
 
-        for ( int i = 1 ; i <= RNAseq1.length() ; ++i )
+        for ( int i = 1 ; i <= StringSequence1.length() ; ++i )
         {
             dp[i][0][0] = i ;
             dp[i][0][1] = 0 ; // we came from the up cell
         }
 
-        for ( int i = 1 ; i <= RNAseq1.length() ; ++i )
-            for ( int j = 1 ; j <= RNAseq2.length() ; ++j )
+        for ( int i = 1 ; i <= StringSequence1.length() ; ++i )
+            for ( int j = 1 ; j <= StringSequence2.length() ; ++j )
             {
                 // we have to note were we came from , calc each thing separately
 
-                int update = dp[i-1][j-1][0] + (CostUpdate( RNAseq1.charAt(i-1) , RNAseq2.charAt(j-1) ) ? costUpdate : 0)  ;
+                int update = dp[i-1][j-1][0] + (CostUpdate( StringSequence1.charAt(i-1) , StringSequence2.charAt(j-1) ) ? costUpdate : 0)  ;
                 int delete = dp[i-1][j][0] + costDelete ;
                 int insert = dp[i][j-1][0] + costInsert ;
 
@@ -101,23 +99,24 @@ public class DiffCreator
 
         currentScript = new EditScript();
 
-        int i = RNAseq1.length();
-        int j = RNAseq2.length();
+        int i = StringSequence1.length();
+        int j = StringSequence2.length();
 
         while ( i != 0 || j != 0 )
             switch (dp[i][j][1] )
             {
                 case 0: // delete operation
-                    currentScript.pushFront( new DeleteOperation( i-1 ));
+                    currentScript.pushFront( new DeleteOperation( i-1 , StringSequence1.charAt(i-1) , j ));
                     --i ;
                     break ;
                 case 1: // update operation
                     if ( dp[i-1][j-1][0] != dp[i][j][0] ) // check if this update costs anything
-                        currentScript.pushFront( new UpdateOperation(i-1 , RNAseq2.charAt(j-1)));
+                        currentScript.pushFront( new UpdateOperation(i-1 , StringSequence2.charAt(j-1) ,
+                                StringSequence1.charAt(i-1) , j-1 ));
                     --i ; --j ;
                     break ;
                 case 2: // insert operation
-                    currentScript.pushFront( new InsertOperation( i , RNAseq2.charAt(j-1) ));
+                    currentScript.pushFront( new InsertOperation( i , StringSequence2.charAt(j-1) , j-1 ));
                     --j ;
                     break ;
             }
@@ -151,8 +150,8 @@ public class DiffCreator
         meta.appendChild(DestinationString) ;
 
         // HASH the two strings
-        SourceString.setTextContent( this.getMD5(this.RNAseq1));
-        DestinationString.setTextContent(this.getMD5(this.RNAseq2));
+        SourceString.setTextContent( this.RNAsequence1.getMD5() );
+        DestinationString.setTextContent( this.RNAsequence2.getMD5() );
 
         // "EditScript" Element is returned by the method
 
@@ -175,16 +174,7 @@ public class DiffCreator
     }
 
 
-    private String getMD5 ( String input ) throws Exception
-    {
-        MessageDigest md = MessageDigest.getInstance("MD5") ;
-        byte[] messageDigest = md.digest(input.getBytes());
 
-        BigInteger no = new BigInteger(1,messageDigest);
-        String hashtext = no.toString(16) ; // to hex
-
-        return hashtext;
-    }
 }
 
 

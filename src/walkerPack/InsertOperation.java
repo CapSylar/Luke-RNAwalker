@@ -3,17 +3,17 @@ package walkerPack;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
-import javax.imageio.metadata.IIOMetadataNode;
-
 public class InsertOperation implements EditOperation
 {
     private int insertIndex ;
     private char charToInsert ;
+    private int reverseIndex ;
 
-    public InsertOperation(int insertIndex, char charToInsert)
+    public InsertOperation(int insertIndex, char charToInsert , int reverseIndex )
     {
         this.insertIndex = insertIndex;
         this.charToInsert = charToInsert;
+        this.reverseIndex = reverseIndex;
     }
 
     @Override
@@ -24,9 +24,9 @@ public class InsertOperation implements EditOperation
     }
 
     @Override
-    public EditOperation getReverse()
+    public EditOperation getReverse ()
     {
-        return null;
+        return new DeleteOperation( this.reverseIndex , this.charToInsert , this.insertIndex );
     }
 
     @Override
@@ -34,12 +34,16 @@ public class InsertOperation implements EditOperation
     {
         Element localRoot = doc.createElement("Insert") ;
         Element nucl = doc.createElement("nucl");
-        Element dropIndex = doc.createElement("dropIndex") ;
+        Element dropIndex = doc.createElement("insertIndex") ;
+        Element reverse_index = doc.createElement("reverseIndex") ;
+
         localRoot.appendChild(nucl);
         localRoot.appendChild(dropIndex);
+        localRoot.appendChild(reverse_index);
 
         nucl.setTextContent(""+this.charToInsert);
         dropIndex.setTextContent(""+this.insertIndex);
+        reverse_index.setTextContent(""+this.reverseIndex);
 
         return localRoot;
     }

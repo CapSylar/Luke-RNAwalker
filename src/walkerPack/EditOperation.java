@@ -4,7 +4,6 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 
-
 interface EditOperation
 {
    int apply( StringBuilder string , int offset ) ; // apply the operation on the string passed, offset to accoutn for prev operations
@@ -23,25 +22,30 @@ interface EditOperation
          {
             char gotNucl = operationInXML.getChildNodes().item(0).getTextContent().charAt(0);
             int insertIndex = Integer.parseInt(operationInXML.getChildNodes().item(1).getTextContent());
+            int reverseIndex = Integer.parseInt(operationInXML.getChildNodes().item(2).getTextContent());
 
-            toReturn = new InsertOperation( insertIndex , gotNucl );
+            toReturn = new InsertOperation( insertIndex , gotNucl , reverseIndex );
          }
             break;
 
          case "Delete":
          {
-            int deleteIndex = Integer.parseInt(operationInXML.getChildNodes().item(0).getTextContent());
+            char NuclToDelete = operationInXML.getChildNodes().item(0).getTextContent().charAt(0);
+            int deleteIndex = Integer.parseInt(operationInXML.getChildNodes().item(1).getTextContent());
+            int reverseIndex = Integer.parseInt(operationInXML.getChildNodes().item(2).getTextContent());
 
-            toReturn = new DeleteOperation(deleteIndex);
+            toReturn = new DeleteOperation(deleteIndex , NuclToDelete , reverseIndex );
          }
             break;
 
          case "Update":
          {
-            char gotNucl = operationInXML.getChildNodes().item(0).getTextContent().charAt(0);
-            int updateIndex = Integer.parseInt(operationInXML.getChildNodes().item(1).getTextContent());
+            char NewNucl = operationInXML.getChildNodes().item(0).getTextContent().charAt(0);
+            char OldNucl = operationInXML.getChildNodes().item(1).getTextContent().charAt(0);
+            int updateIndex = Integer.parseInt(operationInXML.getChildNodes().item(2).getTextContent());
+            int reverseIndex = Integer.parseInt(operationInXML.getChildNodes().item(3).getTextContent());
 
-            toReturn = new UpdateOperation( updateIndex , gotNucl );
+            toReturn = new UpdateOperation( updateIndex , NewNucl , OldNucl , reverseIndex );
          }
             break;
 

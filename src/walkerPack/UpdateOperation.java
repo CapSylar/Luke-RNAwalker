@@ -7,11 +7,15 @@ public class UpdateOperation implements EditOperation
 {
     private int updateIndex ;
     private char newChar ;
+    private char oldChar ;
+    private int reverseIndex;
 
-    public UpdateOperation(int updateIndex, char newChar)
+    public UpdateOperation(int updateIndex, char newChar , char oldChar , int reverseIndex )
     {
         this.updateIndex = updateIndex;
         this.newChar = newChar;
+        this.oldChar = oldChar;
+        this.reverseIndex = reverseIndex;
     }
 
     @Override
@@ -24,20 +28,28 @@ public class UpdateOperation implements EditOperation
     @Override
     public EditOperation getReverse()
     {
-        return null;
+        return new UpdateOperation( this.reverseIndex , this.oldChar , this.newChar , this.updateIndex );
     }
 
     @Override
     public Element toXML(Document doc)
     {
         Element localRoot = doc.createElement("Update") ;
-        Element nucl = doc.createElement("nucl");
+        Element NewNucl = doc.createElement("newNucl");
+        Element OldNucl = doc.createElement("oldNucl");
         Element source = doc.createElement("updateIndex");
-        localRoot.appendChild(nucl);
-        localRoot.appendChild(source);
+        Element reverse_index = doc.createElement("reverseIndex");
 
-        nucl.setTextContent(""+this.newChar);
+        // ORDER MATTERS
+        localRoot.appendChild(NewNucl);
+        localRoot.appendChild(OldNucl);
+        localRoot.appendChild(source);
+        localRoot.appendChild(reverse_index);
+
+        NewNucl.setTextContent(""+this.newChar);
+        OldNucl.setTextContent(""+this.oldChar);
         source.setTextContent("" + this.updateIndex);
+        reverse_index.setTextContent("" + this.reverseIndex);
 
         return localRoot;
     }

@@ -3,6 +3,7 @@ package walkerPack;
 import org.w3c.dom.*;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.transform.OutputKeys;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
@@ -38,9 +39,27 @@ public class DiffApplicator
              */
 
             Document ESDocument = factory.newDocumentBuilder().parse(new File(DiffPath));
+
             EditScript currentScript = EditScript.fromXML( ESDocument.getElementsByTagName("EditScript").item(0) ); // parse script from xml
 
-            currentScript.apply(this.PatchedSequence) ;
+            String SourceSequenceHash = ESDocument.getElementsByTagName("SourceString").item(0).getTextContent();
+            String DestinationSequenceHash = ESDocument.getElementsByTagName("DestinationString").item(0).getTextContent();
+
+            // TODO: consider moving this logic to EditScript Object + letting EditScript manage the 2 Hashes
+
+            if ( this.PatchedSequence.EqualToHash(SourceSequenceHash) ) // ok , just used non-reversed edit script
+            {
+                currentScript.apply(this.PatchedSequence) ;
+            }
+            else if ( this.PatchedSequence.EqualToHash(DestinationSequenceHash) ) // apply reversed edit script to provided sequence
+            {
+                currentScript = currentScript.getReverse();
+                currentScript.apply(this.PatchedSequence);
+            }
+            else
+            {
+                throw new Exception("provided sequence did not match either hash, edit script is not for provided sequence") ;
+            }
         }
 
         catch ( Exception exc )
@@ -67,6 +86,7 @@ public class DiffApplicator
             // save XML DOM to file at filePath
 
             Transformer tranformer = TransformerFactory.newInstance().newTransformer() ;
+            tranformer.setOutputProperty(OutputKeys.INDENT , "yes");
 
             DOMSource domSource = new DOMSource(doc);
             StreamResult streamResult = new StreamResult(new File(pathName)) ;

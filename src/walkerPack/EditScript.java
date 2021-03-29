@@ -9,21 +9,21 @@ import java.util.ArrayList;
 
 public class EditScript
 {
-    private ArrayList<EditOperation> operations;
+    private ArrayList<EditOperation> Operations;
 
     public EditScript()
     {
-        this.operations = new ArrayList<>();
+        this.Operations = new ArrayList<>();
     }
 
     public void pushBack ( EditOperation toAdd )
     {
-        this.operations.add(toAdd);
+        this.Operations.add(toAdd);
     }
 
     public void pushFront ( EditOperation toAdd )
     {
-        this.operations.add(0 , toAdd );
+        this.Operations.add(0 , toAdd );
     }
 
     public String apply ( String sequence )
@@ -31,9 +31,9 @@ public class EditScript
         StringBuilder seq = new StringBuilder(sequence) ;
         int offset = 0 ;
 
-        for ( int i = 0 ; i < this.operations.size() ; ++i )
+        for (int i = 0; i < this.Operations.size() ; ++i )
         {
-            offset += this.operations.get(i).apply(seq , offset); // apply each operation
+            offset += this.Operations.get(i).apply(seq , offset); // apply each operation
         }
 
         return seq.toString();
@@ -44,12 +44,26 @@ public class EditScript
         StringBuilder seq = new StringBuilder(Sequence.getSequence()) ;
         int offset = 0 ;
 
-        for ( int i = 0 ; i < this.operations.size() ; ++i )
+        for (int i = 0; i < this.Operations.size() ; ++i )
         {
-            offset += this.operations.get(i).apply(seq , offset); // apply each operation
+            offset += this.Operations.get(i).apply(seq , offset); // apply each operation
         }
 
         Sequence.setSequence( seq.toString() );
+    }
+
+    public EditScript getReverse()
+    {
+        EditScript Reverse = new EditScript();
+
+        // create new edit script with each operation being reversed
+
+        for (int i = 0; i < this.Operations.size() ; ++i )
+        {
+            Reverse.pushBack(this.Operations.get(i).getReverse());
+        }
+
+        return Reverse;
     }
 
     public Element toXML( Document doc )
@@ -57,9 +71,9 @@ public class EditScript
         // returns the element "EditScript"
         Element localRoot = doc.createElement("EditScript");
 
-        for ( int i = 0 ; i < this.operations.size() ; ++i )
+        for (int i = 0; i < this.Operations.size() ; ++i )
         {
-            localRoot.appendChild(this.operations.get(i).toXML(doc)) ;
+            localRoot.appendChild(this.Operations.get(i).toXML(doc)) ;
         }
 
         return localRoot;
@@ -79,4 +93,6 @@ public class EditScript
 
         return toReturn;
     }
+
+
 }
