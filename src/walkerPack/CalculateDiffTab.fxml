@@ -49,12 +49,17 @@
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="my-tab-pane">
                      <children>
-                        <JFXTextField fx:id="SettingsPaneInsertCostField" layoutX="473.0" layoutY="198.0" prefHeight="35.0" prefWidth="85.0" />
-                        <JFXTextField fx:id="SettingsPaneDeleteCostField" layoutX="471.0" layoutY="341.0" prefHeight="35.0" prefWidth="85.0" />
-                        <JFXTextField fx:id="SettingsPaneUpdateCostField" layoutX="471.0" layoutY="274.0" prefHeight="35.0" prefWidth="85.0" />
-                        <Text layoutX="357.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="root" text="Insert Cost" />
-                        <Text layoutX="352.0" layoutY="288.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="root" text="Update Cost" />
-                        <Text layoutX="354.0" layoutY="355.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="root" text="Delete Cost" />
+                        <JFXTextField fx:id="SettingsPaneInsertCostField" layoutX="685.0" layoutY="245.0" prefHeight="35.0" prefWidth="85.0" />
+                        <JFXTextField fx:id="SettingsPaneDeleteCostField" layoutX="683.0" layoutY="388.0" prefHeight="35.0" prefWidth="85.0" />
+                        <JFXTextField fx:id="SettingsPaneUpdateCostField" layoutX="683.0" layoutY="321.0" prefHeight="35.0" prefWidth="85.0" />
+                        <Text layoutX="569.0" layoutY="269.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="root" text="Insert Cost" />
+                        <Text layoutX="564.0" layoutY="335.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="root" text="Update Cost" />
+                        <Text layoutX="566.0" layoutY="402.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="root" text="Delete Cost" />
+                        <JFXButton fx:id="SettingsPaneLoadDIffButton" layoutX="56.0" layoutY="66.0" onAction="#OnSettingsPaneLoadDIffButtonPressed" text="Load Diff" />
+                        <Text fx:id="SettingsPaneDiffField" layoutX="236.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-field" text="No File Selected" />
+                        <JFXButton fx:id="SettingsPaneSaveReverseButton" layoutX="56.0" layoutY="124.0" onAction="#OnSettingsPaneSaveReverseButtonPressed" text="Save Reverse" />
+                        <Text fx:id="SettingsPaneSaveReverseField" layoutX="236.0" layoutY="151.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-field" text="No Location Specified" />
+                        <JFXButton fx:id="SettingsPaneReverseDiffButton" layoutX="236.0" layoutY="179.0" onAction="#OnSettingsPaneReverseDiffButtonPressed" text="Reverse Diff" />
                      </children></AnchorPane>
               </content>
             </Tab>

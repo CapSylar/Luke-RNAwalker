@@ -40,7 +40,7 @@ public class DiffApplicator
 
             Document ESDocument = factory.newDocumentBuilder().parse(new File(DiffPath));
 
-            EditScript currentScript = EditScript.fromXML( ESDocument.getElementsByTagName("EditScript").item(0) ); // parse script from xml
+            EditScriptSequence currentScript = EditScriptSequence.fromXML( ESDocument.getElementsByTagName("EditScript").item(0) ); // parse script from xml
 
             String SourceSequenceHash = ESDocument.getElementsByTagName("SourceString").item(0).getTextContent();
             String DestinationSequenceHash = ESDocument.getElementsByTagName("DestinationString").item(0).getTextContent();

@@ -113,8 +113,6 @@ public class GFXController
     @FXML
     private JFXProgressBar ApplyDiffPaneProgressBar;
 
-
-
     @FXML
     void OnApplyDiffPaneApplyButtonPressed()
     {
@@ -173,15 +171,61 @@ public class GFXController
     private JFXTextField SettingsPaneUpdateCostField;
 
     @FXML
+    private JFXButton SettingsPaneLoadDIffButton;
+
+    @FXML
+    private Text SettingsPaneDiffField;
+
+    @FXML
+    private Text SettingsPaneSaveReverseField;
+
+    @FXML
+    private JFXButton SettingsPaneSaveReverseButton;
+
+    @FXML
+    private JFXButton SettingsPaneReverseDiffButton;
+
+    @FXML
     public void initialize()
     {
         HookTextFieldListeners(); // hook up the text field listeners
         InitTextFieldsContents() ;
     }
 
+    @FXML
+    void OnSettingsPaneLoadDIffButtonPressed()
+    {
+        String append = Utilities.BrowseForFile("Browse for Diff");
+
+        if ( append != null )
+        {
+            SettingsPaneDiffField.setText(append);
+            ReverserPaneState.setDiffPath(append);
+        }
+    }
+
+    @FXML
+    void OnSettingsPaneSaveReverseButtonPressed()
+    {
+        String append = Utilities.SaveFileLocation("Save Reverse Diff");
+
+        if ( append != null )
+        {
+            SettingsPaneSaveReverseField.setText(append);
+            ReverserPaneState.setReverseSavePath(append);
+        }
+    }
+
+    @FXML
+    void OnSettingsPaneReverseDiffButtonPressed()
+    {
+        ReverserPaneState.reverse();
+    }
 
 
-    public void HookTextFieldListeners()
+
+
+        public void HookTextFieldListeners()
     {
         SettingsPaneInsertCostField.textProperty().addListener(new ChangeListener<String>()
         {

@@ -1,16 +1,8 @@
 package walkerPack;
 
 import org.w3c.dom.Document;
-import org.w3c.dom.DocumentType;
-import org.w3c.dom.Element;
-
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.transform.OutputKeys;
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.dom.DOMSource;
-import javax.xml.transform.stream.StreamResult;
 import java.io.File;
 import java.util.HashMap;
 
@@ -18,7 +10,7 @@ public class DiffCreator
 {
     private Sequence RNAsequence1 , RNAsequence2 ;
     HashMap<Character,String> NuclEquivs; ;
-    EditScript currentScript = new EditScript();
+    EditScriptSequence currentScript = new EditScriptSequence();
 
     public DiffCreator( String file1 , String file2 ) throws Exception
     {
@@ -26,7 +18,7 @@ public class DiffCreator
         DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder() ;
 
         Document doc = builder.parse( new File(file1)) ;
-        Document doc1 = builder.parse( new File (file2) ) ;
+        Document doc1 = builder.parse( new File (file2)) ;
 
         // save them as strings after stripping them
         this.RNAsequence1 = Sequence.fromXML(doc);
@@ -97,7 +89,7 @@ public class DiffCreator
             }
 
 
-        currentScript = new EditScript();
+        currentScript = new EditScriptSequence();
 
         int i = StringSequence1.length();
         int j = StringSequence2.length();
@@ -129,52 +121,9 @@ public class DiffCreator
 
     public void SaveDiffScriptXML ( String fileName ) throws Exception
     {
-        // parse the script
-
-        DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder() ;
-
-        Document diffDoc = builder.newDocument() ;
-        diffDoc.setDocumentURI("hello");
-        Element root = diffDoc.createElement("Diff") ;
-        diffDoc.appendChild( root );
-
-
-        Element meta = diffDoc.createElement("meta");
-        root.appendChild(meta);
-
-        // crate the two elements that will hold our hashes
-
-        Element SourceString = diffDoc.createElement("SourceString");
-        Element DestinationString = diffDoc.createElement("DestinationString");
-        meta.appendChild(SourceString) ;
-        meta.appendChild(DestinationString) ;
-
-        // HASH the two strings
-        SourceString.setTextContent( this.RNAsequence1.getMD5() );
-        DestinationString.setTextContent( this.RNAsequence2.getMD5() );
-
-        // "EditScript" Element is returned by the method
-
-        root.appendChild(this.currentScript.toXML(diffDoc)) ;
-
-        // save XML DOM to file
-
-        DOMSource domSource = new DOMSource(diffDoc);
-        StreamResult streamResult = new StreamResult(new File(fileName)) ;
-
-
-        Transformer transformer = TransformerFactory.newInstance().newTransformer() ;
-        transformer.setOutputProperty(OutputKeys.INDENT , "yes" );
-
-        DocumentType doctype = diffDoc.getImplementation().createDocumentType("doctype" , "hello" , "DiffScriptDefinition.dtd");
-        transformer.setOutputProperty(OutputKeys.DOCTYPE_PUBLIC, doctype.getPublicId());
-        transformer.setOutputProperty(OutputKeys.DOCTYPE_SYSTEM, doctype.getSystemId());
-
-        transformer.transform( domSource , streamResult );
+        EditScript toSave = new EditScript( this.RNAsequence1.getMD5() , this.RNAsequence2.getMD5() , this.currentScript );
+        toSave.toXMLFile(fileName);
     }
-
-
-
 }
 
 

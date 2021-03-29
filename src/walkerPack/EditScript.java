@@ -1,98 +1,125 @@
 package walkerPack;
 
+// editScript is a wrapper around EditScriptSequence
+
 import org.w3c.dom.Document;
+import org.w3c.dom.DocumentType;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
 
-import java.util.ArrayList;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.transform.OutputKeys;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+import java.io.File;
 
 public class EditScript
 {
-    private ArrayList<EditOperation> Operations;
+    String SourceSequenceHash ;
+    String DestinationSequenceHash ;
 
-    public EditScript()
+    EditScriptSequence EditSequence ;
+
+    public EditScript ( String SourceSequenceHash , String DestinationSequenceHash , Node editScript )
     {
-        this.Operations = new ArrayList<>();
+        this.SourceSequenceHash = SourceSequenceHash;
+        this.DestinationSequenceHash = DestinationSequenceHash;
+        this.EditSequence = EditScriptSequence.fromXML(editScript);
     }
 
-    public void pushBack ( EditOperation toAdd )
+    public EditScript ( String sourceSequenceHash , String DestinationSequenceHash , EditScriptSequence sequence )
     {
-        this.Operations.add(toAdd);
+        this.SourceSequenceHash = sourceSequenceHash;
+        this.DestinationSequenceHash = DestinationSequenceHash;
+        this.EditSequence = sequence;
     }
 
-    public void pushFront ( EditOperation toAdd )
-    {
-        this.Operations.add(0 , toAdd );
-    }
 
-    public String apply ( String sequence )
+    public static EditScript fromXMLFile (String path)
     {
-        StringBuilder seq = new StringBuilder(sequence) ;
-        int offset = 0 ;
-
-        for (int i = 0; i < this.Operations.size() ; ++i )
+        try
         {
-            offset += this.Operations.get(i).apply(seq , offset); // apply each operation
+            DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+            factory.setIgnoringElementContentWhitespace(true);
+
+            Document document = factory.newDocumentBuilder().parse(new File(path));
+
+            // get the 2 hashes from the file
+
+            String SourceSequenceHash = document.getElementsByTagName("SourceString").item(0).getTextContent();
+            String DestinationSequenceHash = document.getElementsByTagName("DestinationString").item(0).getTextContent();
+
+            Node editScript = document.getElementsByTagName("EditScript").item(0);
+
+            return new EditScript( SourceSequenceHash , DestinationSequenceHash , editScript );
+        }
+        catch ( Exception excp )
+        {
+            excp.printStackTrace();
         }
 
-        return seq.toString();
+        return null;
     }
 
-    public void apply ( Sequence Sequence )
+    public void toXMLFile ( String path )
     {
-        StringBuilder seq = new StringBuilder(Sequence.getSequence()) ;
-        int offset = 0 ;
+        // save the current EditScript Object to XML
 
-        for (int i = 0; i < this.Operations.size() ; ++i )
+        try
         {
-            offset += this.Operations.get(i).apply(seq , offset); // apply each operation
-        }
+            DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder() ;
+            Document diffDoc = builder.newDocument() ;
 
-        Sequence.setSequence( seq.toString() );
+            diffDoc.setDocumentURI("hello");
+            Element root = diffDoc.createElement("Diff");
+            diffDoc.appendChild( root );
+
+            Element meta = diffDoc.createElement("meta");
+            root.appendChild(meta);
+
+            // crate the two elements that will hold our hashes
+
+            Element SourceString = diffDoc.createElement("SourceString");
+            Element DestinationString = diffDoc.createElement("DestinationString");
+            meta.appendChild(SourceString) ;
+            meta.appendChild(DestinationString) ;
+
+            // HASH the two strings
+            SourceString.setTextContent( this.SourceSequenceHash );
+            DestinationString.setTextContent( this.DestinationSequenceHash );
+
+            // "EditScript" Element is returned by the method
+
+            root.appendChild(this.EditSequence.toXML(diffDoc)) ;
+
+            // save XML DOM to file
+
+            DOMSource domSource = new DOMSource(diffDoc);
+            StreamResult streamResult = new StreamResult(new File(path)) ;
+
+
+            Transformer transformer = TransformerFactory.newInstance().newTransformer() ;
+            transformer.setOutputProperty(OutputKeys.INDENT , "yes" );
+
+            DocumentType doctype = diffDoc.getImplementation().createDocumentType("doctype" , "hello" , "DiffScriptDefinition.dtd");
+            transformer.setOutputProperty(OutputKeys.DOCTYPE_PUBLIC, doctype.getPublicId());
+            transformer.setOutputProperty(OutputKeys.DOCTYPE_SYSTEM, doctype.getSystemId());
+
+            transformer.transform( domSource , streamResult );
+
+        }
+        catch ( Exception excp )
+        {
+            excp.printStackTrace();
+        }
     }
 
     public EditScript getReverse()
     {
-        EditScript Reverse = new EditScript();
-
-        // create new edit script with each operation being reversed
-
-        for (int i = 0; i < this.Operations.size() ; ++i )
-        {
-            Reverse.pushBack(this.Operations.get(i).getReverse());
-        }
-
-        return Reverse;
+        // reverse source and destination hashes and reverse the edit script itself
+        return new EditScript( this.DestinationSequenceHash , this.SourceSequenceHash , this.EditSequence.getReverse() );
     }
-
-    public Element toXML( Document doc )
-    {
-        // returns the element "EditScript"
-        Element localRoot = doc.createElement("EditScript");
-
-        for (int i = 0; i < this.Operations.size() ; ++i )
-        {
-            localRoot.appendChild(this.Operations.get(i).toXML(doc)) ;
-        }
-
-        return localRoot;
-    }
-
-    public static EditScript fromXML( Node root )
-    {
-        // root refers to the Element "EditScript"
-        EditScript toReturn = new EditScript();
-
-        NodeList editList = root.getChildNodes(); // should only be one item
-
-        for ( int i = 0 ; i < editList.getLength() ; ++i )
-        {
-            toReturn.pushBack( EditOperation.fromXML(editList.item(i)) );
-        }
-
-        return toReturn;
-    }
-
-
 }
