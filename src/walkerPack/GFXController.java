@@ -40,6 +40,7 @@ public class GFXController
     @FXML
     void OnCalculateDiffPaneButton1Pressed()
     {
+        CalculateDiffPaneProgressBar.progressProperty().set(0);
         String append = Utilities.BrowseForFile("Browse for Seq 1");
 
         if ( append != null )
@@ -52,6 +53,7 @@ public class GFXController
     @FXML
     void OnCalculateDiffPaneButton2Pressed()
     {
+        CalculateDiffPaneProgressBar.progressProperty().set(0);
         String append = Utilities.BrowseForFile("Browse for Seq 2");
 
         if ( append != null )
@@ -64,6 +66,7 @@ public class GFXController
     @FXML
     void OnCalculateDiffTabSaveDiffButtonPressed()
     {
+        CalculateDiffPaneProgressBar.progressProperty().set(0);
         String append = Utilities.SaveFileLocation("Save Location for Diff Script");
 
         if ( append != null )
@@ -76,7 +79,7 @@ public class GFXController
     @FXML
     void OnCalculateDiffPaneCalculateDiffButtonPressed()
     {
-        DiffPaneState.Calculate();
+        DiffPaneState.Calculate(CalculateDiffPaneProgressBar.progressProperty());
     }
 
     // ******************************** APPLY DIFF PANE START
@@ -108,12 +111,13 @@ public class GFXController
     @FXML
     void OnApplyDiffPaneApplyButtonPressed()
     {
-        ApplyPaneState.applyDiff() ;
+        ApplyPaneState.applyDiff( ApplyDiffPaneProgressBar.progressProperty() ) ;
     }
 
     @FXML
     void OnApplyDiffPaneBrowseSeqButtonPressed()
     {
+        ApplyDiffPaneProgressBar.progressProperty().set(0);
         String append = Utilities.BrowseForFile("Browse for Seq");
 
         if ( append != null )
@@ -126,6 +130,7 @@ public class GFXController
     @FXML
     void OnApplyDiffPaneBrowseScriptButtonPressed()
     {
+        ApplyDiffPaneProgressBar.progressProperty().set(0);
         String append = Utilities.BrowseForFile("Browse for Diff Script");
 
         if ( append != null )
@@ -138,6 +143,7 @@ public class GFXController
     @FXML
     void OnApplyDiffPaneSaveButtonPressed()
     {
+        ApplyDiffPaneProgressBar.progressProperty().set(0);
         String append = Utilities.SaveFileLocation("Save Location for Patched Sequence");
 
         if ( append != null )

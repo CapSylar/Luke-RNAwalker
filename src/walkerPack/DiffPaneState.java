@@ -1,15 +1,12 @@
 package walkerPack;
 
-import org.xml.sax.SAXException;
-
-import javax.xml.parsers.ParserConfigurationException;
-import java.io.IOException;
+import javafx.beans.property.DoubleProperty;
 
 public class DiffPaneState
 {
-    private static String Seq1Path ;
-    private static String Seq2Path ;
-    private static String DiffPath ;
+    private static String Seq1Path = "" ;
+    private static String Seq2Path = "" ;
+    private static String DiffPath = "" ;
 
     public static String getSeq1Path()
     {
@@ -41,13 +38,23 @@ public class DiffPaneState
         DiffPath = diffPath;
     }
 
-    public static void Calculate()
+    public static void Calculate(DoubleProperty progress)
     {
+        // we write to progress to indicate our progress
         try
         {
-            DiffCreator newCreator = new DiffCreator( Seq1Path , Seq2Path );
+            DiffCreator newCreator = new DiffCreator( Seq1Path , Seq2Path ); // does error logging itself
+
+            //TODO: find a better way to do this
+            // we check the save path before executing the diff calc because the apply routine updates the progress bar
+            // and since the save may later fail because the path is invalid , the progress bar moves in this case
+            // we don't want that!
+
+            if ( DiffPath.isBlank() )
+                throw new InternalApplicationException("Invalid Diff Save Path" );
+
             newCreator.BuildDiff(GraphicalInterface.currentManager.getUpdateCost(),GraphicalInterface.currentManager.getDeleteCost()
-                    ,GraphicalInterface.currentManager.getInsertCost()); // pull costs from settings manager that has the update costs
+                    ,GraphicalInterface.currentManager.getInsertCost() , progress ); // pull costs from settings manager that has the update costs
             newCreator.SaveDiffScriptXML(DiffPath);
         }
         catch ( InternalApplicationException exp )

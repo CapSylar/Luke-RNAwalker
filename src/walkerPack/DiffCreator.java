@@ -1,13 +1,6 @@
 package walkerPack;
 
-import org.w3c.dom.Document;
-import org.xml.sax.SAXException;
-
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-import java.io.File;
-import java.io.IOException;
+import javafx.beans.property.DoubleProperty;
 import java.util.HashMap;
 
 public class DiffCreator
@@ -42,7 +35,7 @@ public class DiffCreator
         this.NuclEquivs.put('C' , "C" ) ;
     }
 
-    void BuildDiff ( int costUpdate , int costDelete , int costInsert )
+    void BuildDiff ( int costUpdate , int costDelete , int costInsert , DoubleProperty progress )
     {
         String StringSequence1 = this.RNAsequence1.getSequence() ;
         String StringSequence2 = this.RNAsequence2.getSequence() ;
@@ -66,27 +59,33 @@ public class DiffCreator
             dp[i][0][1] = 0 ; // we came from the up cell
         }
 
+        progress.set(0);
+
         for ( int i = 1 ; i <= StringSequence1.length() ; ++i )
-            for ( int j = 1 ; j <= StringSequence2.length() ; ++j )
+        {
+            for (int j = 1; j <= StringSequence2.length(); ++j)
             {
                 // we have to note were we came from , calc each thing separately
 
-                int update = dp[i-1][j-1][0] + (CostUpdate( StringSequence1.charAt(i-1) , StringSequence2.charAt(j-1) ) ? costUpdate : 0)  ;
-                int delete = dp[i-1][j][0] + costDelete ;
-                int insert = dp[i][j-1][0] + costInsert ;
+                int update = dp[i - 1][j - 1][0] + (CostUpdate(StringSequence1.charAt(i - 1), StringSequence2.charAt(j - 1)) ? costUpdate : 0);
+                int delete = dp[i - 1][j][0] + costDelete;
+                int insert = dp[i][j - 1][0] + costInsert;
 
                 /* by changing the order of the comparisons we could prioritize certain operations later, we could pick the ops
                  * that are the easiest on the program in terms of speed */
 
-                dp[i][j][0] = Math.min( update, Math.min(delete,insert));
+                dp[i][j][0] = Math.min(update, Math.min(delete, insert));
 
-                if ( dp[i][j][0] == update )
-                    dp[i][j][1] = 1 ;
-                else if ( dp[i][j][0] == delete )
-                    dp[i][j][1] = 0 ;
+                if (dp[i][j][0] == update)
+                    dp[i][j][1] = 1;
+                else if (dp[i][j][0] == delete)
+                    dp[i][j][1] = 0;
                 else
-                    dp[i][j][1] = 2 ;
+                    dp[i][j][1] = 2;
             }
+
+            progress.set( progress.get() + i/ ( float ) StringSequence1.length());
+        }
 
 
         currentScript = new EditScriptSequence();

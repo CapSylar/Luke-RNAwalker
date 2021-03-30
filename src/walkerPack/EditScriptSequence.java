@@ -1,5 +1,6 @@
 package walkerPack;
 
+import javafx.beans.property.DoubleProperty;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -39,14 +40,16 @@ public class EditScriptSequence
 //        return seq.toString();
 //    }
 
-    public void apply ( Sequence Sequence )
+    public void apply (Sequence Sequence , DoubleProperty Progress )
     {
         StringBuilder seq = new StringBuilder(Sequence.getSequence()) ;
         int offset = 0 ;
 
+        Progress.set(0);
         for (int i = 0; i < this.Operations.size() ; ++i )
         {
             offset += this.Operations.get(i).apply(seq , offset); // apply each operation
+            Progress.set( Progress.get() + i/ (float)(this.Operations.size()) );
         }
 
         Sequence.setSequence( seq.toString() );

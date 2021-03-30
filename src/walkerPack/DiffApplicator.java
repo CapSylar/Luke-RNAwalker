@@ -1,7 +1,7 @@
 package walkerPack;
 
+import javafx.beans.property.DoubleProperty;
 import org.w3c.dom.*;
-import org.xml.sax.SAXException;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -10,7 +10,6 @@ import javax.xml.transform.*;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import java.io.File;
-import java.io.IOException;
 
 public class DiffApplicator
 {
@@ -22,11 +21,11 @@ public class DiffApplicator
         this.SourceSeqPath = sourceSeq;
     }
 
-    public void applyDiff ( String DiffPath ) throws InternalApplicationException
+    public void applyDiff (String DiffPath , DoubleProperty Progress ) throws InternalApplicationException
     {
         this.PatchedSequence = Sequence.fromXML(SourceSeqPath);
         EditScript currentEditScript = EditScript.fromXMLFile(DiffPath);
-        currentEditScript.apply( this.PatchedSequence );
+        currentEditScript.apply( this.PatchedSequence , Progress );
     }
 
     void SavePatchedSequence( String pathName )

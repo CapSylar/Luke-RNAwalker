@@ -2,6 +2,7 @@ package walkerPack;
 
 // editScript is a wrapper around EditScriptSequence
 
+import javafx.beans.property.DoubleProperty;
 import org.w3c.dom.Document;
 import org.w3c.dom.DocumentType;
 import org.w3c.dom.Element;
@@ -135,15 +136,15 @@ public class EditScript
         return new EditScript( this.DestinationSequenceHash , this.SourceSequenceHash , this.EditSequence.getReverse() );
     }
 
-    public void apply( Sequence sequence ) throws InternalApplicationException
+    public void apply(Sequence sequence , DoubleProperty Progress ) throws InternalApplicationException
     {
         if ( sequence.EqualToHash(this.SourceSequenceHash) )
         {
-            this.EditSequence.apply(sequence); // use normals sequence
+            this.EditSequence.apply(sequence , Progress ); // use normals sequence
         }
         else if ( sequence.EqualToHash(this.DestinationSequenceHash) )
         {
-            this.EditSequence.getReverse().apply(sequence);
+            this.EditSequence.getReverse().apply(sequence , Progress );
         }
         else // error , edit script incompatible with given sequence
         {
