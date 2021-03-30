@@ -1,5 +1,10 @@
 package walkerPack;
 
+import org.xml.sax.SAXException;
+
+import javax.xml.parsers.ParserConfigurationException;
+import java.io.IOException;
+
 public class DiffPaneState
 {
     private static String Seq1Path ;
@@ -41,14 +46,17 @@ public class DiffPaneState
         try
         {
             DiffCreator newCreator = new DiffCreator( Seq1Path , Seq2Path );
+
+            if ( newCreator == null )
+                return;
+
             newCreator.BuildDiff(GraphicalInterface.currentManager.getUpdateCost(),GraphicalInterface.currentManager.getDeleteCost()
                     ,GraphicalInterface.currentManager.getInsertCost()); // pull costs from settings manager that has the update costs
             newCreator.SaveDiffScriptXML(DiffPath);
         }
-        catch ( Exception exc )
+        catch ( ParserConfigurationException | IOException | SAXException  | NullPointerException excp )
         {
-            exc.printStackTrace();
+            GraphicalInterface.logManager.logError("Invalid Path(s) specified!" , 3000 );
         }
-
     }
 }

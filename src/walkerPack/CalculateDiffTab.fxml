@@ -4,8 +4,12 @@
 <?import com.jfoenix.controls.JFXProgressBar?>
 <?import com.jfoenix.controls.JFXTabPane?>
 <?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Text?>
 
@@ -17,14 +21,31 @@
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="my-tab-pane" stylesheets="@../resources/solarized.css">
                      <children>
-                        <JFXButton fx:id="CalculateDiffPaneCalculateDiffButton" layoutX="460.0" layoutY="317.0" onAction="#OnCalculateDiffPaneCalculateDiffButtonPressed" prefHeight="70.0" prefWidth="140.0" styleClass="custom-button" stylesheets="@../resources/solarized.css" text="Calculate" />
-                        <JFXButton fx:id="CalculateDiffPaneBrowse1Button" layoutX="50.0" layoutY="145.0" onAction="#OnCalculateDiffPaneButton1Pressed" prefHeight="50.0" prefWidth="150.0" text="Load Seq1" />
-                        <JFXButton fx:id="CalculateDiffPaneBrowse2Button" layoutX="50.0" layoutY="245.0" onAction="#OnCalculateDiffPaneButton2Pressed" prefHeight="50.0" prefWidth="150.0" text="Load Seq2" />
-                        <JFXProgressBar fx:id="CalculateDiffPaneProgressBar" layoutX="191.0" layoutY="414.0" prefHeight="35.0" prefWidth="475.0" progress="0.73" />
-                        <Text fx:id="CalculateDiffPaneTextField" layoutX="201.0" layoutY="438.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-field" text="File stored at location" wrappingWidth="455.7294921875" />
-                        <JFXButton fx:id="CalculateDiffTabSaveDiffButton" layoutX="248.0" layoutY="317.0" onAction="#OnCalculateDiffTabSaveDiffButtonPressed" prefHeight="70.0" prefWidth="140.0" styleClass="custom-button" stylesheets="@../resources/solarized.css" text="Save Diff" />
-                        <Text fx:id="CalculateDiffPaneSequence1Field" layoutX="281.0" layoutY="177.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-field" text="No File Selected" wrappingWidth="465.65600204467773" />
-                        <Text fx:id="CalculateDiffPaneSequence2Field" layoutX="281.0" layoutY="259.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-field" text="No File Selected" wrappingWidth="483.65600204467773" />
+                        <JFXProgressBar fx:id="CalculateDiffPaneProgressBar" layoutX="212.0" layoutY="365.0" prefHeight="35.0" prefWidth="475.0" progress="0.73" />
+                        <Text fx:id="CalculateDiffPaneTextField" layoutX="222.0" layoutY="389.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-field" text="File stored at location" wrappingWidth="455.7294921875" />
+                        <GridPane alignment="CENTER" layoutX="92.0" layoutY="91.0" prefHeight="224.0" prefWidth="715.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="340.0" minWidth="10.0" prefWidth="228.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="259.0" minWidth="10.0" prefWidth="169.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="259.0" minWidth="10.0" prefWidth="165.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="259.0" minWidth="10.0" prefWidth="206.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints maxHeight="90.0" minHeight="10.0" prefHeight="52.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="60.0" minHeight="0.0" prefHeight="38.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="48.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="36.0" minHeight="10.0" prefHeight="32.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="52.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <JFXButton fx:id="CalculateDiffPaneBrowse1Button" onAction="#OnCalculateDiffPaneButton1Pressed" prefHeight="50.0" prefWidth="150.0" text="Load Seq1" />
+                              <Text fx:id="CalculateDiffPaneSequence1Field" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-field" text="No File Selected" wrappingWidth="465.65600204467773" GridPane.columnIndex="1" />
+                              <Text fx:id="CalculateDiffPaneSequence2Field" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-field" text="No File Selected" wrappingWidth="483.65600204467773" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <JFXButton fx:id="CalculateDiffPaneBrowse2Button" onAction="#OnCalculateDiffPaneButton2Pressed" prefHeight="67.0" prefWidth="152.0" text="Load Seq2" GridPane.rowIndex="2" />
+                              <JFXButton fx:id="CalculateDiffTabSaveDiffButton" onAction="#OnCalculateDiffTabSaveDiffButtonPressed" prefHeight="57.0" prefWidth="140.0" styleClass="custom-button" stylesheets="@../resources/solarized.css" text="Save Diff" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <JFXButton fx:id="CalculateDiffPaneCalculateDiffButton" onAction="#OnCalculateDiffPaneCalculateDiffButtonPressed" prefHeight="70.0" prefWidth="140.0" styleClass="custom-button" stylesheets="@../resources/solarized.css" text="Calculate" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                           </children>
+                        </GridPane>
                      </children>
                   </AnchorPane>
               </content>
@@ -33,14 +54,31 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="my-tab-pane">
                      <children>
-                        <JFXButton fx:id="ApplyDiffPaneApplyButton" layoutX="479.0" layoutY="314.0" onAction="#OnApplyDiffPaneApplyButtonPressed" prefHeight="70.0" prefWidth="140.0" styleClass="custom-button" stylesheets="@../resources/solarized.css" text="Apply" />
-                        <JFXButton fx:id="ApplyDiffPaneBrowseSeqButton" layoutX="37.0" layoutY="133.0" onAction="#OnApplyDiffPaneBrowseSeqButtonPressed" prefHeight="50.0" prefWidth="150.0" text="Load Seq" />
-                        <JFXButton fx:id="ApplyDiffPaneBrowseScriptButton" layoutX="37.0" layoutY="245.0" onAction="#OnApplyDiffPaneBrowseScriptButtonPressed" prefHeight="50.0" prefWidth="166.0" text="Load Diff Script" />
-                        <JFXProgressBar fx:id="ApplyDiffPaneProgressBar" layoutX="175.0" layoutY="412.0" prefHeight="33.0" prefWidth="475.0" progress="0.61" />
-                        <Text fx:id="ApplyDiffPaneResultField" layoutX="180.0" layoutY="435.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-field" text="No File Selected" wrappingWidth="465.7294921875" />
-                        <JFXButton fx:id="ApplyDiffPaneSaveButton" layoutX="249.0" layoutY="314.0" onAction="#OnApplyDiffPaneSaveButtonPressed" prefHeight="70.0" prefWidth="180.0" styleClass="custom-button" stylesheets="@../resources/solarized.css" text="Save Patched Seq" />
-                        <Text fx:id="ApplyDiffPaneSeqField" layoutX="267.0" layoutY="165.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-field" text="No File Selected" />
-                        <Text fx:id="ApplyDiffPaneDiffField" layoutX="267.0" layoutY="277.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-field" text="No File Selected" />
+                        <JFXProgressBar fx:id="ApplyDiffPaneProgressBar" layoutX="191.0" layoutY="377.0" prefHeight="33.0" prefWidth="475.0" progress="0.61" />
+                        <Text fx:id="ApplyDiffPaneResultField" layoutX="196.0" layoutY="400.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-field" text="No File Selected" wrappingWidth="465.7294921875" />
+                        <GridPane alignment="CENTER" layoutX="72.0" layoutY="82.0" prefHeight="257.0" prefWidth="685.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="340.0" minWidth="10.0" prefWidth="214.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="259.0" minWidth="10.0" prefWidth="202.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="259.0" minWidth="10.0" prefWidth="113.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="259.0" minWidth="10.0" prefWidth="156.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints maxHeight="90.0" minHeight="10.0" prefHeight="52.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="60.0" minHeight="0.0" prefHeight="38.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="48.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="36.0" minHeight="10.0" prefHeight="32.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="52.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Text fx:id="ApplyDiffPaneSeqField" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-field" text="No File Selected" wrappingWidth="465.65600204467773" GridPane.columnIndex="1" />
+                              <Text fx:id="ApplyDiffPaneDiffField" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-field" text="No File Selected" wrappingWidth="483.65600204467773" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <JFXButton fx:id="ApplyDiffPaneApplyButton" onAction="#OnApplyDiffPaneApplyButtonPressed" prefHeight="70.0" prefWidth="140.0" styleClass="custom-button" stylesheets="@../resources/solarized.css" text="Apply" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                              <JFXButton fx:id="ApplyDiffPaneBrowseScriptButton" onAction="#OnApplyDiffPaneBrowseScriptButtonPressed" prefHeight="50.0" prefWidth="166.0" text="Load Diff Script" GridPane.rowIndex="2" />
+                              <JFXButton fx:id="ApplyDiffPaneSaveButton" onAction="#OnApplyDiffPaneSaveButtonPressed" prefHeight="70.0" prefWidth="180.0" styleClass="custom-button" stylesheets="@../resources/solarized.css" text="Save Patched Seq" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <JFXButton fx:id="ApplyDiffPaneBrowseSeqButton" onAction="#OnApplyDiffPaneBrowseSeqButtonPressed" prefHeight="50.0" prefWidth="150.0" text="Load Seq" />
+                           </children>
+                        </GridPane>
                      </children>
                   </AnchorPane>
                </content>
@@ -49,21 +87,43 @@
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="my-tab-pane">
                      <children>
-                        <JFXTextField fx:id="SettingsPaneInsertCostField" layoutX="685.0" layoutY="245.0" prefHeight="35.0" prefWidth="85.0" />
-                        <JFXTextField fx:id="SettingsPaneDeleteCostField" layoutX="683.0" layoutY="388.0" prefHeight="35.0" prefWidth="85.0" />
-                        <JFXTextField fx:id="SettingsPaneUpdateCostField" layoutX="683.0" layoutY="321.0" prefHeight="35.0" prefWidth="85.0" />
-                        <Text layoutX="569.0" layoutY="269.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="root" text="Insert Cost" />
-                        <Text layoutX="564.0" layoutY="335.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="root" text="Update Cost" />
-                        <Text layoutX="566.0" layoutY="402.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="root" text="Delete Cost" />
-                        <JFXButton fx:id="SettingsPaneLoadDIffButton" layoutX="56.0" layoutY="66.0" onAction="#OnSettingsPaneLoadDIffButtonPressed" text="Load Diff" />
-                        <Text fx:id="SettingsPaneDiffField" layoutX="236.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-field" text="No File Selected" />
-                        <JFXButton fx:id="SettingsPaneSaveReverseButton" layoutX="56.0" layoutY="124.0" onAction="#OnSettingsPaneSaveReverseButtonPressed" text="Save Reverse" />
-                        <Text fx:id="SettingsPaneSaveReverseField" layoutX="236.0" layoutY="151.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-field" text="No Location Specified" />
-                        <JFXButton fx:id="SettingsPaneReverseDiffButton" layoutX="236.0" layoutY="179.0" onAction="#OnSettingsPaneReverseDiffButtonPressed" text="Reverse Diff" />
+                        <GridPane alignment="CENTER" layoutX="48.0" layoutY="76.0" prefHeight="318.0" prefWidth="734.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="151.0" minWidth="10.0" prefWidth="151.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="152.0" minWidth="10.0" prefWidth="152.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="105.0" minWidth="10.0" prefWidth="71.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="146.0" minWidth="10.0" prefWidth="130.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="10.0" prefWidth="86.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <JFXButton fx:id="SettingsPaneLoadDIffButton" onAction="#OnSettingsPaneLoadDIffButtonPressed" text="Load Diff" />
+                              <JFXButton fx:id="SettingsPaneSaveReverseButton" onAction="#OnSettingsPaneSaveReverseButtonPressed" text="Save Reverse" GridPane.rowIndex="2" />
+                              <JFXButton fx:id="SettingsPaneReverseDiffButton" onAction="#OnSettingsPaneReverseDiffButtonPressed" text="Reverse Diff" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Text fx:id="SettingsPaneDiffField" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-field" text="No File Selected" GridPane.columnIndex="1" />
+                              <Text fx:id="SettingsPaneSaveReverseField" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-field" text="No Location Specified" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="root" text="Insert Cost" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="root" text="Update Cost" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="root" text="Delete Cost" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+                              <JFXTextField fx:id="SettingsPaneInsertCostField" prefHeight="35.0" prefWidth="85.0" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+                              <JFXTextField fx:id="SettingsPaneDeleteCostField" prefHeight="35.0" prefWidth="85.0" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+                              <JFXTextField fx:id="SettingsPaneUpdateCostField" prefHeight="35.0" prefWidth="85.0" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+                           </children>
+                        </GridPane>
                      </children></AnchorPane>
               </content>
             </Tab>
          </tabs>
+         <StackPane.margin>
+            <Insets />
+         </StackPane.margin>
       </JFXTabPane>
    </children>
 </StackPane>

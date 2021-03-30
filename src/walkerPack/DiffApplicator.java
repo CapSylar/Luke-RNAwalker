@@ -3,9 +3,8 @@ package walkerPack;
 import org.w3c.dom.*;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.transform.OutputKeys;
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.*;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import java.io.File;
@@ -92,12 +91,13 @@ public class DiffApplicator
             StreamResult streamResult = new StreamResult(new File(pathName)) ;
 
             tranformer.transform( domSource , streamResult );
-        }
-        catch ( Exception exc )
-        {
-            exc.printStackTrace();
-        }
 
+            GraphicalInterface.logManager.logMessage("Success!" , 1000 );
+        }
+        catch ( ParserConfigurationException | TransformerException | NullPointerException e )
+        {
+            GraphicalInterface.logManager.logError("Invalid Save Path Specified!" , 3000 );
+        }
     }
 
 

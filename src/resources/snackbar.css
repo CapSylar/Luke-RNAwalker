@@ -1,0 +1,40 @@
+
+*
+{
+    -fx-primary: #002b36 ;
+    -fx-secondary: #FFFFFF ;
+    -fx-text-color : #93a1a1 ;
+    -fx-yellow : #b58900 ;
+}
+
+.negative-pane
+{
+    -fx-background-color: #ac0101;
+    -fx-border-radius: 70px ;
+    -fx-background-radius: 70px ;
+    -fx-border-color: #325806;
+    -fx-border-width:5 ;
+}
+
+
+.positive-pane
+{
+    -fx-background-color: #4d840e;
+    -fx-border-radius: 70px ;
+    -fx-background-radius: 70px ;
+    -fx-border-color: #325806;
+    -fx-border-width:5 ;
+}
+
+.background
+{
+    -fx-background-color: -fx-primary ;
+}
+
+
+.text-field
+{
+    -fx-font-family: "Cantarell Extra Bold" ;
+    -fx-font-size: 18 ;
+}
+

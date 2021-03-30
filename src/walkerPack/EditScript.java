@@ -6,15 +6,18 @@ import org.w3c.dom.Document;
 import org.w3c.dom.DocumentType;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
+import org.xml.sax.SAXException;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.OutputKeys;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import java.io.File;
+import java.io.IOException;
 
 public class EditScript
 {
@@ -56,9 +59,13 @@ public class EditScript
 
             return new EditScript( SourceSequenceHash , DestinationSequenceHash , editScript );
         }
-        catch ( Exception excp )
+        catch (SAXException | ParserConfigurationException | IOException e)
         {
-            excp.printStackTrace();
+            GraphicalInterface.logManager.logError("Invalid Diff Path" , 3000 );
+        }
+        catch ( java.lang.NullPointerException excp )
+        {
+            GraphicalInterface.logManager.logError("File Specified has wrong format" , 3000 );
         }
 
         return null;
@@ -109,11 +116,12 @@ public class EditScript
             transformer.setOutputProperty(OutputKeys.DOCTYPE_SYSTEM, doctype.getSystemId());
 
             transformer.transform( domSource , streamResult );
+            GraphicalInterface.logManager.logMessage("Success!" , 1000 );
 
         }
         catch ( Exception excp )
         {
-            excp.printStackTrace();
+            GraphicalInterface.logManager.logError("Invalid Diff Save Path" , 3000 );
         }
     }
 

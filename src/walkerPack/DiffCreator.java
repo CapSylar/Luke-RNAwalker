@@ -1,9 +1,13 @@
 package walkerPack;
 
 import org.w3c.dom.Document;
+import org.xml.sax.SAXException;
+
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
+import java.io.IOException;
 import java.util.HashMap;
 
 public class DiffCreator
@@ -12,9 +16,10 @@ public class DiffCreator
     HashMap<Character,String> NuclEquivs; ;
     EditScriptSequence currentScript = new EditScriptSequence();
 
-    public DiffCreator( String file1 , String file2 ) throws Exception
+    public DiffCreator( String file1 , String file2 ) throws ParserConfigurationException, IOException, SAXException
     {
         // extract the two sequences from the files
+
         DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder() ;
 
         Document doc = builder.parse( new File(file1)) ;
@@ -42,7 +47,7 @@ public class DiffCreator
         this.NuclEquivs.put('C' , "C" ) ;
     }
 
-    void BuildDiff ( int costUpdate , int costDelete , int costInsert ) throws Exception
+    void BuildDiff ( int costUpdate , int costDelete , int costInsert )
     {
         String StringSequence1 = this.RNAsequence1.getSequence() ;
         String StringSequence2 = this.RNAsequence2.getSequence() ;
@@ -119,7 +124,7 @@ public class DiffCreator
         return (this.NuclEquivs.get(old_v).indexOf(new_v) == -1 );
     }
 
-    public void SaveDiffScriptXML ( String fileName ) throws Exception
+    public void SaveDiffScriptXML ( String fileName )
     {
         EditScript toSave = new EditScript( this.RNAsequence1.getMD5() , this.RNAsequence2.getMD5() , this.currentScript );
         toSave.toXMLFile(fileName);

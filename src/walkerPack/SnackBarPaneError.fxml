@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="77.0" prefWidth="369.0" styleClass="background" stylesheets="@../resources/snackbar.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane layoutY="20.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="54.0" prefWidth="369.0" styleClass="negative-pane" stylesheets="@../resources/snackbar.css" AnchorPane.bottomAnchor="23.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Text layoutX="21.0" layoutY="44.694000244140625" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-field" text="Label Here" textOrigin="CENTER" wrappingWidth="328.3860092163086" AnchorPane.topAnchor="11.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

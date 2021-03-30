@@ -29,7 +29,11 @@ public class ReverserPaneState
     {
         // TODO: relocate this code chunk elsewhere
 
-        EditScript Reversed = EditScript.fromXMLFile(DiffPath).getReverse() ;
-        Reversed.toXMLFile(ReverseSavePath); // save to path
+        EditScript Reversed = EditScript.fromXMLFile(DiffPath);
+
+        if ( Reversed != null )
+        {
+            Reversed.getReverse().toXMLFile(ReverseSavePath);// save to path
+        }
     }
 }

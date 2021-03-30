@@ -1,7 +1,5 @@
 package walkerPack;
-import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXProgressBar;
-import com.jfoenix.controls.JFXTextField;
+import com.jfoenix.controls.*;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
@@ -9,8 +7,6 @@ import javafx.scene.text.Text;
 
 public class GFXController
 {
-    static int textLimit = 80;
-
     @FXML
     private JFXButton CalculateDiffPaneCalculateDiffButton;
 
@@ -48,7 +44,7 @@ public class GFXController
 
         if ( append != null )
         {
-            CalculateDiffPaneSequence1Field.setText(append);
+            CalculateDiffPaneSequence1Field.setText(Utilities.TruncateIfLonger(append,60));
             DiffPaneState.setSeq1Path(append);
         }
     }
@@ -60,7 +56,7 @@ public class GFXController
 
         if ( append != null )
         {
-            CalculateDiffPaneSequence2Field.setText(append);
+            CalculateDiffPaneSequence2Field.setText(Utilities.TruncateIfLonger(append,60));
             DiffPaneState.setSeq2Path(append);
         }
     }
@@ -72,10 +68,7 @@ public class GFXController
 
         if ( append != null )
         {
-            if ( append.length() > 45 )
-                CalculateDiffPaneTextField.setText( "..." + append.substring(append.length()-40));
-            else
-                CalculateDiffPaneTextField.setText(append);
+            CalculateDiffPaneTextField.setText(Utilities.TruncateIfLonger( append , 40 ));
             DiffPaneState.setDiffPath(append);
         }
     }
@@ -85,7 +78,6 @@ public class GFXController
     {
         DiffPaneState.Calculate();
     }
-
 
     // ******************************** APPLY DIFF PANE START
 
@@ -126,7 +118,7 @@ public class GFXController
 
         if ( append != null )
         {
-            ApplyDiffPaneSeqField.setText(append);
+            ApplyDiffPaneSeqField.setText(Utilities.TruncateIfLonger(append,60));
             ApplyPaneState.setSeq(append);
         }
     }
@@ -138,7 +130,7 @@ public class GFXController
 
         if ( append != null )
         {
-            ApplyDiffPaneDiffField.setText(append);
+            ApplyDiffPaneDiffField.setText(Utilities.TruncateIfLonger(append,60));
             ApplyPaneState.setDiff(append);
         }
     }
@@ -150,10 +142,7 @@ public class GFXController
 
         if ( append != null )
         {
-            if ( append.length() > 45 )
-                ApplyDiffPaneResultField.setText( "..." + append.substring(append.length()-40));
-            else
-                ApplyDiffPaneResultField.setText(append);
+            ApplyDiffPaneResultField.setText(Utilities.TruncateIfLonger( append , 45));
             ApplyPaneState.setResultingSeq(append);
         }
     }
@@ -199,7 +188,7 @@ public class GFXController
 
         if ( append != null )
         {
-            SettingsPaneDiffField.setText(append);
+            SettingsPaneDiffField.setText(Utilities.TruncateIfLonger(append , 40));
             ReverserPaneState.setDiffPath(append);
         }
     }
@@ -211,7 +200,7 @@ public class GFXController
 
         if ( append != null )
         {
-            SettingsPaneSaveReverseField.setText(append);
+            SettingsPaneSaveReverseField.setText(Utilities.TruncateIfLonger(append , 40));
             ReverserPaneState.setReverseSavePath(append);
         }
     }
@@ -221,9 +210,6 @@ public class GFXController
     {
         ReverserPaneState.reverse();
     }
-
-
-
 
         public void HookTextFieldListeners()
     {
@@ -239,7 +225,6 @@ public class GFXController
                 }
             }
         });
-
 
         SettingsPaneDeleteCostField.textProperty().addListener(new ChangeListener<String>()
         {
@@ -267,7 +252,6 @@ public class GFXController
             }
         });
     }
-
 
     private void InitTextFieldsContents()
     {
