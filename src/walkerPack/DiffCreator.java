@@ -111,6 +111,9 @@ public class DiffCreator
                     --j ;
                     break ;
             }
+
+        int distance = dp[StringSequence1.length()][StringSequence2.length()][0];
+        GraphicalInterface.logManager.logMessage("Success! Distance = " + distance , 7000 );
     }
 
     private Boolean CostUpdate ( char old_v , char new_v )

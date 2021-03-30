@@ -121,7 +121,7 @@ public class EditScript
             transformer.setOutputProperty(OutputKeys.DOCTYPE_SYSTEM, doctype.getSystemId());
 
             transformer.transform( domSource , streamResult );
-            GraphicalInterface.logManager.logMessage("Success!" , 1000 );
+//            GraphicalInterface.logManager.logMessage("Success!" , 1000 );
 
         }
         catch ( Exception excp )
