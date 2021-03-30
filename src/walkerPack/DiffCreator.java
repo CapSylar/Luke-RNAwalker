@@ -16,18 +16,13 @@ public class DiffCreator
     HashMap<Character,String> NuclEquivs; ;
     EditScriptSequence currentScript = new EditScriptSequence();
 
-    public DiffCreator( String file1 , String file2 ) throws ParserConfigurationException, IOException, SAXException
+    public DiffCreator( String file1 , String file2 ) throws InternalApplicationException
     {
         // extract the two sequences from the files
 
-        DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder() ;
-
-        Document doc = builder.parse( new File(file1)) ;
-        Document doc1 = builder.parse( new File (file2)) ;
-
         // save them as strings after stripping them
-        this.RNAsequence1 = Sequence.fromXML(doc);
-        this.RNAsequence2 = Sequence.fromXML(doc1);
+        this.RNAsequence1 = Sequence.fromXML(file1);
+        this.RNAsequence2 = Sequence.fromXML(file2);
 
         this.InitHashMap(); // init the map used for the nucleotide equivalences
     }

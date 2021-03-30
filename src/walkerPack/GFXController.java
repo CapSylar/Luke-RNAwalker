@@ -68,7 +68,7 @@ public class GFXController
 
         if ( append != null )
         {
-            CalculateDiffPaneTextField.setText(Utilities.TruncateIfLonger( append , 40 ));
+            CalculateDiffPaneTextField.setText(Utilities.TruncateIfLonger( append , 30 ));
             DiffPaneState.setDiffPath(append);
         }
     }
@@ -142,7 +142,7 @@ public class GFXController
 
         if ( append != null )
         {
-            ApplyDiffPaneResultField.setText(Utilities.TruncateIfLonger( append , 45));
+            ApplyDiffPaneResultField.setText(Utilities.TruncateIfLonger( append , 30));
             ApplyPaneState.setResultingSeq(append);
         }
     }

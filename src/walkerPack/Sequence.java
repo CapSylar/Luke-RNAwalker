@@ -1,7 +1,12 @@
 package walkerPack;
 
 import org.w3c.dom.*;
+import org.xml.sax.SAXException;
 
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import java.io.File;
+import java.io.IOException;
 import java.math.BigInteger;
 import java.security.MessageDigest;
 
@@ -48,17 +53,27 @@ public class Sequence
         this.description = description;
     }
 
-    public static Sequence fromXML ( Document doc ) //TODO: change this to accept node not doc
+    public static Sequence fromXML ( String sequencePath ) throws InternalApplicationException
     {
-        // node refers to "RNA" Element
+        try
+        {
+            DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+            Document doc = factory.newDocumentBuilder().parse(new File(sequencePath));
 
-        String Accession = doc.getElementsByTagName("accession").item(0).getTextContent().strip() ;
-        String Description = doc.getElementsByTagName("description").item(0).getTextContent().strip();
+            // node refers to "RNA" Element
 
-        String Sequence = doc.getElementsByTagName("sequence").item(0).getTextContent().strip();
-        // why parse sequence length , reconsider ?
+            String Accession = doc.getElementsByTagName("accession").item(0).getTextContent().strip() ;
+            String Description = doc.getElementsByTagName("description").item(0).getTextContent().strip();
 
-        return new Sequence( Sequence , Accession , Description ) ;
+            String Sequence = doc.getElementsByTagName("sequence").item(0).getTextContent().strip();
+            // why parse sequence length , reconsider ?
+
+            return new Sequence( Sequence , Accession , Description ) ;
+        }
+        catch ( SAXException | ParserConfigurationException | IOException | NullPointerException excp )
+        {
+            throw new InternalApplicationException("Invalid Path Specified!");
+        }
     }
 
     public Element toXML ( Document doc )

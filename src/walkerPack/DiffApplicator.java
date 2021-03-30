@@ -1,6 +1,8 @@
 package walkerPack;
 
 import org.w3c.dom.*;
+import org.xml.sax.SAXException;
+
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -8,6 +10,7 @@ import javax.xml.transform.*;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import java.io.File;
+import java.io.IOException;
 
 public class DiffApplicator
 {
@@ -19,53 +22,11 @@ public class DiffApplicator
         this.SourceSeqPath = sourceSeq;
     }
 
-    public void applyDiff ( String DiffPath )
+    public void applyDiff ( String DiffPath ) throws InternalApplicationException
     {
-        try
-        {
-            DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-            Document sourceDocument = factory.newDocumentBuilder().parse(new File(SourceSeqPath));
-
-            this.PatchedSequence = Sequence.fromXML(sourceDocument);
-
-            factory = DocumentBuilderFactory.newInstance() ;
-            factory.setIgnoringElementContentWhitespace(true);
-
-            /*
-             * factory.setIgnoringElementContentWhitespace(true) won't work unless the xml doc has a dtd linked, won't work with xsd i tried
-             * it removes all the empty #text nodes while the parser is working through the file, very efficient :)
-             *
-             */
-
-            Document ESDocument = factory.newDocumentBuilder().parse(new File(DiffPath));
-
-            EditScriptSequence currentScript = EditScriptSequence.fromXML( ESDocument.getElementsByTagName("EditScript").item(0) ); // parse script from xml
-
-            String SourceSequenceHash = ESDocument.getElementsByTagName("SourceString").item(0).getTextContent();
-            String DestinationSequenceHash = ESDocument.getElementsByTagName("DestinationString").item(0).getTextContent();
-
-            // TODO: consider moving this logic to EditScript Object + letting EditScript manage the 2 Hashes
-
-            if ( this.PatchedSequence.EqualToHash(SourceSequenceHash) ) // ok , just used non-reversed edit script
-            {
-                currentScript.apply(this.PatchedSequence) ;
-            }
-            else if ( this.PatchedSequence.EqualToHash(DestinationSequenceHash) ) // apply reversed edit script to provided sequence
-            {
-                currentScript = currentScript.getReverse();
-                currentScript.apply(this.PatchedSequence);
-            }
-            else
-            {
-                throw new Exception("provided sequence did not match either hash, edit script is not for provided sequence") ;
-            }
-        }
-
-        catch ( Exception exc )
-        {
-            exc.printStackTrace();
-        }
-
+        this.PatchedSequence = Sequence.fromXML(SourceSeqPath);
+        EditScript currentEditScript = EditScript.fromXMLFile(DiffPath);
+        currentEditScript.apply( this.PatchedSequence );
     }
 
     void SavePatchedSequence( String pathName )

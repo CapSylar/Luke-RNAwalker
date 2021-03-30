@@ -46,17 +46,13 @@ public class DiffPaneState
         try
         {
             DiffCreator newCreator = new DiffCreator( Seq1Path , Seq2Path );
-
-            if ( newCreator == null )
-                return;
-
             newCreator.BuildDiff(GraphicalInterface.currentManager.getUpdateCost(),GraphicalInterface.currentManager.getDeleteCost()
                     ,GraphicalInterface.currentManager.getInsertCost()); // pull costs from settings manager that has the update costs
             newCreator.SaveDiffScriptXML(DiffPath);
         }
-        catch ( ParserConfigurationException | IOException | SAXException  | NullPointerException excp )
+        catch ( InternalApplicationException exp )
         {
-            GraphicalInterface.logManager.logError("Invalid Path(s) specified!" , 3000 );
+            GraphicalInterface.logManager.logError(exp.getMessage() , 3000 );
         }
     }
 }

@@ -54,8 +54,8 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="my-tab-pane">
                      <children>
-                        <JFXProgressBar fx:id="ApplyDiffPaneProgressBar" layoutX="191.0" layoutY="377.0" prefHeight="33.0" prefWidth="475.0" progress="0.61" />
-                        <Text fx:id="ApplyDiffPaneResultField" layoutX="196.0" layoutY="400.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-field" text="No File Selected" wrappingWidth="465.7294921875" />
+                        <JFXProgressBar fx:id="ApplyDiffPaneProgressBar" layoutX="191.0" layoutY="365.0" prefHeight="33.0" prefWidth="475.0" progress="0.61" />
+                        <Text fx:id="ApplyDiffPaneResultField" layoutX="196.0" layoutY="388.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-field" text="No File Selected" wrappingWidth="465.7294921875" />
                         <GridPane alignment="CENTER" layoutX="72.0" layoutY="82.0" prefHeight="257.0" prefWidth="685.0">
                            <columnConstraints>
                               <ColumnConstraints hgrow="SOMETIMES" maxWidth="340.0" minWidth="10.0" prefWidth="214.0" />

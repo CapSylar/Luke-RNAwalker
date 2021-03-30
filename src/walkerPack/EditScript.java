@@ -41,12 +41,18 @@ public class EditScript
     }
 
 
-    public static EditScript fromXMLFile (String path)
+    public static EditScript fromXMLFile (String path) throws InternalApplicationException
     {
         try
         {
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
             factory.setIgnoringElementContentWhitespace(true);
+
+            /*
+             * factory.setIgnoringElementContentWhitespace(true) won't work unless the xml doc has a dtd linked, won't work with xsd i tried
+             * it removes all the empty #text nodes while the parser is working through the file, very efficient :)
+             *
+             */
 
             Document document = factory.newDocumentBuilder().parse(new File(path));
 
@@ -61,14 +67,12 @@ public class EditScript
         }
         catch (SAXException | ParserConfigurationException | IOException e)
         {
-            GraphicalInterface.logManager.logError("Invalid Diff Path" , 3000 );
+            throw new InternalApplicationException("Invalid Diff Path!") ;
         }
         catch ( java.lang.NullPointerException excp )
         {
-            GraphicalInterface.logManager.logError("File Specified has wrong format" , 3000 );
+            throw new InternalApplicationException("Invalid Diff Path!") ;
         }
-
-        return null;
     }
 
     public void toXMLFile ( String path )
@@ -129,5 +133,21 @@ public class EditScript
     {
         // reverse source and destination hashes and reverse the edit script itself
         return new EditScript( this.DestinationSequenceHash , this.SourceSequenceHash , this.EditSequence.getReverse() );
+    }
+
+    public void apply( Sequence sequence ) throws InternalApplicationException
+    {
+        if ( sequence.EqualToHash(this.SourceSequenceHash) )
+        {
+            this.EditSequence.apply(sequence); // use normals sequence
+        }
+        else if ( sequence.EqualToHash(this.DestinationSequenceHash) )
+        {
+            this.EditSequence.getReverse().apply(sequence);
+        }
+        else // error , edit script incompatible with given sequence
+        {
+           throw new InternalApplicationException("Incompatible Diff Specified!");
+        }
     }
 }

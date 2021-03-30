@@ -26,18 +26,18 @@ public class EditScriptSequence
         this.Operations.add(0 , toAdd );
     }
 
-    public String apply ( String sequence )
-    {
-        StringBuilder seq = new StringBuilder(sequence) ;
-        int offset = 0 ;
-
-        for (int i = 0; i < this.Operations.size() ; ++i )
-        {
-            offset += this.Operations.get(i).apply(seq , offset); // apply each operation
-        }
-
-        return seq.toString();
-    }
+//    public String apply ( String sequence )
+//    {
+//        StringBuilder seq = new StringBuilder(sequence) ;
+//        int offset = 0 ;
+//
+//        for (int i = 0; i < this.Operations.size() ; ++i )
+//        {
+//            offset += this.Operations.get(i).apply(seq , offset); // apply each operation
+//        }
+//
+//        return seq.toString();
+//    }
 
     public void apply ( Sequence Sequence )
     {

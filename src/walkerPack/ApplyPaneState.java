@@ -38,8 +38,16 @@ class ApplyPaneState
 
     public static void applyDiff ()
     {
-        DiffApplicator applicator = new DiffApplicator(ApplyPaneState.Seq) ;
-        applicator.applyDiff(Diff); // apply diff on sequence
-        applicator.SavePatchedSequence(ResultingSeq); // save it at location specified
+        try
+        {
+            DiffApplicator applicator = new DiffApplicator(ApplyPaneState.Seq) ;
+            applicator.applyDiff(Diff); // apply diff on sequence
+            applicator.SavePatchedSequence(ResultingSeq); // save it at location specified
+        }
+        catch ( InternalApplicationException excp )
+        {
+            GraphicalInterface.logManager.logError(excp.getMessage() , 3000 );
+        }
+
     }
 }
