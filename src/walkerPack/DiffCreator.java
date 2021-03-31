@@ -28,7 +28,7 @@ public class DiffCreator
         this.NuclEquivs.put('M' , "MAC" ) ;
         this.NuclEquivs.put('S' , "SGC" ) ;
         this.NuclEquivs.put('V' , "VGAC" ) ;
-        this.NuclEquivs.put('N' , "NGUACRMSV" ) ;
+        this.NuclEquivs.put('N' , "NGUAC" ) ;
         this.NuclEquivs.put('A' , "A" ) ;
         this.NuclEquivs.put('G' , "G" ) ;
         this.NuclEquivs.put('U' , "U" ) ;
