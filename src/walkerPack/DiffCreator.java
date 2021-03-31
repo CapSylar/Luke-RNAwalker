@@ -61,13 +61,16 @@ public class DiffCreator
 
         progress.set(0);
 
+        EquivalenceManager equivalence = new EquivalenceManager();
+
         for ( int i = 1 ; i <= StringSequence1.length() ; ++i )
         {
             for (int j = 1; j <= StringSequence2.length(); ++j)
             {
                 // we have to note were we came from , calc each thing separately
 
-                int update = dp[i - 1][j - 1][0] + (CostUpdate(StringSequence1.charAt(i - 1), StringSequence2.charAt(j - 1)) ? costUpdate : 0);
+//                int update = dp[i - 1][j - 1][0] + (CostUpdate(StringSequence1.charAt(i - 1), StringSequence2.charAt(j - 1)) ? costUpdate : 0);
+                int update = dp[i - 1][j - 1][0] + (equivalence.isEquivalent(StringSequence1.charAt(i - 1), StringSequence2.charAt(j - 1)) ? 0 : costUpdate);
                 int delete = dp[i - 1][j][0] + costDelete;
                 int insert = dp[i][j - 1][0] + costInsert;
 
@@ -101,10 +104,16 @@ public class DiffCreator
                     --i ;
                     break ;
                 case 1: // update operation
-                    if ( dp[i-1][j-1][0] != dp[i][j][0] ) // check if this update costs anything
-                        currentScript.pushFront( new UpdateOperation(i-1 , StringSequence2.charAt(j-1) ,
-                                StringSequence1.charAt(i-1) , j-1 ));
-                    --i ; --j ;
+                {
+                    char oldChar = StringSequence1.charAt(i - 1) ;
+                    char newChar = StringSequence2.charAt(j - 1) ;
+                    // add even if they are equivalent ( equivalency is only one way !)
+                    if ( oldChar != newChar ) // check if this update costs anything
+                        currentScript.pushFront(new UpdateOperation(i - 1, StringSequence2.charAt(j - 1),
+                                StringSequence1.charAt(i - 1), j - 1));
+                    --i;
+                    --j;
+                }
                     break ;
                 case 2: // insert operation
                     currentScript.pushFront( new InsertOperation( i , StringSequence2.charAt(j-1) , j-1 ));

@@ -21,6 +21,13 @@ public class UpdateOperation implements EditOperation
     @Override
     public int apply(StringBuilder string , int offset )
     {
+        // take care of equivalencies
+        // TODO: fix this , creating hashmap every call, very bad idea
+        EquivalenceManager manager = new EquivalenceManager();
+
+        if (manager.isEquivalent(this.oldChar,this.newChar)) // skip this operation
+            return 0;
+
         string.replace( updateIndex + offset , updateIndex + offset + 1 , "" + newChar ) ;
         return 0;
     }
