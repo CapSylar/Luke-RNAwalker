@@ -1,14 +1,12 @@
 package walkerPack;
 
 import javafx.application.Application;
-import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-import javafx.stage.WindowEvent;
 
 public class GraphicalInterface extends Application
 {
@@ -38,15 +36,16 @@ public class GraphicalInterface extends Application
         primaryStage.setScene(new Scene(root));
         primaryStage.setResizable(false);
         primaryStage.show();
-        primaryStage.setOnCloseRequest(new EventHandler<WindowEvent>()
+        primaryStage.setOnCloseRequest(windowEvent ->
         {
-            @Override
-            public void handle(WindowEvent windowEvent)
-            {
-                //TODO: move this elsewhere, good enough for now
-                currentManager.save(); // save manager before closing
-            }
+            //TODO: move this elsewhere, good enough for now
+            currentManager.save(); // save manager before closing
         });
+
+
+        // TODO: move this elsewhere
+
+        EquivalenceManager.initManager();
     }
 
     public static void main(String[] args)

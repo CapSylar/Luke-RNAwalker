@@ -4,6 +4,33 @@ RNA sequences differencing and patching tool
 ## Tool Authors
 JB , AK and RK
 
+#Getting it to Work
+
+Dependencies:
+
+1. `javafx-sdk-16` 
+2. `jfoenix`
+
+In intellij IDE add these two libraries by navigating to `project-structure` -> `Libraries` -> then add the above mentioned libraries( for jfoenix just select the jar, for javafx select the lib folder)
+
+then make sure these libraries are attached to the module in the `Modules` Tab
+
+To make a `Run-configuration` go to `Run` -> `Edit Configurations` -> then add a configuration of type `Application`.
+In the `main Class` field browse for the `Starter` Class. Then under `VM` arguments add the info provided below ( replace Location with the Path ) 
+
+```
+--module-path
+YOUR_LOCATION/javafx-sdk-16/lib
+--add-modules
+javafx.controls,javafx.fxml
+--add-exports
+javafx.controls/com.sun.javafx.scene.control.behavior=ALL-UNNAMED
+--add-exports
+javafx.controls/com.sun.javafx.scene.control=ALL-UNNAMED
+--add-exports
+javafx.graphics/com.sun.javafx.scene=ALL-UNNAMED
+```
+
 # Intelligent Data Processing and Applications
 
 ## Project Proposal
