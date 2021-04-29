@@ -115,19 +115,19 @@ public class VectorSequence
         return Math.sqrt(module);
     }
 
-    public double getCosineSimilarity(VectorSequence otherSeq )
-    {
-        // cosine similarity ( A , B )  = A dot B / ( |A| * |B| )
+//    public double getCosineSimilarity(VectorSequence otherSeq )
+//    {
+//        // cosine similarity ( A , B )  = A dot B / ( |A| * |B| )
+//
+//        return getDotProduct( otherSeq ) / ( this.getModule() * otherSeq.getModule() ) ;
+//    }
 
-        return getDotProduct( otherSeq ) / ( this.getModule() * otherSeq.getModule() ) ;
-    }
-
-    public double getPearsonCC(VectorSequence otherSeq )
-    {
-        // Pearson correlation coefficient ( A , B ) = sigma { ( Ai - avgA ) * ( Bi - avgB ) }/ sqrt ( sigma{(Ai - avgA)^2} * sigma{(Bi - avgB)^2} )
-
-        return getAveragedDotProduct( otherSeq ) / ( this.getAveragedModule() * otherSeq.getAveragedModule() );
-    }
+//    public double getPearsonCC( VectorSequence otherSeq )
+//    {
+//        // Pearson correlation coefficient ( A , B ) = sigma { ( Ai - avgA ) * ( Bi - avgB ) }/ sqrt ( sigma{(Ai - avgA)^2} * sigma{(Bi - avgB)^2} )
+//
+//        return getAveragedDotProduct( otherSeq ) / ( this.getAveragedModule() * otherSeq.getAveragedModule() );
+//    }
 
     public double getDotProduct(VectorSequence otherSeq )
     {

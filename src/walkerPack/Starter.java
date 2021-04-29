@@ -1,26 +1,46 @@
 package walkerPack;
 
-import java.io.SequenceInputStream;
+import java.util.ArrayList;
 
 public class Starter
 {
     public static void main(String args[])
     {
-        // load settings manager
-//        SettingsManager manager = SettingsManager.load() ; // load settings into app
-//
-//        GraphicalInterface.currentManager = manager ; // bind manager
-//        GraphicalInterface.main(args); // launch graphical interface
 
-        int vec[] = {50,1,1,1,1,1,1,1,1};
 
-        VectorSequence hello1 = new VectorSequence( "GAUCRMSVN" , 150 , vec , true );
-        VectorSequence hello2 = new VectorSequence( "GAUCRMSVN" );
+    // load settings manager
 
-        System.out.println(hello1.getModule());
-        System.out.println(hello1.getAveragedModule());
+    EquivalenceManager.initManager();
+        //        SettingsManager manager = SettingsManager.load() ; // load settings into app
+    //
+    //        GraphicalInterface.currentManager = manager ; // bind manager
+    //        GraphicalInterface.main(args); // launch graphical interface
 
-        System.out.println(hello1);
+        ArrayList<Sequence> seqlist = new ArrayList<>();
 
+        seqlist.add(new Sequence("CACACAACA"));
+        seqlist.add(new Sequence("CAGGCAACA"));
+        seqlist.add(new Sequence("CARRRACA"));
+        seqlist.add(new Sequence("CAAAAACA"));
+        seqlist.add(new Sequence("CACCACACCA"));
+        seqlist.add(new Sequence("GACRNNR"));
+
+        SearchGroup group = new SearchGroup(seqlist);
+
+        System.out.println(group);
+
+        group.rankUsingSimilarity( new Sequence("CCCC") , new JaccardCoefficient() );
+
+        System.out.println(group);
+
+        group.filterSelection( new RangeOperator(0.2 ));
+
+        group.rankUsingSimilarity( new Sequence("CCCC") , new PearsonCC() );
+
+        System.out.println(group);
+
+        group.rankUsingSimilarity( new Sequence("CCCC") , new SED() );
+
+        System.out.println(group);
     }
 }

@@ -54,21 +54,21 @@ public class SetSequence
         }
     }
 
-    public double Jaccard ( SetSequence otherSet )
-    {
-        // apply jaccard = A inter B / A union B
+//    public double Jaccard ( SetSequence otherSet )
+//    {
+//        // apply jaccard = A inter B / A union B
+//
+//        double sim = this.getIntersection( otherSet );
+//        return sim / ( this.getModule() + otherSet.getModule() - sim ) ;
+//    }
 
-        double sim = this.getIntersection( otherSet );
-        return sim / ( this.getModule() + otherSet.getModule() - sim ) ;
-    }
-
-    public double DiceCoefficient ( SetSequence otherSet )
-    {
-        // apply dice = 2 * (A inter B) / |A| + |B|
-
-        double sim = this.getIntersection( otherSet );
-        return 2*sim / ( this.getModule() + otherSet.getModule() ) ;
-    }
+//    public double DiceCoefficient ( SetSequence otherSet )
+//    {
+//        // apply dice = 2 * (A inter B) / |A| + |B|
+//
+//        double sim = this.getIntersection( otherSet );
+//        return 2*sim / ( this.getModule() + otherSet.getModule() ) ;
+//    }
 
     public int getModule()
     {

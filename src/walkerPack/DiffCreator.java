@@ -17,6 +17,12 @@ public class DiffCreator
 
     void BuildDiff ( int costUpdate , int costDelete , int costInsert , DoubleProperty progress )
     {
+
+        //TODO: this code chunk here is the same as the one present in SED similarity measure
+        // change the logic here so we can rely on the SED measure
+        // a problem that we need to solve is how to get progress status out of the measure without modifying the original measure's
+        // code
+
         String StringSequence1 = this.RNAsequence1.getSequence() ;
         String StringSequence2 = this.RNAsequence2.getSequence() ;
         

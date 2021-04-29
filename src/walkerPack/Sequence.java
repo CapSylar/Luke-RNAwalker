@@ -53,6 +53,13 @@ public class Sequence
         this.description = description;
     }
 
+    public Sequence( String sequence )
+    {
+        this.sequence = sequence;
+        this.accession = "none";
+        this.description = "none";
+    }
+
     public static Sequence fromXML ( String sequencePath ) throws InternalApplicationException
     {
         try
