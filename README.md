@@ -4,7 +4,7 @@ RNA sequences differencing and patching tool
 ## Tool Authors
 JB , AK and RK
 
-#Getting it to Work
+# Getting it to Work
 
 Dependencies:
 
