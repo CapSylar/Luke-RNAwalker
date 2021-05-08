@@ -4,6 +4,11 @@ public class SED extends SimilarityMeasure
 {
     public double getSimilarity ( Sequence first , Sequence second )
     {
+        return getSimilarity( first , second , null );
+    }
+
+    public double getSimilarity ( Sequence first , Sequence second , EditScriptSequence currentScript )
+    {
         String StringSequence1 = first.getSequence() ;
         String StringSequence2 = second.getSequence() ;
 
@@ -53,42 +58,43 @@ public class SED extends SimilarityMeasure
                 else
                     backtrack[i][j] = 2;
             }
-
-//            progress.set( progress.get() + i/ ( float ) StringSequence1.length());
         }
 
+        double distance = 1- ((dp[StringSequence1.length()][StringSequence2.length()])/(StringSequence1.length() + StringSequence2.length())) ;
 
-//        currentScript = new EditScriptSequence();
-//
-//        int i = StringSequence1.length();
-//        int j = StringSequence2.length();
-//
-//        while ( i != 0 || j != 0 )
-//            switch ( backtrack[i][j] )
-//            {
-//                case 0: // delete operation
-//                    currentScript.pushFront( new DeleteOperation( i-1 , StringSequence1.charAt(i-1) , j ));
-//                    --i ;
-//                    break ;
-//                case 1: // update operation
-//                {
-//                    char oldChar = StringSequence1.charAt(i - 1) ;
-//                    char newChar = StringSequence2.charAt(j - 1) ;
-//                    // add even if they are equivalent ( equivalency is only one way !)
-//                    if ( oldChar != newChar ) // do not include if characters are the same ( include even if cost 0 )
-//                        currentScript.pushFront(new UpdateOperation(i - 1, StringSequence2.charAt(j - 1),
-//                                StringSequence1.charAt(i - 1), j - 1));
-//                    --i;
-//                    --j;
-//                }
-//                break ;
-//                case 2: // insert operation
-//                    currentScript.pushFront( new InsertOperation( i , StringSequence2.charAt(j-1) , j-1 ));
-//                    --j ;
-//                    break ;
-//            }
+        if ( currentScript == null )
+        {
+            return distance;
+        }
 
-        double distance = dp[StringSequence1.length()][StringSequence2.length()] ;
-        return 1 - (distance / (StringSequence1.length() + StringSequence2.length())) ;
+        int i = StringSequence1.length();
+        int j = StringSequence2.length();
+
+        while ( i != 0 || j != 0 )
+            switch ( backtrack[i][j] )
+            {
+                case 0: // delete operation
+                    currentScript.pushFront( new DeleteOperation( i-1 , StringSequence1.charAt(i-1) , j ));
+                    --i ;
+                    break ;
+                case 1: // update operation
+                {
+                    char oldChar = StringSequence1.charAt(i - 1) ;
+                    char newChar = StringSequence2.charAt(j - 1) ;
+                    // add even if they are equivalent ( equivalency is only one way !)
+                    if ( oldChar != newChar ) // do not include if characters are the same ( include even if cost 0 )
+                        currentScript.pushFront(new UpdateOperation(i - 1, StringSequence2.charAt(j - 1),
+                                StringSequence1.charAt(i - 1), j - 1));
+                    --i;
+                    --j;
+                }
+                break ;
+                case 2: // insert operation
+                    currentScript.pushFront( new InsertOperation( i , StringSequence2.charAt(j-1) , j-1 ));
+                    --j ;
+                    break ;
+            }
+
+        return distance;
     }
 }

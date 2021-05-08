@@ -10,11 +10,10 @@ public class Starter
 
     EquivalenceManager.initManager(); // handles all comparison by building a hashMap just once
 
-        //        SettingsManager manager = SettingsManager.load() ; // load settings into app
+    //        SettingsManager manager = SettingsManager.load() ; // load settings into app
     //
     //        GraphicalInterface.currentManager = manager ; // bind manager
     //        GraphicalInterface.main(args); // launch graphical interface
-
 
         SearchGroup group = SearchGroup.fromXML("test-files/FormattedSequences.xml");
 
@@ -24,13 +23,9 @@ public class Starter
 
         System.out.println(group);
 
-        group.filterSelection( new RangeOperator(0.2 ));
+        group.filterSelection( new KNNOperator(10 ));
 
-        group.rankUsingSimilarity( new Sequence("CCCC") , new PearsonCC() );
-
-        System.out.println(group);
-
-        group.rankUsingSimilarity( new Sequence("CCCC") , new SED() );
+        group.rankUsingSimilarity( new Sequence("ACGCCUCCACGAGUGUCUU") , new SED() );
 
         System.out.println(group);
     }
