@@ -54,37 +54,8 @@ public class VectorSequence
 
         for ( int i = 0 ; i < sequence.length() ; ++i )
         {
-            switch (sequence.charAt(i))
-            {
-                //TODO: not cleanest way to do it, but performant
-                case 'G':
-                    ++tf[0];
-                    break;
-                case 'A':
-                    ++tf[1];
-                    break;
-                case 'U':
-                    ++tf[2];
-                    break;
-                case 'C':
-                    ++tf[3];
-                    break;
-                case 'R':
-                    ++tf[4];
-                    break;
-                case 'M':
-                    ++tf[5];
-                    break;
-                case 'S':
-                    ++tf[6];
-                    break;
-                case 'V':
-                    ++tf[7];
-                    break;
-                case 'N':
-                    ++tf[8];
-                    break;
-            }
+            //TODO: not cleanest way to do it, but performant
+            ++nuclWeights[EquivalenceManager.NuclMapper(sequence.charAt(i))] ;
         }
 
         return tf;

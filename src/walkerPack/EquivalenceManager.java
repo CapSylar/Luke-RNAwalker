@@ -6,11 +6,24 @@ public class EquivalenceManager
 {
     static HashMap<Character,HashMap<Character,Float>> UpdateCostMap = new HashMap<>();
     static HashMap<Character,HashSet<Character>> NuclSets = new HashMap<>() ;
+    static HashMap<Character,Integer> Mapper = new HashMap<>();
 
     public static void initManager()
     {
         PopulateSets();
         InitUpdateCostMap();
+        InitMapper();
+    }
+
+    private static void InitMapper() // TODO: may not be the best place for it, reconsider this decision
+    {
+        // this is used to map nucl to their correct order in an array for example
+        // 9 nucleotides:  G A U C R M S V N in this order
+        String all = "GAUCRMSVN" ;
+        for ( int i = 0 ; i < all.length() ; ++i )
+        {
+            Mapper.put(all.charAt(i) , i);
+        }
     }
 
     private static void PopulateSets()
@@ -83,5 +96,10 @@ public class EquivalenceManager
         UpdateCostMap.get(old_v).put(new_v , prob );
 
         return prob ;
+    }
+
+    public static int NuclMapper ( char Nucl )
+    {
+        return Mapper.get( Nucl );
     }
 }
