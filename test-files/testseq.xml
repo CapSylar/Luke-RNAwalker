@@ -1,0 +1,12 @@
+<?xml version= "1.0"?>
+<RNADataBank>
+    <RNA>
+        <accession>AB000263</accession>
+        <description>Homo sapiens mRNA for prepro cortistatin like peptide, complete cds. </description>
+        <length>207</length>
+        <sequence>
+            RNRNR
+        </sequence>
+    </RNA>
+    <DNA></DNA>
+</RNADataBank>

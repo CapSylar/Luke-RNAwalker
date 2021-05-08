@@ -1,0 +1,3004 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE RNADataBank PUBLIC "hello" "RNADataBankDefinition.dtd">
+<RNADataBank>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1910041</description>
+        <length>22</length>
+        <sequence>AGAAGACAUUCGUGGAGGCGUC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 990453</description>
+        <length>20</length>
+        <sequence>ACGCCUCCACGUAGUGUCUU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1276105</description>
+        <length>19</length>
+        <sequence>ACGCCUCCACGAGUGUCUU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1787445</description>
+        <length>31</length>
+        <sequence>ACCAAGGACUUCAUCUUCUCAGAGCUGCUGU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1085182</description>
+        <length>30</length>
+        <sequence>UCAUCUUCUCAGAGCUGCUGUCCAACCUGC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1869484</description>
+        <length>25</length>
+        <sequence>UGUCCAACCUGCACUCGCGUGGGAA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1058989</description>
+        <length>29</length>
+        <sequence>UGGAAACGAGAAGACACUCAUGGAGGAGU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1200763</description>
+        <length>30</length>
+        <sequence>UGGGAACGAGAAGACACUCAUGGAGGCGUC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1144067</description>
+        <length>30</length>
+        <sequence>UGGGAACGAGAAGACACUCAUGGAGGAGUC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 24091</description>
+        <length>20</length>
+        <sequence>GUCGGCCGAGCAGGCACAGC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 166980</description>
+        <length>26</length>
+        <sequence>UCGCGNGGGAAGAAGAAGACACUCCU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 512565</description>
+        <length>30</length>
+        <sequence>UGGGAAGAAGAAGACACUCCUGGAGGAGUC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1009780</description>
+        <length>27</length>
+        <sequence>GAAGAAGACACUCCUGGAGGAGUCGGC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 2147012</description>
+        <length>30</length>
+        <sequence>UCUUCUCGGAGCUGCUGUCCAACCUGUACU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1986304</description>
+        <length>29</length>
+        <sequence>UCUUCUCGGAGCUGCUGUCCAACCUGUAC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1221098</description>
+        <length>31</length>
+        <sequence>UCUUCUCGGAGCUGCUGUCCAACCUGUACUC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1636627</description>
+        <length>29</length>
+        <sequence>UCGGAACCUGCAGACACUUGUGGAGGAGU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1264639</description>
+        <length>30</length>
+        <sequence>UCGGAACCUGCAGACACUUGUGGAGGAGUC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 131993</description>
+        <length>29</length>
+        <sequence>UCGGAACCAGCAGACACUUGUGGAGGAGU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1531952</description>
+        <length>23</length>
+        <sequence>UCGGAACCUGCAGACACUUGNGG</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 234002</description>
+        <length>28</length>
+        <sequence>UGGGAACGAGAAGACACUCGUGGAGGCG</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1474549</description>
+        <length>30</length>
+        <sequence>UGGGAACGAGAAGACACUCGUGGAGGCGUC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1002761</description>
+        <length>33</length>
+        <sequence>UGGGAACGAGAAGACACUCGUGGAGGCGUCGGC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 223982</description>
+        <length>30</length>
+        <sequence>UGGGAACGAGAAGACACUCGUGUAGGCGUC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 211999</description>
+        <length>30</length>
+        <sequence>UGGGAACGAGAAGACACUCGUGGAGGUGUC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 661321</description>
+        <length>25</length>
+        <sequence>UGGGAACAAGGAGACACUCCUGGAG</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1214623</description>
+        <length>32</length>
+        <sequence>CGUGGGAAGAAGAAGACACUCGUGGAGGCGUC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1509292</description>
+        <length>30</length>
+        <sequence>UGGGAACAAGAAGACACUCGUGGAGGCGUC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1967195</description>
+        <length>31</length>
+        <sequence>GGAACAAGAAGACACUCGUGGAGGCGUCGGC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1108639</description>
+        <length>22</length>
+        <sequence>CAGGUUCCGACGCGAGUACAGG</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 363545</description>
+        <length>29</length>
+        <sequence>AGAGCAGGCACAGCGGUGUGACGAGACUC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 922399</description>
+        <length>29</length>
+        <sequence>UGUGACGAGACUCGCGUGGGAAGAAGAAG</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 906903</description>
+        <length>24</length>
+        <sequence>UCGGAACCUGCAGACACUCGUGGA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1364921</description>
+        <length>30</length>
+        <sequence>UGGGAAUGAGAAGACACUCGUGAAGGCGUC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 117689</description>
+        <length>30</length>
+        <sequence>UGGGAACGAGAAGACACUCAUGUAGGAGUC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1281168</description>
+        <length>30</length>
+        <sequence>UGGGAACCAGAAGACACUCGUGGAGGCGUC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 41872</description>
+        <length>23</length>
+        <sequence>UGGGAACCAGAAGACACUCGNGG</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1146599</description>
+        <length>30</length>
+        <sequence>UGGGAACCAGAGGACACUCGUGGAGGCGUC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 598192</description>
+        <length>22</length>
+        <sequence>UGGGAACCAGAAGACACUCGUG</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 26816</description>
+        <length>30</length>
+        <sequence>UGGGAACGAGAAGACACUCCUGGAGGAGUC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 877192</description>
+        <length>24</length>
+        <sequence>UCGCGUAGGGACAAGAAGACACUC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 424393</description>
+        <length>30</length>
+        <sequence>UAGGGACAAGAAGACACUCCUGGAGGAGUC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 2065381</description>
+        <length>30</length>
+        <sequence>UCAUCGGCGACAUCAACAUGAACACCAUCA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1834802</description>
+        <length>19</length>
+        <sequence>CCAAGGGACAGCAGGACUG</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1857061</description>
+        <length>29</length>
+        <sequence>CACCAUUUAAACUGUAGGCCACAGACUGG</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1457954</description>
+        <length>19</length>
+        <sequence>AGGUGGACAACAAUAAGCG</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1878651</description>
+        <length>31</length>
+        <sequence>CAGAAGUUAGGAAGGGCUGUCACUGGUCCUC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1576827</description>
+        <length>30</length>
+        <sequence>UAGUUGGAGAAAGAGAAGCCCUGAUCUCUU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1008978</description>
+        <length>18</length>
+        <sequence>UGGGUUGCUCCAUUAGGG</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 211984</description>
+        <length>26</length>
+        <sequence>UGGUGUAUGGUUCCUGCUUUCCAGCC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1478051</description>
+        <length>25</length>
+        <sequence>CUGGAAGAGCAACCCUCUGGUGUGG</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1597962</description>
+        <length>20</length>
+        <sequence>CUGGCCUAGGGUGGGGAAGG</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 2058845</description>
+        <length>25</length>
+        <sequence>UAUGAAGGACAUUUUCCGGGGUGUC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1348478</description>
+        <length>24</length>
+        <sequence>UGGAAGCUCCCCAGCUGCUGGGUC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 914236</description>
+        <length>30</length>
+        <sequence>UGAUAAAUUGCAAAAUGUCUCCCACCAUCU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1504230</description>
+        <length>29</length>
+        <sequence>UGUGCAUUGUGAUCGUCUGAAGGAAGAGC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1934530</description>
+        <length>32</length>
+        <sequence>UCUGAGGGUGAAUACGGGCCUUGAUUGCCAUA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1710590</description>
+        <length>26</length>
+        <sequence>UAGAAUGCAUCCAAGGAAGUAGAUCA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1764662</description>
+        <length>31</length>
+        <sequence>UUGCCUGUCUAGUCAGCCUUGGUUAAUUUCU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1468348</description>
+        <length>29</length>
+        <sequence>UAGAGUUGAAAGGGAAACGUCUUUGAGGU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1950739</description>
+        <length>20</length>
+        <sequence>UACAGAACCUCAUGGUACGG</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1217676</description>
+        <length>26</length>
+        <sequence>AGGAAAAAGUGCUGAUGGUGCUGCUU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 2072272</description>
+        <length>31</length>
+        <sequence>UUCCAAGAAUAUCCUUUUCCUUGCCUCCUUU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 28262</description>
+        <length>23</length>
+        <sequence>GCUUAGUGGUUGGUGAUCAGUGC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1569952</description>
+        <length>26</length>
+        <sequence>UGAAUUAGCAAAACUGACUGGUAGGC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 798364</description>
+        <length>20</length>
+        <sequence>UGUGUUUACCCGACCCGUGG</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 2001806</description>
+        <length>26</length>
+        <sequence>UGGAACUGCUGUGUGACCAGAAACAG</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 606655</description>
+        <length>21</length>
+        <sequence>UAAGUGUGGAUUGAUUUGGAG</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1496442</description>
+        <length>16</length>
+        <sequence>UCAGAACUGAGGAGGG</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 985769</description>
+        <length>28</length>
+        <sequence>GGAAAAACAUGGCGUUCUCUUGGCUUUU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1864044</description>
+        <length>29</length>
+        <sequence>UUGAUGGUAACAGUAGGUAGUAGGUCAGG</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 238545</description>
+        <length>31</length>
+        <sequence>UAAAGAGGAAAAAGAUGAAUGAAACCAACUC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 763289</description>
+        <length>29</length>
+        <sequence>UGCUACUGUAAGGGUAAAGGGGUAACUGG</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 48121</description>
+        <length>31</length>
+        <sequence>GCUCUACUCACCACCCUGCUUGUUGGCAGCC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 171186</description>
+        <length>30</length>
+        <sequence>UGCAUGAGCUCCAUAAAGCGGCUCUGGAGU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 460732</description>
+        <length>30</length>
+        <sequence>GAAGCAAGAAACAGUCACGGCACGGCCCUG</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1898873</description>
+        <length>31</length>
+        <sequence>GAAGCAAGAAACAGUCACGGCACGGCCCUGU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 598157</description>
+        <length>16</length>
+        <sequence>GAGGAGAGGUUGCUGG</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 789546</description>
+        <length>30</length>
+        <sequence>UAGUCCAAAACUCAGAAAAUACAGAAGGGA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1141766</description>
+        <length>30</length>
+        <sequence>UCUGCGGGGAGAGUCAAAGGAAGGUGACCA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 936891</description>
+        <length>29</length>
+        <sequence>UGGGAAAGAAGGUGUUAGACAGUGGCCUC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 238310</description>
+        <length>32</length>
+        <sequence>UGUGUGGGAAGAAACAUAUGAGAUGGACAUUC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 386223</description>
+        <length>33</length>
+        <sequence>UGGACAGAGAGAAGCAAUCCCGCCACCCACUGC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 713277</description>
+        <length>30</length>
+        <sequence>UGUAGUUGUUUCAGUGACCCCAUUACCUGC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 90308</description>
+        <length>30</length>
+        <sequence>GCUGCGUGGAGAGAGCAAAGAGAUUUCGUU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1915755</description>
+        <length>30</length>
+        <sequence>UAAAGCGUAGCCUGUGCACACAUGCGAACC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1085178</description>
+        <length>26</length>
+        <sequence>UUGAGAAAAGCGGUGGCCCAACAGCC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 25292</description>
+        <length>25</length>
+        <sequence>UUAUUCCUGGNGACUUGUUCUGUGG</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 215216</description>
+        <length>20</length>
+        <sequence>UUUACGAGUAGUUCUGCAGC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1843721</description>
+        <length>30</length>
+        <sequence>UGGACCUGAAUGGCAAAAGUCAAUCUGAUU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1771626</description>
+        <length>30</length>
+        <sequence>AAGAAGCAGCUGCUGAGGAAGCAAAGCCUC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1756290</description>
+        <length>29</length>
+        <sequence>UAUGAGCCUUUCAUGAUUCUUCCUGAUGG</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 495772</description>
+        <length>31</length>
+        <sequence>UGGAGAAUUAAAAAAGGAAAGUUAACAGAGC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1976268</description>
+        <length>29</length>
+        <sequence>UAUUGAAACUAGUGUUUGAGGAAACGACU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1053805</description>
+        <length>25</length>
+        <sequence>UCUGGAGAGCCUGCAUUGGGGGAGA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 371224</description>
+        <length>30</length>
+        <sequence>UUGUUGCUAGUCUGGAAAGGUACUCUCCCC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1966573</description>
+        <length>30</length>
+        <sequence>UGGAAUGACCCAGUUAACUUACCUGCCAAA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1574586</description>
+        <length>27</length>
+        <sequence>UAGAAUGGGUUGUGGCAUGGUUAGGCC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 955257</description>
+        <length>30</length>
+        <sequence>UGAAUGAGAGGGAAGAAUUGAACUAAAGAG</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1229231</description>
+        <length>26</length>
+        <sequence>CAAGCCUUGAGCUGUGGAGACAAGAG</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1205311</description>
+        <length>30</length>
+        <sequence>GUGGAAGUGACAGGAGCUCAGCAUCCCUGU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1214005</description>
+        <length>31</length>
+        <sequence>UCAAUGCUGGGAAAUACCCGAAGAGCCCUGG</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 489254</description>
+        <length>30</length>
+        <sequence>UGGGACAGGUAACACAGGCUUUAGGCUGGC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 794838</description>
+        <length>31</length>
+        <sequence>UGAUCAAGCAGCCGUGCAGAGAUGUGCCUCA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 493810</description>
+        <length>30</length>
+        <sequence>UAGAAAAGAGAAAAGCGUCCUUUGGGCAGA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1576315</description>
+        <length>31</length>
+        <sequence>UAGAAAAGAGAAAAGCGUCCUUUGGGCAGAA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 632353</description>
+        <length>27</length>
+        <sequence>UAGAAAAGAGAAAAGCGUCCUUUGGGC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 941264</description>
+        <length>30</length>
+        <sequence>GCUUGGAAAGUGAAUUCCUCAGAACUCCAC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1391597</description>
+        <length>32</length>
+        <sequence>UGGAAUGCCGGUGAGAAGAAGGAGAUUGUGGU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1201005</description>
+        <length>30</length>
+        <sequence>UCCAAGGAAGAGUGAACUAGCAGAAUCACU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 241122</description>
+        <length>30</length>
+        <sequence>UUAGAGUUUGCCCCGUGCACAGGUUUGGGG</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 2001310</description>
+        <length>28</length>
+        <sequence>UAGUAGAAAUGGUAUCACUCGGGGCAUU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 466075</description>
+        <length>22</length>
+        <sequence>UCCUGUAUCAGCUCUUGAGACC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1658908</description>
+        <length>27</length>
+        <sequence>UAGUCAGUCAGUGCCCCGCCACCCAGC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1911581</description>
+        <length>22</length>
+        <sequence>CUUACUCUCUCUCCUUGCGGGU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 2040165</description>
+        <length>31</length>
+        <sequence>UGGAUGAUGAAAGUUGCUCUGUGUUGGCUUC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 801382</description>
+        <length>30</length>
+        <sequence>UCUGAGAACAGGGCUUCCUGGAUGUCCCCU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 969857</description>
+        <length>26</length>
+        <sequence>UAAGAGGUGUUGACCANAACUCUGGG</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1931808</description>
+        <length>29</length>
+        <sequence>CAGGAGGCAAAGGGUAAGUGGUUUCAUUC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 228616</description>
+        <length>32</length>
+        <sequence>UUGCUGCGGCUUCUUUAGAGAAAUUAUCAAGU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1941196</description>
+        <length>30</length>
+        <sequence>UCUCCAAGUUACCUCUACCCUCGUGGCUGC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1654848</description>
+        <length>27</length>
+        <sequence>UGACUGACUGAGUGACUGACUGACGAG</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1295311</description>
+        <length>31</length>
+        <sequence>UUGGACCAUAGACGCAGCUCUGAUUUCUGGU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 214530</description>
+        <length>31</length>
+        <sequence>UGGUGAAAUAGGAAGCUCCAUGGCAUGUCUC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 204602</description>
+        <length>30</length>
+        <sequence>UCCACAUUUGGUGAAAUAGGAAGCUCCAUG</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1721763</description>
+        <length>26</length>
+        <sequence>ACAUUUGGUGAAAUAGGAAGCUCCAU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1979054</description>
+        <length>31</length>
+        <sequence>UGUAUGUGGGACUUGAGUUGAGACUCAAUUC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 206845</description>
+        <length>24</length>
+        <sequence>UAGGAUGUGGCUAGAGAACGGAGC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1383712</description>
+        <length>26</length>
+        <sequence>CAGGAUCAAGCUACAAUGAAGAGGAG</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 820767</description>
+        <length>27</length>
+        <sequence>UGAAGAGGAGGGAGGCAGUCUGCGCGC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 538570</description>
+        <length>28</length>
+        <sequence>UUCUAGGAACUGGGAAGCCCCCCCCACC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 266581</description>
+        <length>26</length>
+        <sequence>UUAGGAAGAUCCAUCCCUGUGGAACC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 335302</description>
+        <length>27</length>
+        <sequence>UCAAAUAGCAAGUUCAGCCUUCCCAGG</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 313784</description>
+        <length>26</length>
+        <sequence>UUCUGUAUCGUCAAGUGGCUCUUGAA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1258025</description>
+        <length>30</length>
+        <sequence>UGGUUCUUUUGUGGCAAGUGGAGUGCCAGA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 282617</description>
+        <length>29</length>
+        <sequence>UGUCUCUUCUGUGGUUAUCGCGCUUUGCC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1648772</description>
+        <length>25</length>
+        <sequence>UUCAACUGCAGCUGAGGAAGAGGGC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 385039</description>
+        <length>22</length>
+        <sequence>UCAUUCCUGACUCACCACCGUC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 846115</description>
+        <length>25</length>
+        <sequence>UCGUUUCUGGCUGCUGCUGCUCUUC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 338711</description>
+        <length>32</length>
+        <sequence>UGAAGCCCUGUUCAAACUUCUUGACCUUCAGC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 309905</description>
+        <length>28</length>
+        <sequence>UCAAAGUCAGAGGGCUGGAGCAACCUGG</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 331792</description>
+        <length>26</length>
+        <sequence>UACGUGGGAACUGUUCAGGACUGUGG</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1483465</description>
+        <length>29</length>
+        <sequence>UAGGAGCUCCAAAUGUGACUGAGAGGUGG</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 232210</description>
+        <length>26</length>
+        <sequence>UGAAGUAGUGAUAAGUAUGAUGGUGC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 2289</description>
+        <length>27</length>
+        <sequence>UUUCAUCAGAGUUAAAGGCAGACUUGG</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1396232</description>
+        <length>27</length>
+        <sequence>UAGGGUUUUCGAAGGCAGACAUUCACC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1340557</description>
+        <length>27</length>
+        <sequence>UAAAGUCUUGACAGAAAGAAAUGAGGU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1354720</description>
+        <length>27</length>
+        <sequence>UGACUUUUGGGGAAAAAUGCACACCUU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1933700</description>
+        <length>30</length>
+        <sequence>AACUGGUGGAGAUGUGAACUGAGGCAGUGU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 490203</description>
+        <length>26</length>
+        <sequence>AACUGGUGGUGCAGGUGGAUGGCCAA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 358736</description>
+        <length>26</length>
+        <sequence>AACUGUGCUACAAAUGGAGCCACAGA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1804561</description>
+        <length>28</length>
+        <sequence>AACUUCCUAGAUGGGAUGGCGGCCAGGC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 579912</description>
+        <length>26</length>
+        <sequence>AACUUUGAACUUGAGGGUGAUGAUUU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1204931</description>
+        <length>29</length>
+        <sequence>AAGAAAAGAGUGUGUUGGUGGCUGACUGU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1802934</description>
+        <length>29</length>
+        <sequence>AAGAAACUGUUGCCUGGUGAGAGAAAGAG</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1362727</description>
+        <length>28</length>
+        <sequence>AAGAAAGAGGUGGCCUCUGGGAGCAGGA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1720558</description>
+        <length>28</length>
+        <sequence>AAGAACAAUAACAAUCAGGGCCAAACUU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 2026827</description>
+        <length>29</length>
+        <sequence>AAGAACAGAUGCCUGUCUGCAGGACACUG</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 901040</description>
+        <length>27</length>
+        <sequence>AAGAAGAGAAUGACAUUGAAGAGCAGC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 377350</description>
+        <length>27</length>
+        <sequence>AAGAAGAGAGACUACUGUAUGGAGCCA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 435564</description>
+        <length>26</length>
+        <sequence>AAGAAGCGCCAGGAGCCCCUGAUGGU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1168043</description>
+        <length>30</length>
+        <sequence>AAGAAGGCACAGGGAACCUACUGCACGAGA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1035226</description>
+        <length>30</length>
+        <sequence>AAGAAGGUCUCACCCUUCCUCAUCGCAGGU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1619512</description>
+        <length>26</length>
+        <sequence>ACAGAGGAGAUAAUCUCCAGGAUGCC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 591304</description>
+        <length>30</length>
+        <sequence>ACAGAGGGUGCACUGCAAAGGAUGUGAAGG</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1575543</description>
+        <length>28</length>
+        <sequence>ACAGAGGUGUGACGAGACUCGCGUGGGA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 763176</description>
+        <length>29</length>
+        <sequence>ACAGAGGUGUGACGAGACUCGCGUGGGAA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1127530</description>
+        <length>30</length>
+        <sequence>ACAGAGGUGUGACGAGACUCGCGUGGGAAG</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 690396</description>
+        <length>30</length>
+        <sequence>ACAGAGUAUUUCUGGGUGGGCAUCGAUUGU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1724508</description>
+        <length>27</length>
+        <sequence>ACAGAUGGUAGUCUUGGCAGAAGCCUU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 86190</description>
+        <length>31</length>
+        <sequence>ACAGAUUUAGGAGAUGCCUUGUCUCUCUGGU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 327802</description>
+        <length>29</length>
+        <sequence>ACAGCAAAGAGCUAAAGGAGGGGAUGGUC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1484617</description>
+        <length>29</length>
+        <sequence>ACAGCAAAGUAGUCAGGAACAGAUCUAGU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 414840</description>
+        <length>30</length>
+        <sequence>ACAGCAAAUCUUUGCCAUCUGUUCCUGUCC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 950503</description>
+        <length>28</length>
+        <sequence>ACAGCAAUGACCAUAUCCUGGGUGUCCU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 619260</description>
+        <length>29</length>
+        <sequence>ACAGCACAUUAGCACUGAGGAGCCAUGGU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 349276</description>
+        <length>29</length>
+        <sequence>ACAGCACGGAACGUGUGACCUUGGUCCCC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 680548</description>
+        <length>28</length>
+        <sequence>ACAGCAGAUAUUGGUGAACCGCAAACGC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1110964</description>
+        <length>27</length>
+        <sequence>ACAGCAGAUCCAGUGGCCGCCAACGUC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 170366</description>
+        <length>26</length>
+        <sequence>ACAGCAGCCAGGGAUAGCGAAGGUGG</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 148926</description>
+        <length>29</length>
+        <sequence>ACAGCAGCGAUGGAGGCCUGAGUCCCAGC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 434309</description>
+        <length>29</length>
+        <sequence>ACAGCAGUUGAACAUGGGUCAGUCGGUCC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1903945</description>
+        <length>30</length>
+        <sequence>ACAGCCAACAGGUGUAGAGAAAGGUGCUGC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1508001</description>
+        <length>30</length>
+        <sequence>ACAGCCAACAGGUGUAGAGAAAGGUGCUGU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1521910</description>
+        <length>29</length>
+        <sequence>ACAGCCUGAAACAAGCUCACCCGUAGCUA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1211980</description>
+        <length>29</length>
+        <sequence>ACAGCGUGUAAACACAUGUUCUGUGCCUG</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1160936</description>
+        <length>26</length>
+        <sequence>ACAGCUCCGAGGAGACAGUGACCAUC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1969298</description>
+        <length>29</length>
+        <sequence>ACAGCUGAUAUCUCCUGGUGCUAUCCCCA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1018260</description>
+        <length>27</length>
+        <sequence>ACAGGAAGAAUGUGUCUCUACAAAAAA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 239509</description>
+        <length>28</length>
+        <sequence>ACAGGAAGAAUGUGUCUCUACAAAAAAA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 82921</description>
+        <length>30</length>
+        <sequence>ACAGGGGAUUUCUGCUCUGUGAGAGGGAGU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 422799</description>
+        <length>28</length>
+        <sequence>ACAGGGUGAAGUUCCUGGUGAUGAAUGA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 618526</description>
+        <length>29</length>
+        <sequence>ACCUUUGGCCUUGCCUAUGGGUUGUUGGA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 651729</description>
+        <length>30</length>
+        <sequence>ACCUUUGGCCUUGCCUAUGGGUUGUUGGAA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1028832</description>
+        <length>29</length>
+        <sequence>ACGAACACAAUAGUNCACUAUAUAAAGUC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 260915</description>
+        <length>30</length>
+        <sequence>ACGAACAGUAGCCAAACCAGAGAGCAGUCA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 642991</description>
+        <length>28</length>
+        <sequence>ACGAAGCAUACUCGGGGCCGUUCUUGGA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 61347</description>
+        <length>29</length>
+        <sequence>ACGAAGCAUACUCGGGGCCGUUCUUGGAC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 936223</description>
+        <length>29</length>
+        <sequence>ACGAAUGGACUUGACUGUCUUUGCCUGGU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 2133721</description>
+        <length>27</length>
+        <sequence>ACGACACUGAUUUGCCCAGUGAUUGCC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 648065</description>
+        <length>26</length>
+        <sequence>ACGACAUGAAUAUGUUGACUGGGUAC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1910408</description>
+        <length>27</length>
+        <sequence>ACGACCUGAAACGGUGCACGUACUACG</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1967152</description>
+        <length>26</length>
+        <sequence>ACGACUACGACGCCGGCAGGUACAGC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 908087</description>
+        <length>27</length>
+        <sequence>ACGAGAACUAUCUUUGGAAUCAGCCUU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1296809</description>
+        <length>26</length>
+        <sequence>ACGAGAAGCCACUGAAAACUAGGGCG</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 497305</description>
+        <length>29</length>
+        <sequence>ACGAGAUAAAUCAGUUGGAUCAGUGGAGA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1472943</description>
+        <length>27</length>
+        <sequence>ACGAGGACCUAGACUGUGACAACGACC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1341223</description>
+        <length>30</length>
+        <sequence>AGAGCAGGGAGCUUCAGAUGGGAAGAAGUC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 336865</description>
+        <length>29</length>
+        <sequence>AGAGCAGUGAGGCCUAGUCAGUGAGGUGU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1480229</description>
+        <length>30</length>
+        <sequence>AGAGCAGUGUUGCUGUAGACAUCCACGUUC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1525745</description>
+        <length>28</length>
+        <sequence>AGAGCCAGAUGCUGCAUAUAUGGGUGAA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 129384</description>
+        <length>29</length>
+        <sequence>AGAGCCAGGACCCAGAUGACACAGAUGAC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 457910</description>
+        <length>27</length>
+        <sequence>AGAGCCAGUUGAAACUGUUGGGGAAUC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1533236</description>
+        <length>30</length>
+        <sequence>AGAGCCAUGAGACUCAACUGGGCCUGUAGC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1999953</description>
+        <length>28</length>
+        <sequence>AGAGCCUGAUGAACUAAACGAUGCAAGU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 223979</description>
+        <length>26</length>
+        <sequence>AGAGCUAUGUCACCAUAGACCUGUGU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1159033</description>
+        <length>29</length>
+        <sequence>AGAGCUGAAUCGCUGAGUGUGUCUGCAGA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 944350</description>
+        <length>30</length>
+        <sequence>AGAGCUGAAUCGCUGAGUGUGUCUGCAGAG</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 413309</description>
+        <length>30</length>
+        <sequence>AGAGCUGUAACACUCACGGGGAAGGUCUGC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1877735</description>
+        <length>31</length>
+        <sequence>AGAGCUGUGACCUUACAAUGGUGACGGUGAC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 449375</description>
+        <length>30</length>
+        <sequence>AGAGGAAGAAUCCCAGCUAGCCUAUGGAUG</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 507364</description>
+        <length>32</length>
+        <sequence>AGCUGGAGACCCCAGAACUUGGUGUCUGCCUU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 782962</description>
+        <length>30</length>
+        <sequence>AGCUGGAGACCGCAGAACUUGGUGUCUGCC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 778081</description>
+        <length>26</length>
+        <sequence>AGCUGGAGCAGGUGGCCGAGCUCUUG</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 130353</description>
+        <length>28</length>
+        <sequence>AGCUGGAGUGCAGUGGUGCGAUCACGGC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 670976</description>
+        <length>29</length>
+        <sequence>AGCUGGGGGCUCCUUGAUUCUCACCUGAU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 179558</description>
+        <length>30</length>
+        <sequence>AGCUGGUAGCAUGAAUGCUGUGUAGGAUGU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1692880</description>
+        <length>31</length>
+        <sequence>AGCUGUGCCCGUUCGUCUGUGGGCUGCUGUA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1482642</description>
+        <length>29</length>
+        <sequence>AGCUGUUAACAUUGCAGGGAGAGACAGGA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1217295</description>
+        <length>30</length>
+        <sequence>AGCUGUUAGAGACUCUUCGCAAGUGACCCC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1217139</description>
+        <length>26</length>
+        <sequence>AGCUUACAUGGACGGUCUUGCCUCAA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 371668</description>
+        <length>28</length>
+        <sequence>AGCUUAGCAGGUGGAGACAACUCACUUC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 381323</description>
+        <length>30</length>
+        <sequence>AGCUUAGUUUCUUCGACGGAAAACAUUUGU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 557045</description>
+        <length>29</length>
+        <sequence>AGCUUUAGAGGUUGCACUCAGUGGGUAGC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1266314</description>
+        <length>31</length>
+        <sequence>AGCUUUCUGACUUUAGGACCUGAGAGUGGAA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 211082</description>
+        <length>27</length>
+        <sequence>AGCUUUGAGCGGCAGAAGUACCUGAGC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 150619</description>
+        <length>26</length>
+        <sequence>AAACAAACCUGACUUUGUGGGGGCGC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 767048</description>
+        <length>29</length>
+        <sequence>AAACAAAGAAACAGGUGGUGAGAAUGUGU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 820853</description>
+        <length>29</length>
+        <sequence>AAACAGAUGUGCUCAAGCUGAGUGGUCCA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1165544</description>
+        <length>27</length>
+        <sequence>AAACAGCCUGUGGUGUUCUGUGUGACC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 468058</description>
+        <length>26</length>
+        <sequence>AAACAGUGGUUACAGGGGGCUCAGAU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 917361</description>
+        <length>27</length>
+        <sequence>AAACAUUGAGGAUGUCUACGGCAACAC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1388294</description>
+        <length>31</length>
+        <sequence>AAACCAUCCCAGAAUCUGGAUGUGGCCCAGU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1006412</description>
+        <length>32</length>
+        <sequence>AAACCCUACCACUGUUACUACAGACUAAUGAG</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1972303</description>
+        <length>29</length>
+        <sequence>AAACCGAAUAAAGUCUUCAUCUGAUGCUC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1094386</description>
+        <length>28</length>
+        <sequence>AAACCUACAUCCACACAGAAACGUACAC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 946111</description>
+        <length>26</length>
+        <sequence>AAACGAGGUAAUGAUCCUGGAGCCUA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1259223</description>
+        <length>31</length>
+        <sequence>AAACGUCUCCUGAACCAAUCCUUAUAGUCCA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1510650</description>
+        <length>31</length>
+        <sequence>AAACGUGGAAUUCUGGGCAUGCAGCUCAUCC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1628456</description>
+        <length>32</length>
+        <sequence>AAACGUUCUCAAGAACACAGACAGGUUGAAGA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1412534</description>
+        <length>26</length>
+        <sequence>AAACUAGACAUCUUUGAGGUGAGCCU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 900268</description>
+        <length>30</length>
+        <sequence>AAACUCUGAGUGUGACCUUCCUAUUCUUGA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 695838</description>
+        <length>26</length>
+        <sequence>AAACUGACCAGAUGAAUGAGAAACCC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 210113</description>
+        <length>28</length>
+        <sequence>AAACUGAUUUAGGUGACCCAAUGUUCCA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1510758</description>
+        <length>31</length>
+        <sequence>AAACUGCGUACAAGAAUUCCUCAGCCACUGC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1130803</description>
+        <length>29</length>
+        <sequence>AAACUGCGUGUGUCAAGACUCACAACUGC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1940072</description>
+        <length>29</length>
+        <sequence>AAACUGCUGCAGGUGACACAGGUACUGGU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 309657</description>
+        <length>31</length>
+        <sequence>AAACUGGUGGAGAUGUGAACUGAGGCAGUGU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1867640</description>
+        <length>29</length>
+        <sequence>AAACUUACAAUGAUGGCACAAGGGGAAGC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1553074</description>
+        <length>28</length>
+        <sequence>AAACUUAUAAUCAUGGUGGAAGGUGAAA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1349905</description>
+        <length>28</length>
+        <sequence>AAAGAACCAGACUGACAAGGCCCAGGUG</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 69551</description>
+        <length>31</length>
+        <sequence>AAAGAAGGCAUUAAACAGAGCUUUUAAAGGU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 2042785</description>
+        <length>31</length>
+        <sequence>AAAGAAGUGAGUCACACCCCUGUUGCACGCC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1425038</description>
+        <length>31</length>
+        <sequence>AAAGAAGUGCAGUUUGGCCCUGGCAGAGUGG</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1324743</description>
+        <length>28</length>
+        <sequence>AAAGAAUGAAGAAGAACUUACUUGGCCU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 155299</description>
+        <length>28</length>
+        <sequence>AAAGACAUGGGUUGAGUCCUACCAUUCC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 309993</description>
+        <length>31</length>
+        <sequence>AAAGACUCUGUGUGACGAGUGCCUGAUUGUC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1283912</description>
+        <length>32</length>
+        <sequence>AAAGAGAAUUGAAAACAUAGGUGCACACAGGC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1063742</description>
+        <length>27</length>
+        <sequence>AAAGAUCAUUGGUGUUGGACACAACUC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 54120</description>
+        <length>27</length>
+        <sequence>AAAGAUGAGAGUCAGUUCCAGCCCUGU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1719102</description>
+        <length>26</length>
+        <sequence>AAAGAUGGCAGAUACAGCACCAGGGC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1117854</description>
+        <length>31</length>
+        <sequence>AAAGAUGUCAAUACCAACCAGAUGGACCUUG</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1485001</description>
+        <length>32</length>
+        <sequence>AAAGAUGUUGAUGGAGGCCAUUCAUCCAGAUC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1692704</description>
+        <length>30</length>
+        <sequence>AAAGCAACAUUCUCCAGAGGACAGGAGGGA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 478740</description>
+        <length>27</length>
+        <sequence>AAAGCAAGAAAGGAUGCAGAACUGCCU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1466541</description>
+        <length>30</length>
+        <sequence>AAAGCAAGGCAUGUCGUACUUGGUGGCAGG</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 210186</description>
+        <length>30</length>
+        <sequence>AAAGCACAGAGCCAGAAGAGGACCUAGAGA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 246722</description>
+        <length>28</length>
+        <sequence>AAAGCACAGCAUACCCAGAAGAGCUGGA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1080317</description>
+        <length>32</length>
+        <sequence>AAAGCACUUCGGUUUCUGCCCUGCUUGGCGUG</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1911837</description>
+        <length>30</length>
+        <sequence>AAAGCAUUGGUCCGUUAAGCAUCUGUAGGU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1053358</description>
+        <length>31</length>
+        <sequence>AAAGCAUUGGUCCGUUAAGCAUCUGUAGGUA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 666191</description>
+        <length>31</length>
+        <sequence>AAAGCCAUUCAUGAGGAUAGUGACCCCAUGA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1140133</description>
+        <length>26</length>
+        <sequence>AAAGCUCCUCUAGUGACUCUUAAGCC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 2053606</description>
+        <length>27</length>
+        <sequence>AAAGCUGCUGUGCCUCGACUCGAGGAA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 479727</description>
+        <length>27</length>
+        <sequence>AAAGCUUAAUUUUGUGCAUGGUGAUGU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1225593</description>
+        <length>27</length>
+        <sequence>AAAGCUUUAAGUGUGUUGGCGUGCUUC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1393443</description>
+        <length>32</length>
+        <sequence>AAAGGAAGAAACUCUGAACACCAGAGGGGACA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1620343</description>
+        <length>28</length>
+        <sequence>AAAGGAAGUGUCUGUUGGGCUUACUGUC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1801984</description>
+        <length>30</length>
+        <sequence>AAAGGACAGUGACUGGUCCAGGACCAUAGC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1501482</description>
+        <length>31</length>
+        <sequence>AAAGGAGUAACGUAACGAGAAAUGUCUGUGC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1847181</description>
+        <length>26</length>
+        <sequence>AAAGGAGUUCAUCUUCUCAGAGCUGC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1829600</description>
+        <length>31</length>
+        <sequence>AAAGGAGUUCAUCUUCUCAGAGCUGCUGUCC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 568658</description>
+        <length>31</length>
+        <sequence>AAAGGCUUCAGGGUGACACUGAGAACUGGGU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1893292</description>
+        <length>27</length>
+        <sequence>AAAGGGCCAGCAUGAAUUAGCAAAACU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 473795</description>
+        <length>30</length>
+        <sequence>AAAGGGNGCCAAUGGAUUCUAGGAGUGAGA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 266334</description>
+        <length>31</length>
+        <sequence>AAAGGNGCCAACCACCAUCUGCUAAGUGUGC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1620026</description>
+        <length>31</length>
+        <sequence>AAAGGNGUAACGUAACGAGAAAUGUCUGUGC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 806323</description>
+        <length>31</length>
+        <sequence>AAAGGNGUUCAUCUUCUCAGAGCUGCUGUCC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 16318</description>
+        <length>32</length>
+        <sequence>AAAGGNGUUCAUCUUCUCAGAGCUGCUGUCCA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 2000550</description>
+        <length>30</length>
+        <sequence>AAAGGUCCUAGAGUGAGUUGGUUCAGAGAU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 135659</description>
+        <length>31</length>
+        <sequence>AAAGGUGGAAACCAAGCAUGCCCAAUCCCCA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1918969</description>
+        <length>29</length>
+        <sequence>AAAGUCCCAUUGUCUGCCUUUAUGCCGUA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1665041</description>
+        <length>29</length>
+        <sequence>AAAGUGAGGAGCGUCUCCGCCCGGCCGCC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1035522</description>
+        <length>31</length>
+        <sequence>AAAGUGAUGAUGGAAGAUGGGGGUGACCCUA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 220619</description>
+        <length>27</length>
+        <sequence>AAAGUGAUGCUGUGUGAAAUACCAUGA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 183519</description>
+        <length>28</length>
+        <sequence>AAAGUGCAAACACAAAGGGAACUGCGUG</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1578906</description>
+        <length>29</length>
+        <sequence>AAAGUGCAAAGCUGCUUAGAAGAGGGUCC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1676375</description>
+        <length>30</length>
+        <sequence>AAAGUGCUGGGAGUCCAGUGUGAUCUGCCU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1167601</description>
+        <length>30</length>
+        <sequence>AAAUAAACCUGUCCUUGUUGACUGUCGAGC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 970014</description>
+        <length>31</length>
+        <sequence>AAAUAAACCUGUCCUUGUUGACUGUCGAGCC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 855585</description>
+        <length>29</length>
+        <sequence>AAAUAAAGCCUAGAAGACACUUGAGGAAA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1056271</description>
+        <length>26</length>
+        <sequence>AAAUACUGUUUGAAGGGCUUCUGUGU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1123992</description>
+        <length>26</length>
+        <sequence>AAAUAUGGUGAACAGGAAUGGGAAUG</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 463161</description>
+        <length>27</length>
+        <sequence>AAAUAUUCCAGUAGGCCUGAGGUCAAG</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1806508</description>
+        <length>31</length>
+        <sequence>AAAUCCUAACAACAAAUCCCAUUUCAGGUUC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 760312</description>
+        <length>30</length>
+        <sequence>AAAUGAGUGAAUAAGUGGGCUGUCCUCAUA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1179439</description>
+        <length>30</length>
+        <sequence>AAAUGCAGUGUGGAACACAAUGAACUGAAC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 912664</description>
+        <length>30</length>
+        <sequence>AAAUGCCGAAUGCUGAAUAAAUGGCAGAAU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 64360</description>
+        <length>28</length>
+        <sequence>AAAUGCUGAAGGAGCAGAAGUGUGUCUU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 525262</description>
+        <length>31</length>
+        <sequence>AAAUGGGACCAACCUUGAUGAAUAUGUGGCU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1543937</description>
+        <length>29</length>
+        <sequence>AAAUGGUACAACAACCGGGUGAGGUGUGC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1514077</description>
+        <length>30</length>
+        <sequence>AAAUGNGUGAAUAAGUGGGCUGUCCUCAUA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 715018</description>
+        <length>30</length>
+        <sequence>AAAUGUGUAAGCAGGAUCCGAGCGUUCUGC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 46009</description>
+        <length>32</length>
+        <sequence>AAAUGUUAUGAUGAUGGGCGAAAUGUUCAACU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1234907</description>
+        <length>30</length>
+        <sequence>AAAUGUUGGUUAUACCCUUCCCGUACUACC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1038612</description>
+        <length>30</length>
+        <sequence>AAAUNGCAUGAGUGAUCUGUGUCUUAAGGA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 2013164</description>
+        <length>30</length>
+        <sequence>AAAUUGGUGAAGAUGUGGGCUGAGACAAUG</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 716652</description>
+        <length>31</length>
+        <sequence>AAAUUGGUGAAGAUGUGGGCUGAGACAAUGU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1740579</description>
+        <length>28</length>
+        <sequence>AACAAAGGCUGAGAUAGCUUUAGGUGUC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1765886</description>
+        <length>30</length>
+        <sequence>AACAAAUUCAUAUCUGAAACGAGCGGAGGC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 194345</description>
+        <length>28</length>
+        <sequence>AACAAGAUCAGAGGUGCUAAGUGCUAUA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1075765</description>
+        <length>29</length>
+        <sequence>AACAAGGUCAGUGGGAAGAGACAAUGGAG</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1277178</description>
+        <length>29</length>
+        <sequence>AACAAUAGCAAUUGGGCUGGCUUAGGAGC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1968394</description>
+        <length>27</length>
+        <sequence>AACAAUGACAACAUUGCACUCCGAGAC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 729557</description>
+        <length>30</length>
+        <sequence>AACACAGGUGGAUGUGAAGGAUUUUCAUUU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 714933</description>
+        <length>31</length>
+        <sequence>AACACAUAUAUGUGCCCAAGGAUGGUAUGGU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 93906</description>
+        <length>27</length>
+        <sequence>AACAGACAAUAGCCAAAACAGGAGAUG</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1167266</description>
+        <length>26</length>
+        <sequence>AACAGACAUUGGAGACUCAGAAGGGU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1150472</description>
+        <length>30</length>
+        <sequence>AACAGAGCCAGGGGACAGUGCCAAAGAUGC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1896755</description>
+        <length>27</length>
+        <sequence>AACAGAUGUCCUGAGCACAAAUGAGCU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 98847</description>
+        <length>29</length>
+        <sequence>AACAGCAACUGUCAAAGUGGUGGUGAUCC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1130024</description>
+        <length>26</length>
+        <sequence>AACAGCAUGGGGAAGUUAAAUAGACU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 895785</description>
+        <length>29</length>
+        <sequence>AACAGCGUAAGUGUUGUUGUGCUGUGGCU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 733004</description>
+        <length>27</length>
+        <sequence>AACAGCUGGAGUAGAAAAGGUUGCCUA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 983705</description>
+        <length>30</length>
+        <sequence>AACAGGAUACAGUCCUCACACUCAAUGGGC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1164636</description>
+        <length>29</length>
+        <sequence>AACAGUGGCGGCAUUCCAGCUGGUGAGUC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1435069</description>
+        <length>32</length>
+        <sequence>AACAGUUGGUAACAGCUUGUUAGCUUUAUGGU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1279084</description>
+        <length>28</length>
+        <sequence>AACAGUUGUACAAUCCAAUGCAGCCGUC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 370743</description>
+        <length>29</length>
+        <sequence>AACAUGAUGGGCCGUUUUUUUGGAGCUAG</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1279801</description>
+        <length>28</length>
+        <sequence>AACAUUGCCCCGAGAAGAAUGAUACUGG</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1395431</description>
+        <length>27</length>
+        <sequence>AACAUUGGCCUAUUAUAAUCUGUGUUG</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 2099113</description>
+        <length>30</length>
+        <sequence>AACCAACACAAGAGCCUUACAGUGCCCAAA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1427912</description>
+        <length>31</length>
+        <sequence>AACCAACGUGACCGACUGGGGACUCUCUGAU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1797965</description>
+        <length>29</length>
+        <sequence>AACCAAGACUUAGAGAUGGAAAGUAGUUC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 596606</description>
+        <length>28</length>
+        <sequence>AACCAAGAUUGCACUGGAACAUCCCAUG</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 333490</description>
+        <length>28</length>
+        <sequence>AACCAAGUGGUGGAUGGAAUUGUCAGGA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 816382</description>
+        <length>30</length>
+        <sequence>AACCACCAUCUGCUAAGUGUGCUACAUGCC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1306680</description>
+        <length>27</length>
+        <sequence>AACCACUGCUGCUAAGACUCUCACUGU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 405314</description>
+        <length>30</length>
+        <sequence>AACCAGACGUUUUUAGUCACAAUGGAUGCA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 2053149</description>
+        <length>31</length>
+        <sequence>AACCAGACGUUUUUAGUCACAAUGGAUGCAU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 619052</description>
+        <length>27</length>
+        <sequence>AACCAGAGCAAAGAAAUGGCCCAGUGC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 2007529</description>
+        <length>26</length>
+        <sequence>AACCAGUGCUGAAGAAUAAUGAGUGA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 275925</description>
+        <length>29</length>
+        <sequence>AACCCACUAAUGGUGUGCGACCCACGGGA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 889906</description>
+        <length>31</length>
+        <sequence>AACCCUUGCUGUGUUACGAAACUUUCCUUCC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 2068205</description>
+        <length>32</length>
+        <sequence>AACCUCUCUGAUGUCAGAGCCUUCAGGCAGUG</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1361331</description>
+        <length>26</length>
+        <sequence>AACGAGAAGACACUCAUGUAGGAGUC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1175701</description>
+        <length>26</length>
+        <sequence>AACGAGAAGACACUCGUGGAGGCGUC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1270650</description>
+        <length>29</length>
+        <sequence>AACGAGAAGACACUCGUGGAGGCGUCGGC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1453893</description>
+        <length>26</length>
+        <sequence>AACGCCAGGGUGCACUGAUAGAGGGA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 398354</description>
+        <length>26</length>
+        <sequence>AACGGACUUUCGCAACCUUUGGGAAA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1526819</description>
+        <length>30</length>
+        <sequence>AACNCCAAUGAACAGGUUUGACUACAAGGA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1672640</description>
+        <length>29</length>
+        <sequence>AACNGCAUGAAGCCAAUUAAAUGUGUUUU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 2042501</description>
+        <length>30</length>
+        <sequence>AACNGGAUUUAACUCGUGCACUUGUGUUGA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 450093</description>
+        <length>30</length>
+        <sequence>AACNGUGGUGCUCUUGACACAAACCAAGUU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1212463</description>
+        <length>30</length>
+        <sequence>AACUAAGGAAAAGUUCUGCAACAGCCAUGU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1583389</description>
+        <length>26</length>
+        <sequence>AACUCAAAGGCCGGUGCCAGUGCAGG</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1929171</description>
+        <length>26</length>
+        <sequence>AACUCCAAAGGUGAUCAGACAAGGCA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 651553</description>
+        <length>28</length>
+        <sequence>AACUCCAGCAUCACCAGGCCCUUAUUUC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1241202</description>
+        <length>29</length>
+        <sequence>AACUCUGAGUGUGACCUUCCUAUUCUUGA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 676221</description>
+        <length>30</length>
+        <sequence>AACUGAGAUACCAAGUACCAAAAGCAGGAC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 145608</description>
+        <length>30</length>
+        <sequence>AACUGGUGGAGACAUGAACUGAGACAAUGU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 390569</description>
+        <length>31</length>
+        <sequence>AACUGGUGGAGACAUGAACUGAGACAAUGUU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1104692</description>
+        <length>28</length>
+        <sequence>AACUGGUGGAGAUGUGAACUGAGGCAGU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 597274</description>
+        <length>28</length>
+        <sequence>AAGAAGGUGAUAACCAUGUUUGUACAGC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 950041</description>
+        <length>32</length>
+        <sequence>AAGAAGUGAAAAUAGCCUUAACUGAUGACAUU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 300852</description>
+        <length>26</length>
+        <sequence>AAGAAGUGAGUCACACCCCUGUUGCA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1911159</description>
+        <length>27</length>
+        <sequence>AAGAAGUGAGUCACACCCCUGUUGCAC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 201790</description>
+        <length>29</length>
+        <sequence>AAGAAGUUGGAAUGCUAGCUGCUUGUCUA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 405255</description>
+        <length>27</length>
+        <sequence>AAGACACUGCGGUGGAAGGUGAGGAGA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1609129</description>
+        <length>30</length>
+        <sequence>AAGACAGUGAGUGAGGACAGGCCUCAGGCU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 349117</description>
+        <length>30</length>
+        <sequence>AAGACAUCCAGGUGUGGCCUGUGGGCACGU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1278388</description>
+        <length>27</length>
+        <sequence>AAGACAUGGGCUGUGUCAACUCAGGGU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1585126</description>
+        <length>27</length>
+        <sequence>AAGACCGCUGAGGCGGGGUGGGAGCCA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 344205</description>
+        <length>30</length>
+        <sequence>AAGACCUGGGAUCAAUGGAAAGGAAUGUUC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 759870</description>
+        <length>30</length>
+        <sequence>AAGACUUAGAGAUGGAAAGUAGUUCAAUGG</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1976373</description>
+        <length>30</length>
+        <sequence>AAGAGACACUUCAGUGCUGAAUAGUUUGGU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1665244</description>
+        <length>29</length>
+        <sequence>AAGAGACCUAUCAAGACCUGUAUCCAGGA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1366180</description>
+        <length>30</length>
+        <sequence>AAGAGAGCAGUGUGACAUUCUGGAUGCCAC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 398112</description>
+        <length>26</length>
+        <sequence>AAGAGAUGUCCGUGCACAGGUGUGCU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 2053458</description>
+        <length>28</length>
+        <sequence>AAGAGCUGCAGGGGAACUGGGAGAGGGU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 240155</description>
+        <length>31</length>
+        <sequence>AAGAGCUGUAACACUUGCCGUGAAGGUCUGC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1492061</description>
+        <length>27</length>
+        <sequence>AAGAGGUGAUCUGUAAUGUUACAAAUU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 766472</description>
+        <length>29</length>
+        <sequence>AAGAGGUGUUUGCAAAAUGCUUGUUGGGA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 876334</description>
+        <length>27</length>
+        <sequence>AAGAGUAGAACCUUGGGGGAUCCUGAA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1513190</description>
+        <length>27</length>
+        <sequence>AAGAGUCAGUGUGUGAGAGAGGUGGUC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1725009</description>
+        <length>26</length>
+        <sequence>AAGAUCCGAGUUUCUGAUGCCGCGUG</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 14052</description>
+        <length>27</length>
+        <sequence>AAGAUGCACAUAGACUUUAGUUGCCAA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1316123</description>
+        <length>29</length>
+        <sequence>AAGAUGCCAUUUCAUCCUGUGCAUGGGAA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1187345</description>
+        <length>29</length>
+        <sequence>AAGAUGCCUGAGGAUUCAGUGCCUGGUGA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 701363</description>
+        <length>31</length>
+        <sequence>AAGAUGCCUGAGGAUUCAGUGCCUGGUGAGG</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1388166</description>
+        <length>27</length>
+        <sequence>AAGAUGGACGGUUGUGGUGUCUUCUAA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 824888</description>
+        <length>30</length>
+        <sequence>AAGAUGUGCCCACUUUGCAUAUGGAGAAAC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1742344</description>
+        <length>28</length>
+        <sequence>AAGAUUAGAAUUACGGAGGUGUCCUCAA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1957638</description>
+        <length>28</length>
+        <sequence>AAGCAAAACCCGUCCCCACAGACAUGCU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1124656</description>
+        <length>30</length>
+        <sequence>AAGCAAAAUAAACAGGAGUCGCAUCACCAG</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 65524</description>
+        <length>29</length>
+        <sequence>AAGCAACAUUCUCCAGAGGACAGGAGGGA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 520479</description>
+        <length>30</length>
+        <sequence>AAGCAACAUUCUCCAGAGGACAGGAGGGAA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 142860</description>
+        <length>30</length>
+        <sequence>AAGCAAUGCAGGGAAAUGUGAUUUGAUGGC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 939205</description>
+        <length>31</length>
+        <sequence>AAGCAAUGGUCCAGCUCCCAGGUCUAGAGGC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 884011</description>
+        <length>30</length>
+        <sequence>AAGCACAGGUAUGGUGCUGGUCCCUUCCAC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1145726</description>
+        <length>31</length>
+        <sequence>AAGCAUGAUGGGUACCACCCGAAUGGAGGGG</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1235383</description>
+        <length>31</length>
+        <sequence>AAGCCAAACCAUAUCAGUUAGUCAGUGAAGA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 547197</description>
+        <length>26</length>
+        <sequence>AAGCCAAACUGAAUUGCCUGACGAGA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1250086</description>
+        <length>30</length>
+        <sequence>AAGCCAAGCUGUGAAUGACAAGAGGAGCCA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1442438</description>
+        <length>31</length>
+        <sequence>AAGCCAGACAUGGAGGAGACGGUGUCAGUGC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1968948</description>
+        <length>31</length>
+        <sequence>AAGCCAGGGAUUGUGGGUUCGGGUCCCAUCU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 2144194</description>
+        <length>30</length>
+        <sequence>AAGCCAUUUGCGCGGGCAGUCCCUGCGUGA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 586030</description>
+        <length>31</length>
+        <sequence>AAGCCCAAUGAAUAUGGCUAAGUGUCCGUUU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 417893</description>
+        <length>26</length>
+        <sequence>AAGCCCACACAUGGAGGUCCUGCCUU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1356258</description>
+        <length>30</length>
+        <sequence>AAGCCUAGAAGACACUUGAGGAAAUGUACA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1395398</description>
+        <length>28</length>
+        <sequence>AAGCCUCAGCAAUGAUGGGCACCCCUCC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1851565</description>
+        <length>30</length>
+        <sequence>AAGCCUGUAUUCAGCCUGGAUUGCUAUGGU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 617120</description>
+        <length>28</length>
+        <sequence>AAGCCUGUCCUGUUUGUUGUGCUCUGGC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 2015497</description>
+        <length>28</length>
+        <sequence>AAGCCUUACAAAUCACUUCGACAACAGA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 473459</description>
+        <length>32</length>
+        <sequence>AAGCCUUCUGCGUAAAGAUGGACUUGCAGGAA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 896307</description>
+        <length>30</length>
+        <sequence>AAGCGAUCUAGAUGUGGUGGUAGACUCUGC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 701724</description>
+        <length>28</length>
+        <sequence>AAGGAAGAGAGGAUGGUGAUGCACCGGU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 270884</description>
+        <length>30</length>
+        <sequence>AAGGAAGCCGACAAUAAGGGCCUCUGGAUU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 2030912</description>
+        <length>27</length>
+        <sequence>AAGGAAGGACCAAGAAAAUUUGAAGAA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 44035</description>
+        <length>28</length>
+        <sequence>AAGGAAUGAACAAUUCCAGACAUGCUGC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1754051</description>
+        <length>27</length>
+        <sequence>AAGGAGAAGAUGAGGCCACCCACUACC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 695119</description>
+        <length>29</length>
+        <sequence>AAGGAGACGGUGGACGGAAUCUGACCAGG</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 724388</description>
+        <length>27</length>
+        <sequence>AAGGAGCCAAAAUGGAGUCUGUCCGGC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 2048842</description>
+        <length>30</length>
+        <sequence>AAGGAGCCAACCACCAUCUGCUAAGUGUGC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 14645</description>
+        <length>31</length>
+        <sequence>AAGGAGCCAACCACCAUCUGCUAAGUGUGCU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1205339</description>
+        <length>27</length>
+        <sequence>AAGGAGCCAUGUGCCUGGCAAAUCAGC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1520918</description>
+        <length>30</length>
+        <sequence>AAGGAGGUCAGAAUGCAGUUAUGUUGCGGG</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 844851</description>
+        <length>29</length>
+        <sequence>AAGGAGUAACGUAACGAGAAAUGUCUGUG</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 470834</description>
+        <length>29</length>
+        <sequence>AAGGAGUUCAUCUUCUCAGAGCUGCUGUC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 701113</description>
+        <length>30</length>
+        <sequence>AAGGAGUUCAUCUUCUCAGAGCUGCUGUCC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1754667</description>
+        <length>30</length>
+        <sequence>AAGGAGUUCAUCUUCUCGGAGCUGCUGUCC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 287983</description>
+        <length>28</length>
+        <sequence>AAGGAUGAGAGGUGUUUCCACUGAGGAU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 365566</description>
+        <length>28</length>
+        <sequence>AAGGAUGGUUUUGUUCUCAAUUGAAACU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 129567</description>
+        <length>28</length>
+        <sequence>AAGGAUGUCACCUGGGAGGGCUGAGGUC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1170919</description>
+        <length>29</length>
+        <sequence>AAGGCACUGAUCGAUGGCAGCUUUGUCUC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 305582</description>
+        <length>28</length>
+        <sequence>AAGGCAGUGUAUUGCUAGCGGCUGUUAU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1637039</description>
+        <length>29</length>
+        <sequence>AAGGCCGAUUUGGACAGGGUGCUCCAUGU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 167965</description>
+        <length>30</length>
+        <sequence>AAGGCCGUGAGGGUCUGCAGUCCGAGAUGG</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1449953</description>
+        <length>31</length>
+        <sequence>AAGGCCGUGAGGGUCUGCAGUCCGAGAUGGC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 163802</description>
+        <length>28</length>
+        <sequence>AAGGCUGAACCAGGGAGCCAUGGAGUGA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1783530</description>
+        <length>28</length>
+        <sequence>AAGGCUGAACCAGGGAGCCAUGGAGUGU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 220792</description>
+        <length>29</length>
+        <sequence>AAGGCUGAGAAGGAUGAGACGGUGAGUGU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 658915</description>
+        <length>30</length>
+        <sequence>AAGGCUGAGAAGUCCGAAAUCAAGAUGCCU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1491072</description>
+        <length>30</length>
+        <sequence>AAGGCUGAGAAGUCCGAGAUCAAGAUGCCU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 210348</description>
+        <length>27</length>
+        <sequence>AAGGCUUGGAGCUAAAGGUGGUGGCCA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1714257</description>
+        <length>28</length>
+        <sequence>AAGGGAGAAUGAAAUCAGUUACACCAUC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 58916</description>
+        <length>30</length>
+        <sequence>AAGGGAGGAAACCAUCCUGCCACUGGGAAC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1448592</description>
+        <length>30</length>
+        <sequence>AAGGGCACUGAUCGAUGGCAGCUUUGUCUC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1629587</description>
+        <length>30</length>
+        <sequence>AAGGGCCUUGUGCAAAGGAUUAAUCCAAGA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 89434</description>
+        <length>26</length>
+        <sequence>AAGGGGAAUGGUUGAGCCUCUGGAGA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 849545</description>
+        <length>31</length>
+        <sequence>AAGGGGUGGAUGCGGGACAGGUUGGAGGCUA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1270761</description>
+        <length>32</length>
+        <sequence>AAGGGUUUNCCUGCAUACCUCCGCCUGCUCCC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 649900</description>
+        <length>30</length>
+        <sequence>AAGGNGCUUAGCGUGUUGAAAGCAUGUGUA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1608855</description>
+        <length>30</length>
+        <sequence>AAGGUAAUGUGCCUGGAUGUGGAUGUAGGC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1104701</description>
+        <length>30</length>
+        <sequence>AAGGUCAAGGUGCUCAAGGCUGAGGAUGAC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 516893</description>
+        <length>29</length>
+        <sequence>AAGGUCACCAAGGGCAGCCUUGAAGAGGA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1450252</description>
+        <length>30</length>
+        <sequence>AAGGUGCUUGGAACUGAUUAGGUCCUCUCA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1511961</description>
+        <length>28</length>
+        <sequence>AAGGUGGACGGCGGUGGCGGCGGUGGCG</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1948776</description>
+        <length>30</length>
+        <sequence>AAGGUGUCCAUUAGUUCAGUCUGAAAAGGC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 641688</description>
+        <length>29</length>
+        <sequence>AAGGUUACAUUCUGAGGUGCUGGGUGGAC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 964375</description>
+        <length>30</length>
+        <sequence>AAGGUUCCAAAGGAAGCUGGAGAUGACCUA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1432036</description>
+        <length>31</length>
+        <sequence>AAGUCAUCGAAUGAUUGGCAUUUGUUGGGAU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1981991</description>
+        <length>31</length>
+        <sequence>AAGUCCAUUGAGCUUUGUGAGCCACUGCCCA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1165929</description>
+        <length>28</length>
+        <sequence>AAGUCCCAGUUGGGGCCAGGUGUUAAGU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1868222</description>
+        <length>28</length>
+        <sequence>AAGUCUGCCUGGAUUAGGACCAGUGGUA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 597288</description>
+        <length>28</length>
+        <sequence>AAGUGAACCUCUUUUCAUGUGCAUGGUC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 88667</description>
+        <length>26</length>
+        <sequence>AAGUGACAGGAGCUCAGCAUCCCUGU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 111738</description>
+        <length>27</length>
+        <sequence>AAGUGACGUACAGAAAACAUUAGUGAG</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1279948</description>
+        <length>27</length>
+        <sequence>AAGUGAUUGGUCAGUUAUGUGGACUGC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 2050733</description>
+        <length>27</length>
+        <sequence>AAGUGCAUUACAGCACAGGCCAAGUGC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1549088</description>
+        <length>27</length>
+        <sequence>AAGUGCUAUACAAAAGGGAGAUCCUGA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 819438</description>
+        <length>27</length>
+        <sequence>AAGUGCUGUAGCGCUUGACGUGGAUGC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 2142435</description>
+        <length>27</length>
+        <sequence>AAGUGCUGUGGGUCUGUGCCAACCUCU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 2114926</description>
+        <length>27</length>
+        <sequence>AAGUGUACAGAUGGACCUAAAGCAAGC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1962312</description>
+        <length>29</length>
+        <sequence>AAGUGUACAGAUGGACCUAAAGCAAGCAC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1863685</description>
+        <length>30</length>
+        <sequence>AAGUUGAUUUCAUCUCCCCUACAAAUGGAA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1793956</description>
+        <length>29</length>
+        <sequence>AAUACCUGGUUUGGUAGGGUCUCGGCUCC</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1162328</description>
+        <length>30</length>
+        <sequence>AAUCAAGUGAUGCGUGUCCAGAAGGCAAGU</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1215064</description>
+        <length>27</length>
+        <sequence>AAUCAGGAGGUGAUGAGGCUGCAAAGA</sequence>
+    </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 1354472</description>
+        <length>29</length>
+        <sequence>AAUCAGUAUCUUCUCUUCACUACAGGGAC</sequence>
+    </RNA>
+</RNADataBank>

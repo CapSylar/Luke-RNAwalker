@@ -1,0 +1,25 @@
+<?xml encoding="UTF-8"?>
+
+        <!ELEMENT RNADataBank (RNA)+>
+        <!ATTLIST RNADataBank
+                xmlns CDATA #FIXED ''>
+
+        <!ELEMENT RNA (accession,description,length,sequence)>
+        <!ATTLIST RNA
+                xmlns CDATA #FIXED ''>
+
+        <!ELEMENT accession (#PCDATA)>
+        <!ATTLIST accession
+                xmlns CDATA #FIXED ''>
+
+        <!ELEMENT description (#PCDATA)>
+        <!ATTLIST description
+                xmlns CDATA #FIXED ''>
+
+        <!ELEMENT length (#PCDATA)>
+        <!ATTLIST length
+                xmlns CDATA #FIXED ''>
+
+        <!ELEMENT sequence (#PCDATA)>
+        <!ATTLIST sequence
+                xmlns CDATA #FIXED ''>

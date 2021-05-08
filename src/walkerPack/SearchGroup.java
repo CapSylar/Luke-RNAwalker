@@ -1,4 +1,10 @@
 package walkerPack;
+import org.w3c.dom.Document;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+
+import javax.xml.parsers.DocumentBuilderFactory;
+import java.io.File;
 import java.util.ArrayList;
 
 public class SearchGroup
@@ -115,5 +121,33 @@ public class SearchGroup
         }
 
         return builder + "} \n";
+    }
+
+
+    public static SearchGroup fromXML ( String filepath )
+    {
+        try
+        {
+            DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+            factory.setIgnoringElementContentWhitespace(true);
+
+            Document document = factory.newDocumentBuilder().parse(new File(filepath));
+            Node root = document.getElementsByTagName("RNADataBank").item(0);
+            NodeList sequences = root.getChildNodes();
+
+            ArrayList<Sequence> toReturn = new ArrayList<>() ;
+            for ( int i = 0 ; i < sequences.getLength() ; ++i )
+            {
+                toReturn.add( Sequence.fromXML(sequences.item(i)));
+            }
+
+            return new SearchGroup(toReturn);
+        }
+        catch ( Exception exc )
+        {
+            System.out.println(exc);
+        }
+
+        return null;
     }
 }

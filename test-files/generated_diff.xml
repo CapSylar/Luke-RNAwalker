@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE Diff PUBLIC "hello" "DiffScriptDefinition.dtd">
+<Diff>
+    <meta>
+        <SourceString>10d5e3f4f321294416bd6b418773dd67</SourceString>
+        <DestinationString>212e04aaedde8510415d5cfe8c1ba514</DestinationString>
+    </meta>
+    <EditScript>
+        <Update>
+            <newNucl>G</newNucl>
+            <oldNucl>R</oldNucl>
+            <updateIndex>0</updateIndex>
+            <reverseIndex>0</reverseIndex>
+        </Update>
+        <Insert>
+            <nucl>U</nucl>
+            <insertIndex>1</insertIndex>
+            <reverseIndex>1</reverseIndex>
+        </Insert>
+        <Update>
+            <newNucl>A</newNucl>
+            <oldNucl>N</oldNucl>
+            <updateIndex>1</updateIndex>
+            <reverseIndex>2</reverseIndex>
+        </Update>
+        <Update>
+            <newNucl>G</newNucl>
+            <oldNucl>R</oldNucl>
+            <updateIndex>2</updateIndex>
+            <reverseIndex>3</reverseIndex>
+        </Update>
+        <Update>
+            <newNucl>U</newNucl>
+            <oldNucl>N</oldNucl>
+            <updateIndex>3</updateIndex>
+            <reverseIndex>4</reverseIndex>
+        </Update>
+        <Update>
+            <newNucl>A</newNucl>
+            <oldNucl>R</oldNucl>
+            <updateIndex>4</updateIndex>
+            <reverseIndex>5</reverseIndex>
+        </Update>
+        <Insert>
+            <nucl>C</nucl>
+            <insertIndex>5</insertIndex>
+            <reverseIndex>6</reverseIndex>
+        </Insert>
+    </EditScript>
+</Diff>

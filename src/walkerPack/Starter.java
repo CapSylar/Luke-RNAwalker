@@ -6,26 +6,17 @@ public class Starter
 {
     public static void main(String args[])
     {
-
-
     // load settings manager
 
-    EquivalenceManager.initManager();
+    EquivalenceManager.initManager(); // handles all comparison by building a hashMap just once
+
         //        SettingsManager manager = SettingsManager.load() ; // load settings into app
     //
     //        GraphicalInterface.currentManager = manager ; // bind manager
     //        GraphicalInterface.main(args); // launch graphical interface
 
-        ArrayList<Sequence> seqlist = new ArrayList<>();
 
-        seqlist.add(new Sequence("CACACAACA"));
-        seqlist.add(new Sequence("CAGGCAACA"));
-        seqlist.add(new Sequence("CARRRACA"));
-        seqlist.add(new Sequence("CAAAAACA"));
-        seqlist.add(new Sequence("CACCACACCA"));
-        seqlist.add(new Sequence("GACRNNR"));
-
-        SearchGroup group = new SearchGroup(seqlist);
+        SearchGroup group = SearchGroup.fromXML("test-files/FormattedSequences.xml");
 
         System.out.println(group);
 

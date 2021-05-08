@@ -83,6 +83,15 @@ public class Sequence
         }
     }
 
+    public static Sequence fromXML ( Node RNAroot ) throws InternalApplicationException
+    {
+        // TODO: warning this assumes that children are in the order specified by the document and that not TEXT is located between them
+
+        NodeList children = RNAroot.getChildNodes();
+        return new Sequence( children.item(3).getTextContent() , children.item(0).getTextContent() ,
+                children.item(2).getTextContent() );
+    }
+
     public Element toXML ( Document doc )
     {
         Element localRoot = doc.createElement("RNA");
