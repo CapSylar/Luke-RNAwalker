@@ -42,7 +42,7 @@ public class SED extends SimilarityMeasure
 
                 int costUpdate = 1 , costDelete = 1, costInsert = 1;
 
-                float update = dp[i - 1][j - 1] + equivalence.getUpdateWeight(StringSequence1.charAt(i - 1), StringSequence2.charAt(j - 1) ) * costUpdate  ;
+                float update = dp[i - 1][j - 1] + equivalence.getUpdateCost(StringSequence1.charAt(i - 1), StringSequence2.charAt(j - 1) ) * costUpdate  ;
                 float delete = dp[i - 1][j] + costDelete;
                 float insert = dp[i][j - 1] + costInsert;
 

@@ -70,7 +70,7 @@ public class EquivalenceManager
         UpdateCostMap.put('N' , new HashMap<>());
     }
 
-    public static float getUpdateWeight(char old_v , char new_v ) // returns cost of update ->
+    public static float getUpdateCost(char old_v , char new_v ) // returns cost of update ->
     {
         if ( old_v == new_v )
             return 0 ;
