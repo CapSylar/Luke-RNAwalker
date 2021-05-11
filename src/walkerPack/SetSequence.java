@@ -3,6 +3,12 @@ package walkerPack;
 // vector representation of an RNA sequence
 public class SetSequence
 {
+    private long preprocessTime;
+
+    public long getPreprocessTime()
+    {
+        return this.preprocessTime;
+    }
     // we might have to store many of these in memory
     // avoid using big DSs here
 
@@ -13,16 +19,18 @@ public class SetSequence
 
     public SetSequence( String sequence )
     {
-        preprocess( sequence );   // cutup the sequence and count them
+        this.preprocessTime = preprocess( sequence );   // cutup the sequence and count them
     }
 
-    public void preprocess ( String sequence )
+    private long preprocess ( String sequence ) // returns time it took to preprocess
     {
+        long startTimeNano = System.nanoTime();
         for ( int i = 0 ; i < sequence.length() ; ++i )
         {
             //TODO: not cleanest way to do it, but performant O(1)
             ++nucleotides[EquivalenceManager.NuclMapper(sequence.charAt(i))] ;
         }
+        return System.nanoTime() - startTimeNano;
     }
 
     public int getModule()

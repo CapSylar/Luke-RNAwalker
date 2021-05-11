@@ -3,11 +3,14 @@ package walkerPack;
 public class JaccardCoefficient extends SetSimilarityMethod
 {
     @Override
-    public double getSimilarity(SetSequence seq, SetSequence otherSeq)
+    public TimeNSimilarity getSimilarity(SetSequence seq, SetSequence otherSeq)
     {
         // apply jaccard = A inter B / A union B
+        long start = System.nanoTime();
 
         double sim = seq.getIntersection( otherSeq );
-        return sim / ( seq.getModule() + otherSeq.getModule() - sim ) ;
+        sim = sim / ( seq.getModule() + otherSeq.getModule() - sim ) ;
+
+        return new TimeNSimilarity( System.nanoTime() - start , sim );
     }
 }

@@ -2,9 +2,12 @@ package walkerPack;
 
 public class SED extends SimilarityMeasure
 {
-    public double getSimilarity ( Sequence first , Sequence second )
+    public TimeNSimilarity getSimilarity ( Sequence first , Sequence second )
     {
-        return getSimilarity( first , second , null );
+        long start = System.nanoTime();
+        double sim = getSimilarity( first , second , null );
+
+        return new TimeNSimilarity( System.nanoTime() - start , sim );
     }
 
     public double getSimilarity ( Sequence first , Sequence second , EditScriptSequence currentScript )
@@ -60,11 +63,10 @@ public class SED extends SimilarityMeasure
             }
         }
 
-        double distance = 1- ((dp[StringSequence1.length()][StringSequence2.length()])/(StringSequence1.length() + StringSequence2.length())) ;
-
+        double similarity = 1- ((dp[StringSequence1.length()][StringSequence2.length()])/(StringSequence1.length() + StringSequence2.length())) ;
         if ( currentScript == null )
         {
-            return distance;
+            return similarity;
         }
 
         int i = StringSequence1.length();
@@ -95,6 +97,6 @@ public class SED extends SimilarityMeasure
                     break ;
             }
 
-        return distance;
+        return similarity;
     }
 }

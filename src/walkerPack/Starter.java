@@ -1,7 +1,5 @@
 package walkerPack;
 
-import java.util.ArrayList;
-
 public class Starter
 {
     public static void main(String args[])
@@ -17,16 +15,19 @@ public class Starter
 
         SearchGroup group = SearchGroup.fromXML("test-files/FormattedSequences.xml");
 
-        System.out.println(group);
+        System.out.println( "getSet preporcessing time " + group.getSetPreProcessingTime()/1000 + " microseconds");
+        System.out.println( "getS" + group.getVectorPreProcessingTime()/1000 + " microseconds");
 
-        group.rankUsingSimilarity( new Sequence("CCCC") , new JaccardCoefficient() );
-
-        System.out.println(group);
-
-        group.filterSelection( new KNNOperator(10 ));
-
-        group.rankUsingSimilarity( new Sequence("ACGCCUCCACGAGUGUCUU") , new SED() );
+        long timeItTook = group.rankUsingSimilarity( new Sequence("CCCC") , new JaccardCoefficient() );
 
         System.out.println(group);
+        System.out.println("It took " + timeItTook/1000 + " microseconds");
+
+        group.filterSelection( new KNNOperator(20 ));
+
+        timeItTook = group.rankUsingSimilarity( new Sequence("ACGCCUCCACGAGUGUCUU") , new SED() );
+
+        System.out.println(group);
+        System.out.println("It took " + timeItTook/1000 + " microseconds");
     }
 }

@@ -7,10 +7,18 @@ public class VectorSequence
     // 9 nucleotides:  G A U C R M S V N
     // store them in array , with index starting from 0 as specified
 
+    private long preprocessTime;
+
+    public long getPreprocessTime()
+    {
+        return this.preprocessTime;
+    }
+
     double nuclWeights[] ;
 
     public VectorSequence( String sequence )
     {
+        long start = System.nanoTime();
         // use only Term Frequency in this case TF ( Ti , Document )
 
         this.nuclWeights = new double[9];
@@ -20,6 +28,8 @@ public class VectorSequence
         {
             this.nuclWeights[i] = tf[i];
         }
+
+        this.preprocessTime = System.nanoTime() - start;
     }
 
     public VectorSequence ( String sequence , int collectionCount , int[] termCollectionCount ,  boolean includeTF )
@@ -29,6 +39,8 @@ public class VectorSequence
         // termCollectionCount is assumed to be ordered in the same way as nuclWeights
 
         // populate array with IDF
+
+        long start = System.nanoTime();
 
         this.nuclWeights = new double[9];
 
@@ -46,6 +58,7 @@ public class VectorSequence
                 this.nuclWeights[i] *= tf[i];
             }
         }
+        this.preprocessTime = System.nanoTime() - start;
     }
 
     private int[] countTF ( String sequence )
@@ -85,20 +98,6 @@ public class VectorSequence
 
         return Math.sqrt(module);
     }
-
-//    public double getCosineSimilarity(VectorSequence otherSeq )
-//    {
-//        // cosine similarity ( A , B )  = A dot B / ( |A| * |B| )
-//
-//        return getDotProduct( otherSeq ) / ( this.getModule() * otherSeq.getModule() ) ;
-//    }
-
-//    public double getPearsonCC( VectorSequence otherSeq )
-//    {
-//        // Pearson correlation coefficient ( A , B ) = sigma { ( Ai - avgA ) * ( Bi - avgB ) }/ sqrt ( sigma{(Ai - avgA)^2} * sigma{(Bi - avgB)^2} )
-//
-//        return getAveragedDotProduct( otherSeq ) / ( this.getAveragedModule() * otherSeq.getAveragedModule() );
-//    }
 
     public double getDotProduct(VectorSequence otherSeq )
     {

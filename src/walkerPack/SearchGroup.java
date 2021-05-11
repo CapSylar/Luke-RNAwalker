@@ -30,16 +30,25 @@ public class SearchGroup
         }
     }
 
-    public void rankUsingSimilarity ( Sequence query , SimilarityMeasure measure )
+    /*
+        rankUsingSimilarity return the time it took to compute all computation namely for every first:
+        preprocessing time for all entities and then compute time for similarity measure
+    */
+
+    public long rankUsingSimilarity ( Sequence query , SimilarityMeasure measure )
     {
+        long cumulativeTime = 0 ;
         this.lastQuery = query;
         for ( int i = 0 ; i < collection.size() ; ++i )
         {
-            double currentSim = measure.calculateSimilarity( new Block(query) , collection.get(i) );
-            collection.get(i).lastSimilarityValue = currentSim;
+            TimeNSimilarity returned = measure.calculateSimilarity( new Block(query) , collection.get(i) ); //TOFIX: why new Block(query) every time ?
+            collection.get(i).lastSimilarityValue = returned.similarity;
+            cumulativeTime += returned.time;
         }
 
         sortCollection();
+
+        return cumulativeTime;
     }
 
     public void filterSelection(SelectionOperator operator )
@@ -64,7 +73,71 @@ public class SearchGroup
     }
 
 
-    // TODO: ugly ass thing, reconsider this decision
+    @Override
+    public String toString()
+    {
+        // list the ranked collection with last similarity info
+        String builder = "Search Group{ last query used: " + (this.lastQuery != null ? this.lastQuery.getSequence() : "none") + "\n";
+
+        for ( int i = 0 ; i < collection.size() ; ++i )
+        {
+            builder += "rank "+ i + " : " + collection.get(i).NativeSequence.getSequence() + " " + collection.get(i).lastSimilarityValue + '\n' ;
+        }
+
+        return builder + "} \n";
+    }
+
+    public long getSetPreProcessingTime ()
+    {
+        long sum = 0;
+        for ( int i = 0 ; i < this.collection.size() ; ++i )
+        {
+            sum += this.collection.get(i).getSetPreProcessingTime();
+        }
+
+        return sum;
+    }
+
+    public long getVectorPreProcessingTime()
+    {
+        long sum = 0;
+        for ( int i = 0 ; i < this.collection.size() ; ++i )
+        {
+            sum += this.collection.get(i).getVectorPreProcessingTime();
+        }
+
+        return sum;
+    }
+
+
+    public static SearchGroup fromXML ( String filepath )
+    {
+        try
+        {
+            DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+            factory.setIgnoringElementContentWhitespace(true);
+
+            Document document = factory.newDocumentBuilder().parse(new File(filepath));
+            Node root = document.getElementsByTagName("RNADataBank").item(0);
+            NodeList sequences = root.getChildNodes();
+
+            ArrayList<Sequence> toReturn = new ArrayList<>() ;
+            for ( int i = 0 ; i < sequences.getLength() ; ++i )
+            {
+                toReturn.add( Sequence.fromXML(sequences.item(i)));
+            }
+
+            return new SearchGroup(toReturn);
+        }
+        catch ( Exception exc )
+        {
+            System.out.println(exc);
+        }
+
+        return null;
+    }
+
+    // TODO: ugly ass thing, reconsider this decision, whole things feels like a hack!
     public class Block
     {
         // Block houses the sequence, the set and the vector corresponding to the sequence
@@ -107,47 +180,15 @@ public class SearchGroup
         {
             return NativeSequence;
         }
-    }
 
-    @Override
-    public String toString()
-    {
-        // list the ranked collection with last similarity info
-        String builder = "Search Group{ last query used: " + (this.lastQuery != null ? this.lastQuery.getSequence() : "none") + "\n";
-
-        for ( int i = 0 ; i < collection.size() ; ++i )
+        public long getSetPreProcessingTime ()
         {
-            builder += "rank "+ i + " : " + collection.get(i).NativeSequence.getSequence() + " " + collection.get(i).lastSimilarityValue + '\n' ;
+            return getSequenceAsSet().getPreprocessTime();
         }
 
-        return builder + "} \n";
-    }
-
-
-    public static SearchGroup fromXML ( String filepath )
-    {
-        try
+        public long getVectorPreProcessingTime ()
         {
-            DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-            factory.setIgnoringElementContentWhitespace(true);
-
-            Document document = factory.newDocumentBuilder().parse(new File(filepath));
-            Node root = document.getElementsByTagName("RNADataBank").item(0);
-            NodeList sequences = root.getChildNodes();
-
-            ArrayList<Sequence> toReturn = new ArrayList<>() ;
-            for ( int i = 0 ; i < sequences.getLength() ; ++i )
-            {
-                toReturn.add( Sequence.fromXML(sequences.item(i)));
-            }
-
-            return new SearchGroup(toReturn);
+            return getSequenceAsVector().getPreprocessTime();
         }
-        catch ( Exception exc )
-        {
-            System.out.println(exc);
-        }
-
-        return null;
     }
 }
