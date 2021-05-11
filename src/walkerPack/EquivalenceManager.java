@@ -4,7 +4,7 @@ import java.util.*;
 
 public class EquivalenceManager
 {
-    static HashMap<Character,HashMap<Character,Float>> UpdateCostMap = new HashMap<>();
+    static HashMap<Character,HashMap<Character,Double>> NuclSimilarityMap = new HashMap<>();
     static HashMap<Character,HashSet<Character>> NuclSets = new HashMap<>() ;
     static HashMap<Character,Integer> Mapper = new HashMap<>();
 
@@ -58,44 +58,49 @@ public class EquivalenceManager
 
     private static void InitUpdateCostMap ()
     {
-        UpdateCostMap.put('G' , new HashMap<>());
-        UpdateCostMap.put('U' , new HashMap<>());
-        UpdateCostMap.put('A' , new HashMap<>());
-        UpdateCostMap.put('C' , new HashMap<>());
+        NuclSimilarityMap.put('G' , new HashMap<>());
+        NuclSimilarityMap.put('U' , new HashMap<>());
+        NuclSimilarityMap.put('A' , new HashMap<>());
+        NuclSimilarityMap.put('C' , new HashMap<>());
 
-        UpdateCostMap.put('R' , new HashMap<>());
-        UpdateCostMap.put('M' , new HashMap<>());
-        UpdateCostMap.put('S' , new HashMap<>());
-        UpdateCostMap.put('V' , new HashMap<>());
-        UpdateCostMap.put('N' , new HashMap<>());
+        NuclSimilarityMap.put('R' , new HashMap<>());
+        NuclSimilarityMap.put('M' , new HashMap<>());
+        NuclSimilarityMap.put('S' , new HashMap<>());
+        NuclSimilarityMap.put('V' , new HashMap<>());
+        NuclSimilarityMap.put('N' , new HashMap<>());
     }
 
-    public static float getUpdateCost(char old_v , char new_v ) // returns cost of update ->
+    public static double getNormalizedDistance(char old_nucl , char new_nucl ) // returns cost of update ->
     {
-        if ( old_v == new_v )
-            return 0 ;
+        return 1 - getSimilarity( old_nucl , new_nucl ) ;
+    }
 
-        if ( UpdateCostMap.get(old_v).containsKey(new_v))
+    public static double getSimilarity ( char old_nucl , char new_nucl )
+    {
+        if ( old_nucl == new_nucl )
+            return 1 ; // equal sim = 1
+
+        if ( NuclSimilarityMap.get(old_nucl).containsKey(new_nucl)) // check if already cached
         {
-            return UpdateCostMap.get(old_v).get(new_v) ;
+            return NuclSimilarityMap.get(old_nucl).get(new_nucl) ;
         }
 
         // calculate the requested cost and then store it thus avoiding the need to recalculate
 
-        HashSet<Character> intersection = new HashSet<>( NuclSets.get(old_v) ) ;
-        HashSet<Character> union = new HashSet<>( NuclSets.get(old_v)) ;
+        HashSet<Character> intersection = new HashSet<>( NuclSets.get(old_nucl) ) ;
+        HashSet<Character> union = new HashSet<>( NuclSets.get(old_nucl)) ;
 
-        union.addAll( NuclSets.get(new_v)) ;
-        intersection.retainAll( NuclSets.get(new_v));
+        union.addAll( NuclSets.get(new_nucl)) ;
+        intersection.retainAll( NuclSets.get(new_nucl));
 
-//        double sim = intersection.size() / ( double ) union.size() ;
+        double similarity = (intersection.size() / ( float )( NuclSets.get(old_nucl).size() )) *
+                (intersection.size() / ( float )( NuclSets.get(new_nucl).size() ));
 
-        float prob = 1 - (intersection.size() / ( float )( NuclSets.get(old_v).size() )) *
-                (intersection.size() / ( float )( NuclSets.get(new_v).size() )) ;
+        // sim = probability first symbol = X * probability second symbol = X
 
-        UpdateCostMap.get(old_v).put(new_v , prob );
+        NuclSimilarityMap.get(old_nucl).put(new_nucl , similarity);
 
-        return prob ;
+        return similarity ;
     }
 
     public static int NuclMapper ( char Nucl )

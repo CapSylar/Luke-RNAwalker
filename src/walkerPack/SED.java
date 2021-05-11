@@ -12,7 +12,7 @@ public class SED extends SimilarityMeasure
         String StringSequence1 = first.getSequence() ;
         String StringSequence2 = second.getSequence() ;
 
-        float dp[][] = new float[StringSequence1.length()+1][StringSequence2.length()+1] ;
+        double dp[][] = new double[StringSequence1.length()+1][StringSequence2.length()+1] ;
         byte backtrack[][] = new byte [StringSequence1.length()+1][StringSequence2.length()+1] ;
 
         // [2] : one for edit distance , 1: to note were we came from , 0 from delete, 1 from update
@@ -42,9 +42,9 @@ public class SED extends SimilarityMeasure
 
                 int costUpdate = 1 , costDelete = 1, costInsert = 1;
 
-                float update = dp[i - 1][j - 1] + equivalence.getUpdateCost(StringSequence1.charAt(i - 1), StringSequence2.charAt(j - 1) ) * costUpdate  ;
-                float delete = dp[i - 1][j] + costDelete;
-                float insert = dp[i][j - 1] + costInsert;
+                double update = dp[i - 1][j - 1] + equivalence.getNormalizedDistance(StringSequence1.charAt(i - 1), StringSequence2.charAt(j - 1) ) * costUpdate  ;
+                double delete = dp[i - 1][j] + costDelete;
+                double insert = dp[i][j - 1] + costInsert;
 
                 /* by changing the order of the comparisons we could prioritize certain operations later, we could pick the ops
                  * that are the easiest on the program in terms of speed */

@@ -7,7 +7,7 @@ public class DiceCoefficient extends SetSimilarityMethod
     {
         // apply dice = 2 * (A inter B) / |A| + |B|
 
-        double sim = seq.getIntersection( otherSeq );
+        double sim = seq.getAugmentedIntersection( otherSeq );
         return 2*sim / ( seq.getModule() + otherSeq.getModule() ) ;
     }
 }
