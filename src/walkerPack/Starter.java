@@ -1,7 +1,5 @@
 package walkerPack;
 
-import java.util.ArrayList;
-
 public class Starter
 {
     public static void main(String args[])
@@ -31,7 +29,7 @@ public class Starter
 
         SetSequence set1 = new SetSequence("AGAAA");
         SetSequence set2 = new SetSequence("ARAAA");
-        JaccardCoefficient t = new JaccardCoefficient();
+        AugmentedJaccardCoefficient t = new AugmentedJaccardCoefficient();
         System.out.println(t.getSimilarity(set1,set2));
     }
 }

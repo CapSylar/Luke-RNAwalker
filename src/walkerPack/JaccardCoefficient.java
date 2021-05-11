@@ -5,9 +5,9 @@ public class JaccardCoefficient extends SetSimilarityMethod
     @Override
     public double getSimilarity(SetSequence seq, SetSequence otherSeq)
     {
-        // apply jaccard = A inter B / A union B
+        // Jaccard = A inter B / A union B
 
-        double intersection = seq.getAugmentedIntersection( otherSeq );
-        return intersection / ( seq.getModule() + otherSeq.getModule() - intersection ) ;
+        double sim = seq.getIntersection( otherSeq );
+        return sim / ( seq.getModule() + otherSeq.getModule() - sim ) ;
     }
 }
