@@ -3,8 +3,11 @@ package walkerPack;
 public class CosineSimilarity extends VectorSimilarityMethod
 {
     @Override
-    public double getSimilarity(VectorSequence seq, VectorSequence otherSeq)
+    public TimeNSimilarity getSimilarity(VectorSequence seq, VectorSequence otherSeq)
     {
-        return seq.getDotProduct( otherSeq ) / ( seq.getModule() * otherSeq.getModule() ) ;
+        long start = System.nanoTime();
+        double sim = seq.getDotProduct( otherSeq ) / ( seq.getModule() * otherSeq.getModule() ) ;
+
+        return new TimeNSimilarity( System.nanoTime() - start , sim );
     }
 }

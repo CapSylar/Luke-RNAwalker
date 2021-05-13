@@ -2,5 +2,5 @@ package walkerPack;
 
 public abstract class SetSimilarityMethod extends SimilarityMeasure
 {
-    public abstract double getSimilarity(SetSequence seq, SetSequence otherSeq) ;
+    public abstract TimeNSimilarity getSimilarity(SetSequence seq, SetSequence otherSeq) ;
 }

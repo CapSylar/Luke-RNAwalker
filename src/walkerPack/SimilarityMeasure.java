@@ -2,7 +2,7 @@ package walkerPack;
 
 public abstract class SimilarityMeasure
 {
-    public double calculateSimilarity(SearchGroup.Block query , SearchGroup.Block seq)
+    public TimeNSimilarity calculateSimilarity(SearchGroup.Block query , SearchGroup.Block seq)
     {
         if ( this instanceof VectorSimilarityMethod )
         {
@@ -17,7 +17,6 @@ public abstract class SimilarityMeasure
             return ((SED) this).getSimilarity( query.getSequence() , seq.getSequence() );
         }
         else // could not happen
-            return -1; // TODO: handle this case in a better way. Murphy's law: "Anything that can go wrong will go wrong"
+            return null; // TODO: handle this case in a better way. Murphy's law: "Anything that can go wrong will go wrong"
     }
-
 }
