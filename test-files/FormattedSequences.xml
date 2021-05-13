@@ -3001,4 +3001,10 @@
         <length>29</length>
         <sequence>AAUCAGUAUCUUCUCUUCACUACAGGGAC</sequence>
     </RNA>
+    <RNA>
+        <accession>none</accession>
+        <description>rna sequence 13234234472</description>
+        <length>29</length>
+        <sequence>AAUCAGUAUCUUCURRUCACUACAGGGAC</sequence>
+    </RNA>
 </RNADataBank>

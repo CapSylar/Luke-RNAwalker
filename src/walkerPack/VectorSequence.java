@@ -46,7 +46,8 @@ public class VectorSequence
 
         for ( int i = 0 ; i < this.nuclWeights.length ; ++i )
         {
-            this.nuclWeights[i] = Math.log10(collectionCount/(double) termCollectionCount[i] );
+            if ( termCollectionCount[i] > 0 )
+                this.nuclWeights[i] = 1 + (Math.log10(collectionCount/(double) termCollectionCount[i] ));
         }
 
         if ( includeTF ) // use Term frequency as well
@@ -58,6 +59,7 @@ public class VectorSequence
                 this.nuclWeights[i] *= tf[i];
             }
         }
+
         this.preprocessTime = System.nanoTime() - start;
     }
 
@@ -68,7 +70,7 @@ public class VectorSequence
         for ( int i = 0 ; i < sequence.length() ; ++i )
         {
             //TODO: not cleanest way to do it, but performant
-            ++nuclWeights[EquivalenceManager.NuclMapper(sequence.charAt(i))] ;
+            ++tf[EquivalenceManager.NuclMapper(sequence.charAt(i))] ;
         }
 
         return tf;
