@@ -3,11 +3,12 @@ package walkerPack;
 public class AugmentedDiceCoefficient extends SetSimilarityMethod
 {
     @Override
-    public double getSimilarity( SetSequence seq, SetSequence otherSeq )
+    public TimeNSimilarity getSimilarity( SetSequence seq, SetSequence otherSeq )
     {
-        // apply dice = 2 * (A inter B) / |A| + |B|
+        // DICE = 2 * (A inter B) / |A| + |B| taking into consideration ambiguity symbols
+        long start = System.nanoTime();
+        double sim = (2 * seq.getAugmentedIntersection( otherSeq )) / ( seq.getModule() + otherSeq.getModule() ) ;
 
-        double sim = seq.getAugmentedIntersection( otherSeq );
-        return 2*sim / ( seq.getModule() + otherSeq.getModule() ) ;
+        return new TimeNSimilarity( System.nanoTime() - start , sim );
     }
 }

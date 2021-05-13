@@ -15,23 +15,21 @@ public class Starter
     //        GraphicalInterface.currentManager = manager ; // bind manager
     //        GraphicalInterface.main(args); // launch graphical interface
 
-//        SearchGroup group = SearchGroup.fromXML("test-files/FormattedSequences.xml");
-//
-//        System.out.println(group);
-//
-//        group.rankUsingSimilarity( new Sequence("CCCC") , new JaccardCoefficient() );
-//
-//        System.out.println(group);
-//
-//        group.filterSelection( new KNNOperator(10 ));
-//
-//        group.rankUsingSimilarity( new Sequence("ACGCCUCCACGAGUGUCUU") , new SED() );
-//
+        SearchGroup group = SearchGroup.fromXML("test-files/FormattedSequences.xml");
+
+        System.out.println(group);
+
+        long nanoTime = group.rankUsingSimilarity( new Sequence("CCCC") , new JaccardCoefficient() );
+
+        System.out.println("It took " + nanoTime/1000 );
 //        System.out.println(group);
 
-        SetSequence set1 = new SetSequence("AGAAA");
-        SetSequence set2 = new SetSequence("ARAAA");
-        AugmentedJaccardCoefficient t = new AugmentedJaccardCoefficient();
-        System.out.println(t.getSimilarity(set1,set2));
+        group.filterSelection( new KNNOperator(10 ));
+
+        nanoTime = group.rankUsingSimilarity( new Sequence("ACGCCUCCACGAGUGUCUU") , new SED() );
+
+
+        System.out.println( "It took " +  nanoTime/1000 );
+//        System.out.println(group);
     }
 }

@@ -1,13 +1,16 @@
 package walkerPack;
 
+
 public class AugmentedJaccardCoefficient extends SetSimilarityMethod
 {
     @Override
-    public double getSimilarity(SetSequence seq, SetSequence otherSeq)
+    public TimeNSimilarity getSimilarity(SetSequence seq, SetSequence otherSeq)
     {
-        // apply jaccard = A inter B / A union B
-
+        // apply jaccard = A inter B / A union B taking into consideration ambiguity symbols
+        long start = System.nanoTime();
         double intersection = seq.getAugmentedIntersection( otherSeq );
-        return intersection / ( seq.getModule() + otherSeq.getModule() - intersection ) ;
+        double sim = intersection / ( seq.getModule() + otherSeq.getModule() - intersection ) ;
+
+        return new TimeNSimilarity( System.nanoTime() - start , sim );
     }
 }
