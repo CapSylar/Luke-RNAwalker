@@ -1,6 +1,6 @@
 package walkerPack;
 
-public interface SelectionOperator
+public abstract class SelectionOperator extends SearchGroupOperation
 {
-    public void ApplyOperator( SearchGroup group );
+    public abstract void ApplyOperator( SearchGroup group );
 }

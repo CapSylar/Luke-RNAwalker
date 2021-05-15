@@ -2,7 +2,7 @@ package walkerPack;
 
 import java.util.ArrayList;
 
-public class RangeOperator implements SelectionOperator
+public class RangeOperator extends SelectionOperator
 {
     // TODO: maybe we should specify a distance here rather than a similarity value
     private double similarityLowerBound;
@@ -20,7 +20,7 @@ public class RangeOperator implements SelectionOperator
 
         //TODO: should the operator know all the details of the implementation of the group collection ?, reconsider
 
-        ArrayList<SearchGroup.Block> collection = group.collection;
+        ArrayList<SequenceBlock> collection = group.collection;
 
         for ( int i = 0; i < collection.size() ;) //TOFIX: group collection is always sorted, make the removal faster
         {

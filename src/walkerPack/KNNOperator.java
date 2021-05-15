@@ -2,7 +2,7 @@ package walkerPack;
 
 import java.util.ArrayList;
 
-public class KNNOperator implements SelectionOperator
+public class KNNOperator extends SelectionOperator
 {
     private int k;
 
@@ -16,7 +16,7 @@ public class KNNOperator implements SelectionOperator
     {
         // K-nearest neighborhood operator returns the set of k neighboring documents located nearest to a query Q using a distance function d
 
-        ArrayList<SearchGroup.Block> collection = group.collection;
+        ArrayList<SequenceBlock> collection = group.collection;
 
         // collection is sorted, get first k
         // TODO: check if there is a faster way to do this

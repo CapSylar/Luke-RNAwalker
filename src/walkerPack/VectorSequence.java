@@ -22,7 +22,7 @@ public class VectorSequence
         // use only Term Frequency in this case TF ( Ti , Document )
 
         this.nuclWeights = new double[9];
-        int tf[] = countTF( sequence );
+        int tf[] = Sequence.countTermFreq( sequence );
 
         for ( int i = 0 ; i < this.nuclWeights.length ; ++i )
         {
@@ -52,7 +52,7 @@ public class VectorSequence
 
         if ( includeTF ) // use Term frequency as well
         {
-            int[] tf = countTF( sequence );
+            int[] tf = Sequence.countTermFreq( sequence );
 
             for ( int i = 0 ; i < tf.length ; ++i )
             {
@@ -61,19 +61,6 @@ public class VectorSequence
         }
 
         this.preprocessTime = System.nanoTime() - start;
-    }
-
-    private int[] countTF ( String sequence )
-    {
-        int tf[] = new int [9];
-
-        for ( int i = 0 ; i < sequence.length() ; ++i )
-        {
-            //TODO: not cleanest way to do it, but performant
-            ++tf[EquivalenceManager.NuclMapper(sequence.charAt(i))] ;
-        }
-
-        return tf;
     }
 
     public double getModule()
@@ -143,9 +130,7 @@ public class VectorSequence
     public String toString()
     {
         // 9 nucleotides:  G A U C R M S V N
-
         return "VectorSequence{" +
-
                 "nuclWeights=" + "G:" + nuclWeights[0] +
                 " A:" + nuclWeights[1] +
                 " U:" + nuclWeights[2] +

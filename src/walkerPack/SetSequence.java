@@ -1,5 +1,8 @@
 package walkerPack;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 // vector representation of an RNA sequence
 public class SetSequence
 {
@@ -15,7 +18,7 @@ public class SetSequence
     // 9 nucleotides:  G A U C R M S V N
     // store them in array , with index starting from 0 as specified
 
-    public int nucleotides[] = new int[9];
+    public int nucleotides[];
 
     public SetSequence( String sequence )
     {
@@ -25,11 +28,7 @@ public class SetSequence
     private long preprocess ( String sequence ) // returns time it took to preprocess
     {
         long startTimeNano = System.nanoTime();
-        for ( int i = 0 ; i < sequence.length() ; ++i )
-        {
-            //TODO: not cleanest way to do it, but performant O(1)
-            ++nucleotides[EquivalenceManager.NuclMapper(sequence.charAt(i))] ;
-        }
+        nucleotides = Sequence.countTermFreq(sequence);
         return System.nanoTime() - startTimeNano;
     }
 

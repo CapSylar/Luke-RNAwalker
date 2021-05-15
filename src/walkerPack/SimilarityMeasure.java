@@ -1,8 +1,8 @@
 package walkerPack;
 
-public abstract class SimilarityMeasure
+public abstract class SimilarityMeasure extends SearchGroupOperation
 {
-    public TimeNSimilarity calculateSimilarity(SearchGroup.Block query , SearchGroup.Block seq)
+    public TimeNSimilarity calculateSimilarity(SequenceBlock query , SequenceBlock seq)
     {
         if ( this instanceof VectorSimilarityMethod )
         {

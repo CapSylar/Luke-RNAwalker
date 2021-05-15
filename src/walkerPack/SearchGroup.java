@@ -10,7 +10,7 @@ import java.util.Arrays;
 
 public class SearchGroup
 {
-    ArrayList<Block> collection;
+    ArrayList<SequenceBlock> collection;
     int termCollectionCount[] = new int[9];
 
     private boolean useTF ;
@@ -35,7 +35,7 @@ public class SearchGroup
 
         for ( int i = 0 ; i < sequences.size() ; ++i )
         {
-            collection.add( new Block( sequences.get(i) ));
+            collection.add( new SequenceBlock( sequences.get(i) ));
         }
 
         recalculateAll();
@@ -47,7 +47,7 @@ public class SearchGroup
 
         for ( int i = 0 ; i < this.collection.size() ; ++i )
         {
-            collection.get(i).process(); // gets every Block ready by calculating set and vector for the sequence
+            collection.get(i).process( collection.size() , termCollectionCount , useTF , useIDF ); // gets every Block ready by calculating set and vector for the sequence
         }
     }
 
@@ -76,12 +76,13 @@ public class SearchGroup
     {
         long cumulativeTime = 0 ;
         this.lastQuery = query;
-        Block QueryAsBlock = new Block(query);
-        QueryAsBlock.process();
+
+        SequenceBlock queryAsSequenceBlock = new SequenceBlock(query);
+        queryAsSequenceBlock.process( collection.size() , termCollectionCount , useTF , useIDF );
 
         for ( int i = 0 ; i < collection.size() ; ++i )
         {
-            TimeNSimilarity returned = measure.calculateSimilarity( QueryAsBlock , collection.get(i) );
+            TimeNSimilarity returned = measure.calculateSimilarity(queryAsSequenceBlock, collection.get(i) );
             collection.get(i).lastSimilarityValue = returned.similarity;
             cumulativeTime += returned.time;
         }
@@ -90,13 +91,12 @@ public class SearchGroup
         return cumulativeTime;
     }
 
-    public void filterSelection(SelectionOperator operator )
+    public void filterSelection( SelectionOperator operator )
     {
         operator.ApplyOperator(this); // apply range on ourselves
 
         recalculateAll();
     }
-
 
     private void sortCollection()
     {
@@ -122,7 +122,7 @@ public class SearchGroup
 
         for ( int i = 0 ; i < collection.size() ; ++i )
         {
-            builder += "rank "+ i + " : " + collection.get(i).NativeSequence.getSequence() + " " + collection.get(i).lastSimilarityValue + '\n' ;
+            builder += "rank "+ i + " : " + collection.get(i).getSequence().getSequence() + " " + collection.get(i).lastSimilarityValue + '\n' ;
         }
 
         return builder + "} \n";
@@ -165,7 +165,6 @@ public class SearchGroup
         return sum;
     }
 
-
     public static SearchGroup fromXML ( String filepath , boolean useTF , boolean useIDF )
     {
         try
@@ -191,57 +190,5 @@ public class SearchGroup
         }
 
         return null;
-    }
-
-    // TODO: ugly ass thing, reconsider this decision, whole things feels like a hack!
-    public class Block
-    {
-        // Block houses the sequence, the set and the vector corresponding to the sequence
-        // internal representation used
-
-        private Sequence NativeSequence;
-        private SetSequence SequenceAsSet ;
-        private VectorSequence SequenceAsVector;
-        public double lastSimilarityValue; // used for sorting or trimming the current collection after applying some operation
-
-        public Block(Sequence nativeSequence )
-        {
-            NativeSequence = nativeSequence;
-            SequenceAsSet = new SetSequence(NativeSequence.getSequence());
-            lastSimilarityValue = -1; // not yet computed
-        }
-
-        public void process()
-        {
-            if ( useIDF )
-                SequenceAsVector = new VectorSequence(NativeSequence.getSequence() , collection.size() , termCollectionCount , useTF );
-            else
-                SequenceAsVector = new VectorSequence(NativeSequence.getSequence());
-        }
-
-        public SetSequence getSequenceAsSet()
-        {
-            return SequenceAsSet;
-        }
-
-        public VectorSequence getSequenceAsVector()
-        {
-            return SequenceAsVector;
-        }
-
-        public Sequence getSequence()
-        {
-            return NativeSequence;
-        }
-
-        public long getSetPreProcessingTime ()
-        {
-            return getSequenceAsSet().getPreprocessTime();
-        }
-
-        public long getVectorPreProcessingTime ()
-        {
-            return getSequenceAsVector().getPreprocessTime();
-        }
     }
 }
