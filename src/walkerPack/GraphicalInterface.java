@@ -44,8 +44,6 @@ public class GraphicalInterface extends Application
 
 
         // TODO: move this elsewhere
-
-        EquivalenceManager.initManager();
     }
 
     public static void main(String[] args)

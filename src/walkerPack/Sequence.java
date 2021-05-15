@@ -53,6 +53,13 @@ public class Sequence
         this.description = description;
     }
 
+    public Sequence( String sequence )
+    {
+        this.sequence = sequence;
+        this.accession = "none";
+        this.description = "none";
+    }
+
     public static Sequence fromXML ( String sequencePath ) throws InternalApplicationException
     {
         try
@@ -74,6 +81,28 @@ public class Sequence
         {
             throw new InternalApplicationException("Invalid Path Specified!");
         }
+    }
+
+    public static int[] countTermFreq ( String sequence )
+    {
+        int tf[] = new int [9];
+
+        for ( int i = 0 ; i < sequence.length() ; ++i )
+        {
+            //TODO: not cleanest way to do it, but performant O(1) every time
+            ++tf[EquivalenceManager.NuclMapper(sequence.charAt(i))] ;
+        }
+
+        return tf;
+    }
+
+    public static Sequence fromXML ( Node RNAroot ) throws InternalApplicationException
+    {
+        // TODO: warning this assumes that children are in the order specified by the document and that not TEXT is located between them
+
+        NodeList children = RNAroot.getChildNodes();
+        return new Sequence( children.item(3).getTextContent() , children.item(0).getTextContent() ,
+                children.item(2).getTextContent() );
     }
 
     public Element toXML ( Document doc )

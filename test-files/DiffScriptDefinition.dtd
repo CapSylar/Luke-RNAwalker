@@ -1,0 +1,61 @@
+<?xml encoding="UTF-8"?>
+
+        <!ELEMENT Diff (meta,EditScript)>
+        <!ATTLIST Diff
+                xmlns CDATA #FIXED ''>
+
+        <!ELEMENT meta (SourceString,DestinationString)>
+        <!ATTLIST meta
+                xmlns CDATA #FIXED ''>
+
+        <!ELEMENT EditScript (Insert | Update | Delete)*>
+        <!ATTLIST EditScript
+                xmlns CDATA #FIXED ''>
+
+        <!ELEMENT SourceString (#PCDATA)>
+        <!ATTLIST SourceString
+                xmlns CDATA #FIXED ''>
+
+        <!ELEMENT DestinationString (#PCDATA)>
+        <!ATTLIST DestinationString
+                xmlns CDATA #FIXED ''>
+
+        <!ELEMENT Insert (nucl,insertIndex,reverseIndex)>
+        <!ATTLIST Insert
+                xmlns CDATA #FIXED ''>
+
+        <!ELEMENT Update (newNucl,oldNucl,updateIndex,reverseIndex)>
+        <!ATTLIST Update
+                xmlns CDATA #FIXED ''>
+
+        <!ELEMENT Delete (nucl ,deleteIndex , reverseIndex)>
+        <!ATTLIST Delete
+                xmlns CDATA #FIXED ''>
+
+        <!ELEMENT insertIndex (#PCDATA)>
+        <!ATTLIST insertIndex
+                xmlns CDATA #FIXED ''>
+
+        <!ELEMENT updateIndex (#PCDATA)>
+        <!ATTLIST updateIndex
+                xmlns CDATA #FIXED ''>
+
+        <!ELEMENT deleteIndex (#PCDATA)>
+        <!ATTLIST deleteIndex
+                xmlns CDATA #FIXED ''>
+
+        <!ELEMENT nucl (#PCDATA)>
+        <!ATTLIST nucl
+                xmlns CDATA #FIXED ''>
+
+        <!ELEMENT newNucl (#PCDATA)>
+        <!ATTLIST newNucl
+                xmlns CDATA #FIXED ''>
+
+        <!ELEMENT oldNucl (#PCDATA)>
+        <!ATTLIST oldNucl
+                xmlns CDATA #FIXED ''>
+
+        <!ELEMENT reverseIndex (#PCDATA)>
+        <!ATTLIST reverseIndex
+                xmlns CDATA #FIXED ''>
