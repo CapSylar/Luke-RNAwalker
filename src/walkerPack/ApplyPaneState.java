@@ -4,45 +4,89 @@ import javafx.beans.property.DoubleProperty;
 
 class ApplyPaneState
 {
-   static String Seq = "" ;
-   static String Diff = "" ;
-   static String ResultingSeq = "" ;
+   private String Seq = "" ;
+   private String Diff = "" ;
+   private String ResultingSeq = "" ;
 
-    public static String getSeq()
+   private ApplyPaneView currentView;
+
+    public ApplyPaneState(ApplyPaneView currentView)
+    {
+        this.currentView = currentView;
+    }
+
+    public String getSeq()
     {
         return Seq;
     }
 
-    public static void setSeq(String seq)
+    public void setSeq(String seq)
     {
         Seq = seq;
     }
 
-    public static String getDiff()
+    public String getDiff()
     {
         return Diff;
     }
 
-    public static void setDiff(String diff)
+    public void setDiff(String diff)
     {
         Diff = diff;
     }
 
-    public static String getResultingSeq()
+    public String getResultingSeq()
     {
         return ResultingSeq;
     }
 
-    public static void setResultingSeq(String resultingSeq)
+    public void setResultingSeq(String resultingSeq)
     {
         ResultingSeq = resultingSeq;
     }
 
-    public static void applyDiff (DoubleProperty Progress )
+    public void loadSeqButtonPressed()
+    {
+        this.currentView.setProgressBar(0); // reset just in case
+        String append = Utilities.BrowseForFile("Browse for Seq");
+
+        if ( append != null )
+        {
+            this.currentView.setSeqField(append);
+            Seq = append;
+        }
+    }
+
+    public void loadDiffButtonPressed()
+    {
+        this.currentView.setProgressBar(0); // reset just in case
+        String append = Utilities.BrowseForFile("Browse for Diff Script");
+
+        if ( append != null )
+        {
+            this.currentView.setDiffField(append);
+            Diff = append;
+        }
+    }
+
+    public void saveButtonPressed()
+    {
+        this.currentView.setProgressBar(0); // reset just in case
+        String append = Utilities.SaveFileLocation("Save Location for Patched Sequence");
+
+        if ( append != null )
+        {
+            this.currentView.setResultField(append);
+            this.ResultingSeq = append;
+        }
+    }
+
+
+    public void applyDiff (DoubleProperty Progress)
     {
         try
         {
-            DiffApplicator applicator = new DiffApplicator(ApplyPaneState.Seq) ; // does logging and checking itself
+            DiffApplicator applicator = new DiffApplicator(Seq) ; // does logging and checking itself
 
             //TODO: find a better way to do this
             // we check the save path before executing the apply because the apply routine updates the progress bar

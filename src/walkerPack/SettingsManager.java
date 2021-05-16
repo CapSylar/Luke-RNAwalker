@@ -22,18 +22,9 @@ public class SettingsManager implements Serializable
         return insertCost;
     }
 
-    public void setInsertCost(String InsertCost)
+    public void setInsertCost(int insertCost)
     {
-        try
-        {
-            insertCost = Integer.parseInt(InsertCost);
-        }
-        catch ( NumberFormatException exc )
-        {
-            ; // do nothing
-        }
-//        PrintState();
-
+        this.insertCost = insertCost;
     }
 
     public int getDeleteCost()
@@ -41,18 +32,9 @@ public class SettingsManager implements Serializable
         return deleteCost;
     }
 
-    public void setDeleteCost(String DeleteCost)
+    public void setDeleteCost(int deleteCost)
     {
-        try
-        {
-            deleteCost = Integer.parseInt(DeleteCost);
-        }
-        catch ( NumberFormatException exc )
-        {
-            ; // do nothing
-        }
-//        PrintState();
-
+        this.deleteCost = deleteCost;
     }
 
     public int getUpdateCost()
@@ -60,17 +42,9 @@ public class SettingsManager implements Serializable
         return updateCost;
     }
 
-    public void setUpdateCost(String UpdateCost)
+    public void setUpdateCost(int updateCost)
     {
-        try
-        {
-            updateCost = Integer.parseInt(UpdateCost);
-        }
-        catch ( NumberFormatException exc )
-        {
-            ; // do nothing
-        }
-//        PrintState();
+        this.updateCost = updateCost;
     }
 
     public void PrintState()

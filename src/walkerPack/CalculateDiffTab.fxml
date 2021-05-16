@@ -1,19 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXProgressBar?>
-<?import com.jfoenix.controls.JFXTabPane?>
-<?import com.jfoenix.controls.JFXTextField?>
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Tab?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.layout.StackPane?>
-<?import javafx.scene.text.Text?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="857.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="walkerPack.GFXController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="857.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="walkerPack.GFXController">
    <children>
       <JFXTabPane prefHeight="504.0" prefWidth="777.0" stylesheets="@../resources/solarized.css">
          <tabs>
@@ -38,7 +31,7 @@
                               <RowConstraints maxHeight="52.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
-                              <JFXButton fx:id="CalculateDiffPaneBrowse1Button" onAction="#OnCalculateDiffPaneButton1Pressed" prefHeight="50.0" prefWidth="150.0" text="Load Seq1" />
+                              <JFXButton fx:id="CalculateDiffPaneBrowse1Button" onAction="#OnCalculateDiffPaneLoadSeq1Pressed" prefHeight="50.0" prefWidth="150.0" text="Load Seq1" />
                               <Text fx:id="CalculateDiffPaneSequence1Field" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-field" text="No File Selected" wrappingWidth="465.65600204467773" GridPane.columnIndex="1" />
                               <Text fx:id="CalculateDiffPaneSequence2Field" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-field" text="No File Selected" wrappingWidth="483.65600204467773" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                               <JFXButton fx:id="CalculateDiffPaneBrowse2Button" onAction="#OnCalculateDiffPaneButton2Pressed" prefHeight="67.0" prefWidth="152.0" text="Load Seq2" GridPane.rowIndex="2" />

@@ -1,20 +1,51 @@
 package walkerPack;
 import com.jfoenix.controls.*;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.scene.text.Text;
 
 public class GFXController
 {
-    @FXML
-    private JFXButton CalculateDiffPaneCalculateDiffButton;
+    private DiffPaneState DiffPaneStateInstance;
+    private DiffPaneView DiffPaneViewInstance;
+
+    private ApplyPaneState ApplyPaneStateInstance;
+    private ApplyPaneView ApplyPaneViewInstance;
+
+    private SettingsPaneState SettingsPaneStateInstance;
+    private SettingsPaneView SettingsPaneViewInstance;
 
     @FXML
-    private JFXButton CalculateDiffPaneBrowse1Button;
+    public void initialize()
+    {
+        // Hook Model and View instance of the Diff Pane
+        this.DiffPaneViewInstance = new DiffPaneView( this.CalculateDiffPaneSequence1Field , this.CalculateDiffPaneSequence2Field ,
+                CalculateDiffPaneTextField , CalculateDiffPaneProgressBar );
+        this.DiffPaneStateInstance = new DiffPaneState( this.DiffPaneViewInstance );
 
-    @FXML
-    private JFXButton CalculateDiffPaneBrowse2Button;
+        // Hook Model and View instance of the Apply Diff Pane
+        this.ApplyPaneViewInstance = new ApplyPaneView( ApplyDiffPaneSeqField , ApplyDiffPaneDiffField ,
+                ApplyDiffPaneResultField , ApplyDiffPaneProgressBar );
+        this.ApplyPaneStateInstance = new ApplyPaneState( this.ApplyPaneViewInstance );
+
+        // Hook Model and View instance of the Settings Pane
+
+        this.SettingsPaneViewInstance = new SettingsPaneView( SettingsPaneInsertCostField , SettingsPaneDeleteCostField ,
+                SettingsPaneUpdateCostField, SettingsPaneDiffField , SettingsPaneSaveReverseField  );
+        this.SettingsPaneStateInstance = new SettingsPaneState( this.SettingsPaneViewInstance );
+
+        HookTextFieldListeners(); // hook up the text field listeners
+        InitTextFieldsContents() ;
+    }
+
+
+//    @FXML
+//    private JFXButton CalculateDiffPaneCalculateDiffButton;
+//
+//    @FXML
+//    private JFXButton CalculateDiffPaneBrowse1Button;
+//
+//    @FXML
+//    private JFXButton CalculateDiffPaneBrowse2Button;
 
     @FXML
     private Text CalculateDiffPaneSequence1Field;
@@ -25,73 +56,55 @@ public class GFXController
     @FXML
     private JFXProgressBar CalculateDiffPaneProgressBar;
 
-    @FXML
-    private JFXButton CalculateDiffTabSaveDiffButton;
+//    @FXML
+//    private JFXButton CalculateDiffTabSaveDiffButton;
 
-    @FXML
-    private JFXTextField CalculateDiffPaneSequence1Field1;
-
-    @FXML
-    private JFXTextField CalculateDiffPaneSequence2Field1;
+//    @FXML
+//    private JFXTextField CalculateDiffPaneSequence1Field1;
+//
+//    @FXML
+//    private JFXTextField CalculateDiffPaneSequence2Field1;
 
     @FXML
     private Text CalculateDiffPaneTextField;
 
     @FXML
-    void OnCalculateDiffPaneButton1Pressed()
+    void OnCalculateDiffPaneLoadSeq1Pressed()
     {
-        CalculateDiffPaneProgressBar.progressProperty().set(0);
-        String append = Utilities.BrowseForFile("Browse for Seq 1");
-
-        if ( append != null )
-        {
-            CalculateDiffPaneSequence1Field.setText(Utilities.TruncateIfLonger(append,60));
-            DiffPaneState.setSeq1Path(append);
-        }
+        // Call State of Diff Pane
+        this.DiffPaneStateInstance.LoadFirstSeqButtonPressed();
     }
 
     @FXML
     void OnCalculateDiffPaneButton2Pressed()
     {
-        CalculateDiffPaneProgressBar.progressProperty().set(0);
-        String append = Utilities.BrowseForFile("Browse for Seq 2");
-
-        if ( append != null )
-        {
-            CalculateDiffPaneSequence2Field.setText(Utilities.TruncateIfLonger(append,60));
-            DiffPaneState.setSeq2Path(append);
-        }
+        // Call State of Diff Pane
+        this.DiffPaneStateInstance.LoadSecondSeqButtonPressed();
     }
 
     @FXML
     void OnCalculateDiffTabSaveDiffButtonPressed()
     {
-        CalculateDiffPaneProgressBar.progressProperty().set(0);
-        String append = Utilities.SaveFileLocation("Save Location for Diff Script");
-
-        if ( append != null )
-        {
-            CalculateDiffPaneTextField.setText(Utilities.TruncateIfLonger( append , 30 ));
-            DiffPaneState.setDiffPath(append);
-        }
+        // Call State of Diff Pane
+        this.DiffPaneStateInstance.SaveDiffButtonPressed();
     }
 
     @FXML
     void OnCalculateDiffPaneCalculateDiffButtonPressed()
     {
-        DiffPaneState.Calculate(CalculateDiffPaneProgressBar.progressProperty());
+        this.DiffPaneStateInstance.Calculate(CalculateDiffPaneProgressBar.progressProperty());
     }
 
     // ******************************** APPLY DIFF PANE START
 
-    @FXML
-    private JFXButton ApplyDiffPaneApplyButton;
-
-    @FXML
-    private JFXButton ApplyDiffPaneBrowseSeqButton;
-
-    @FXML
-    private JFXButton ApplyDiffPaneBrowseScriptButton;
+//    @FXML
+//    private JFXButton ApplyDiffPaneApplyButton;
+//
+//    @FXML
+//    private JFXButton ApplyDiffPaneBrowseSeqButton;
+//
+//    @FXML
+//    private JFXButton ApplyDiffPaneBrowseScriptButton;
 
     @FXML
     private Text ApplyDiffPaneSeqField;
@@ -102,55 +115,37 @@ public class GFXController
     @FXML
     private Text ApplyDiffPaneResultField;
 
-    @FXML
-    private JFXButton ApplyDiffPaneSaveButton;
+//    @FXML
+//    private JFXButton ApplyDiffPaneSaveButton;
 
     @FXML
     private JFXProgressBar ApplyDiffPaneProgressBar;
 
     @FXML
-    void OnApplyDiffPaneApplyButtonPressed()
-    {
-        ApplyPaneState.applyDiff( ApplyDiffPaneProgressBar.progressProperty() ) ;
-    }
-
-    @FXML
     void OnApplyDiffPaneBrowseSeqButtonPressed()
     {
-        ApplyDiffPaneProgressBar.progressProperty().set(0);
-        String append = Utilities.BrowseForFile("Browse for Seq");
-
-        if ( append != null )
-        {
-            ApplyDiffPaneSeqField.setText(Utilities.TruncateIfLonger(append,60));
-            ApplyPaneState.setSeq(append);
-        }
+        // Call State of Apply Diff Pane
+        this.ApplyPaneStateInstance.loadSeqButtonPressed();
     }
 
     @FXML
     void OnApplyDiffPaneBrowseScriptButtonPressed()
     {
-        ApplyDiffPaneProgressBar.progressProperty().set(0);
-        String append = Utilities.BrowseForFile("Browse for Diff Script");
-
-        if ( append != null )
-        {
-            ApplyDiffPaneDiffField.setText(Utilities.TruncateIfLonger(append,60));
-            ApplyPaneState.setDiff(append);
-        }
+        // Call State of Apply Diff Pane
+        this.ApplyPaneStateInstance.loadDiffButtonPressed();
     }
 
     @FXML
     void OnApplyDiffPaneSaveButtonPressed()
     {
-        ApplyDiffPaneProgressBar.progressProperty().set(0);
-        String append = Utilities.SaveFileLocation("Save Location for Patched Sequence");
+        // Call State of Apply Diff Pane
+        this.ApplyPaneStateInstance.saveButtonPressed();
+    }
 
-        if ( append != null )
-        {
-            ApplyDiffPaneResultField.setText(Utilities.TruncateIfLonger( append , 30));
-            ApplyPaneState.setResultingSeq(append);
-        }
+    @FXML
+    void OnApplyDiffPaneApplyButtonPressed()
+    {
+        this.ApplyPaneStateInstance.applyDiff( ApplyDiffPaneProgressBar.progressProperty() ) ;
     }
 
     //*******************************
@@ -165,8 +160,8 @@ public class GFXController
     @FXML
     private JFXTextField SettingsPaneUpdateCostField;
 
-    @FXML
-    private JFXButton SettingsPaneLoadDIffButton;
+//    @FXML
+//    private JFXButton SettingsPaneLoadDIffButton;
 
     @FXML
     private Text SettingsPaneDiffField;
@@ -174,96 +169,54 @@ public class GFXController
     @FXML
     private Text SettingsPaneSaveReverseField;
 
-    @FXML
-    private JFXButton SettingsPaneSaveReverseButton;
-
-    @FXML
-    private JFXButton SettingsPaneReverseDiffButton;
-
-    @FXML
-    public void initialize()
-    {
-        HookTextFieldListeners(); // hook up the text field listeners
-        InitTextFieldsContents() ;
-    }
+//    @FXML
+//    private JFXButton SettingsPaneSaveReverseButton;
+//
+//    @FXML
+//    private JFXButton SettingsPaneReverseDiffButton;
 
     @FXML
     void OnSettingsPaneLoadDIffButtonPressed()
     {
-        String append = Utilities.BrowseForFile("Browse for Diff");
-
-        if ( append != null )
-        {
-            SettingsPaneDiffField.setText(Utilities.TruncateIfLonger(append , 40));
-            ReverserPaneState.setDiffPath(append);
-        }
+        this.SettingsPaneStateInstance.loadDiffButtonPressed();
     }
 
     @FXML
     void OnSettingsPaneSaveReverseButtonPressed()
     {
-        String append = Utilities.SaveFileLocation("Save Reverse Diff");
-
-        if ( append != null )
-        {
-            SettingsPaneSaveReverseField.setText(Utilities.TruncateIfLonger(append , 40));
-            ReverserPaneState.setReverseSavePath(append);
-        }
+        this.SettingsPaneStateInstance.saveReverseButtonPressed();
     }
 
     @FXML
     void OnSettingsPaneReverseDiffButtonPressed()
     {
-        ReverserPaneState.reverse();
+        this.SettingsPaneStateInstance.reverse();
     }
 
-        public void HookTextFieldListeners()
+
+    public void HookTextFieldListeners()
     {
-        SettingsPaneInsertCostField.textProperty().addListener(new ChangeListener<String>()
+        SettingsPaneInsertCostField.textProperty().addListener((observableValue, oldS, newS) ->
         {
-            @Override
-            public void changed(ObservableValue<? extends String> observableValue, String oldS , String newS )
-            {
-                if ( !newS.isBlank() && newS.matches("\\d*") )
-                {
-                    SettingsPaneInsertCostField.setText(newS);
-                    GraphicalInterface.currentManager.setInsertCost(newS);
-                }
-            }
+            if ( !newS.isBlank() && newS.matches("\\d*") )
+                SettingsPaneStateInstance.setInsertCost(newS);
         });
 
-        SettingsPaneDeleteCostField.textProperty().addListener(new ChangeListener<String>()
+        SettingsPaneDeleteCostField.textProperty().addListener((observableValue, oldS, newS) ->
         {
-            @Override
-            public void changed(ObservableValue<? extends String> observableValue, String oldS , String newS )
-            {
-                if ( !newS.isBlank() && newS.matches("\\d*") )
-                {
-                    SettingsPaneDeleteCostField.setText(newS);
-                    GraphicalInterface.currentManager.setDeleteCost(newS);
-                }
-            }
+            if ( !newS.isBlank() && newS.matches("\\d*") )
+                SettingsPaneStateInstance.setDeleteCost(newS);
         });
 
-        SettingsPaneUpdateCostField.textProperty().addListener(new ChangeListener<String>()
+        SettingsPaneUpdateCostField.textProperty().addListener((observableValue, oldS, newS) ->
         {
-            @Override
-            public void changed(ObservableValue<? extends String> observableValue, String oldS , String newS )
-            {
-                if ( !newS.isBlank() && newS.matches("\\d*") )
-                {
-                    SettingsPaneUpdateCostField.setText(newS);
-                    GraphicalInterface.currentManager.setUpdateCost(newS);
-                }
-            }
+            if ( !newS.isBlank() && newS.matches("\\d*") )
+                SettingsPaneStateInstance.setUpdateCost(newS);
         });
     }
 
     private void InitTextFieldsContents()
     {
-        // Settings pane, gets text field contents from the SettingsManager
-        SettingsPaneInsertCostField.setText(""+GraphicalInterface.currentManager.getInsertCost());
-        SettingsPaneDeleteCostField.setText(""+GraphicalInterface.currentManager.getDeleteCost());
-        SettingsPaneUpdateCostField.setText(""+GraphicalInterface.currentManager.getUpdateCost());
+        this.SettingsPaneViewInstance.initView();
     }
 }
