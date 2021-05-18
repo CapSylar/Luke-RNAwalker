@@ -99,3 +99,12 @@
 {
     -fx-text-fill: -fx-text-color ;
 }
+
+.text-area {
+    -fx-font-size: 17;
+    -fx-text-fill: #ffffff;
+}
+
+.text-area .content {
+    -fx-background-color: -fx-primary ;
+}

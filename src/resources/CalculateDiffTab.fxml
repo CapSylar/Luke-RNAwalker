@@ -174,7 +174,7 @@
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="my-tab-pane">
                      <children>
-                        <TextArea fx:id="SearchEnginePaneResultsField" editable="false" layoutX="12.0" layoutY="10.0" prefHeight="467.0" prefWidth="604.0" />
+                        <TextArea fx:id="SearchEnginePaneResultsField" layoutX="12.0" layoutY="10.0" prefHeight="467.0" prefWidth="604.0" styleClass="text-area" />
                         <JFXButton layoutX="692.0" layoutY="427.0" onAction="#OnSearchEnginePaneSearchPressed" text="SEARCH" />
                         <GridPane layoutX="642.0" layoutY="39.0" prefHeight="281.0" prefWidth="201.0">
                           <columnConstraints>
@@ -196,7 +196,7 @@
                            </children>
                         </GridPane>
                         <Text layoutX="684.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-field" text="Operations" wrappingWidth="117.84000396728516" />
-                        <JFXTextField fx:id="SearchEnginePaneQueryField" layoutX="642.0" layoutY="320.0" prefHeight="40.0" prefWidth="202.0" />
+                        <JFXTextField fx:id="SearchEnginePaneQueryField" layoutX="642.0" layoutY="320.0" prefHeight="40.0" prefWidth="202.0" text="Enter Sequence" />
                      </children>
                   </AnchorPane>
               </content>
