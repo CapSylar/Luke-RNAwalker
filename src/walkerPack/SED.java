@@ -1,8 +1,10 @@
 package walkerPack;
 
+import SearchGroupOperations.TimeNSimilarity;
+
 public class SED extends SimilarityMeasure
 {
-    public TimeNSimilarity getSimilarity ( Sequence first , Sequence second )
+    public TimeNSimilarity getSimilarity (Sequence first , Sequence second )
     {
         long start = System.nanoTime();
         double sim = getSimilarity( first , second , null );

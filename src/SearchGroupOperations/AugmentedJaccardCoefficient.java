@@ -1,5 +1,7 @@
-package walkerPack;
+package SearchGroupOperations;
 
+
+import walkerPack.SetSequence;
 
 public class AugmentedJaccardCoefficient extends SetSimilarityMethod
 {

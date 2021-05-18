@@ -28,7 +28,7 @@
 .tab
 {
     -fx-background-color: #073642 ;
-    -fx-pref-width: 274 ;
+    -fx-pref-width: 205 ;
     -fx-pref-height: 60 ;
     -fx-underline: #ffffff ;
 }
@@ -36,6 +36,11 @@
 .tab-header-background
 {
     -fx-background-color: #073642 ;
+}
+
+.popup-background
+{
+    -fx-background-color: #3a112a;
 }
 
 .text-field

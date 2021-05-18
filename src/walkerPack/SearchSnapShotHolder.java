@@ -1,5 +1,7 @@
 package walkerPack;
 
+import SearchGroupOperations.SelectionOperator;
+
 import java.util.ArrayList;
 
 public class SearchSnapShotHolder
@@ -8,20 +10,28 @@ public class SearchSnapShotHolder
     // at the end of every applied measure or filtering, making it able to view the results after every stage and the time it took
 
     private SearchGroup group;
-    private ArrayList<SearchGroupSnapshot> current;
+    private ArrayList<SearchGroupSnapshot> SnapShots;
 
     public SearchSnapShotHolder(SearchGroup group )
     {
         this.group = group;
     }
 
-    public void applyOperationStack( Sequence query , ArrayList<SearchGroupOperation> stack )
+    public void applyOperationStack( Sequence query , SearchGroupOperation stack[] )
     {
-        current = new ArrayList<>();
+        SnapShots = new ArrayList<>();
         // apply operations on the stack on by one and create a 'snapshot' each time
-        for ( int i = 0 ; i < stack.size() ; ++i )
+        for ( int i = 0 ; i < stack.length; ++i )
         {
-            SearchGroupOperation currentOperation = stack.get(i);
+            SearchGroupOperation currentOperation = stack[i];
+
+            // if null, skip it , but create a snapshot anyways, just put a pointer to the last snapshot
+            if ( currentOperation == null )
+            {
+                SnapShots.add(SnapShots.get(SnapShots.size()-1)); // copy last one, no cost involved
+                continue;
+            }
+
             long timeItTook = 0; // time it took for filter selection is zero, we don't need time reporting for it
 
             if ( currentOperation instanceof SimilarityMeasure )
@@ -31,12 +41,12 @@ public class SearchSnapShotHolder
             else
                 this.group.filterSelection((SelectionOperator) currentOperation);
 
-            current.add(new SearchGroupSnapshot( this.group.toString() , timeItTook));
+            SnapShots.add(new SearchGroupSnapshot( this.group.toString() , timeItTook));
         }
     }
 
     public SearchGroupSnapshot getSnapshot ( int i )
     {
-        return current.get(i);
+        return SnapShots.get(i);
     }
 }

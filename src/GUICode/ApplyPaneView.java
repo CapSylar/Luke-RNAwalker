@@ -1,7 +1,8 @@
-package walkerPack;
+package GUICode;
 
 import com.jfoenix.controls.JFXProgressBar;
 import javafx.scene.text.Text;
+import walkerPack.Utilities;
 
 public class ApplyPaneView
 {

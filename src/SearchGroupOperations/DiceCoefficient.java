@@ -1,9 +1,11 @@
-package walkerPack;
+package SearchGroupOperations;
+
+import walkerPack.SetSequence;
 
 public class DiceCoefficient extends SetSimilarityMethod
 {
     @Override
-    public TimeNSimilarity getSimilarity( SetSequence seq, SetSequence otherSeq )
+    public TimeNSimilarity getSimilarity(SetSequence seq, SetSequence otherSeq )
     {
         long start = System.nanoTime();
         // Dice = 2 * (A inter B) / |A| + |B|

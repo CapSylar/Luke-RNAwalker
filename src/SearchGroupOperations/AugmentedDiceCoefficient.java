@@ -1,9 +1,11 @@
-package walkerPack;
+package SearchGroupOperations;
+
+import walkerPack.SetSequence;
 
 public class AugmentedDiceCoefficient extends SetSimilarityMethod
 {
     @Override
-    public TimeNSimilarity getSimilarity( SetSequence seq, SetSequence otherSeq )
+    public TimeNSimilarity getSimilarity(SetSequence seq, SetSequence otherSeq )
     {
         // DICE = 2 * (A inter B) / |A| + |B| taking into consideration ambiguity symbols
         long start = System.nanoTime();

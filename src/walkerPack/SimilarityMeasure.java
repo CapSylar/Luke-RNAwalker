@@ -1,14 +1,18 @@
 package walkerPack;
 
+import SearchGroupOperations.SetSimilarityMethod;
+import SearchGroupOperations.TimeNSimilarity;
+import SearchGroupOperations.VectorSimilarityMethod;
+
 public abstract class SimilarityMeasure extends SearchGroupOperation
 {
     public TimeNSimilarity calculateSimilarity(SequenceBlock query , SequenceBlock seq)
     {
-        if ( this instanceof VectorSimilarityMethod )
+        if ( this instanceof VectorSimilarityMethod)
         {
             return ((VectorSimilarityMethod) this).getSimilarity( query.getSequenceAsVector() , seq.getSequenceAsVector() );
         }
-        else if ( this instanceof  SetSimilarityMethod )
+        else if ( this instanceof SetSimilarityMethod)
         {
             return ((SetSimilarityMethod) this).getSimilarity( query.getSequenceAsSet() , seq.getSequenceAsSet() );
         }

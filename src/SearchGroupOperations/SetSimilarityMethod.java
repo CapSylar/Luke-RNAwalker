@@ -1,4 +1,7 @@
-package walkerPack;
+package SearchGroupOperations;
+
+import walkerPack.SetSequence;
+import walkerPack.SimilarityMeasure;
 
 public abstract class SetSimilarityMethod extends SimilarityMeasure
 {

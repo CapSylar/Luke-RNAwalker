@@ -1,5 +1,6 @@
 package walkerPack;
 
+import GUICode.GFXController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -14,18 +15,24 @@ public class GraphicalInterface extends Application
     public static SettingsManager currentManager ;
     public static Pane rootPane;
     public static LoggingManager logManager;
+    public static Stage PrimaryStage;
+    public static Scene KNNPane;
+    public static Scene RangeQueryPane;
 
     @Override
     public void start(Stage primaryStage) throws Exception
     {
+        PrimaryStage = primaryStage;
+
         FXMLLoader currentLoader = new FXMLLoader() ;
 
-        Parent root = currentLoader.load(getClass().getResource("CalculateDiffTab.fxml"));
+        Parent root = currentLoader.load(getClass().getResource("../resources/CalculateDiffTab.fxml"));
         rootPane = ( Pane ) root  ;
 
-        Pane snackBarPanePositive = currentLoader.load(getClass().getResource("SnackBarPaneGood.fxml"));
-        Pane snackBarPaneNegative = currentLoader.load(getClass().getResource("SnackBarPaneError.fxml"));
-
+        Pane snackBarPanePositive = currentLoader.load(getClass().getResource("../resources/SnackBarPaneGood.fxml"));
+        Pane snackBarPaneNegative = currentLoader.load(getClass().getResource("../resources/SnackBarPaneError.fxml"));
+        KNNPane = new Scene(currentLoader.load(getClass().getResource("../resources/KNNPane.fxml"))) ;
+        RangeQueryPane = new Scene( currentLoader.load(getClass().getResource("../resources/RangeQueryPane.fxml")));
         // init logging manager
         logManager = new LoggingManager(  rootPane , snackBarPanePositive , snackBarPaneNegative );
 

@@ -1,6 +1,8 @@
-package walkerPack;
+package GUICode;
 import com.jfoenix.controls.*;
 import javafx.fxml.FXML;
+import javafx.scene.control.SplitMenuButton;
+import javafx.scene.control.TextArea;
 import javafx.scene.text.Text;
 
 public class GFXController
@@ -13,6 +15,9 @@ public class GFXController
 
     private SettingsPaneState SettingsPaneStateInstance;
     private SettingsPaneView SettingsPaneViewInstance;
+
+    private SearchEnginePaneState SearchEnginePaneStateInstance;
+    private SearchEnginePaneView SearchEnginePaneViewInstance;
 
     @FXML
     public void initialize()
@@ -33,10 +38,16 @@ public class GFXController
                 SettingsPaneUpdateCostField, SettingsPaneDiffField , SettingsPaneSaveReverseField  );
         this.SettingsPaneStateInstance = new SettingsPaneState( this.SettingsPaneViewInstance );
 
+        // Hook Model and View instance of the Search Engine Pane
+
+        this.SearchEnginePaneViewInstance = new SearchEnginePaneView( SearchEnginePaneResultsField , SearchEnginePaneMenuButton1,
+                SearchEnginePaneMenuButton2 , SearchEnginePaneMenuButton3 , SearchEnginePaneMenuButton4 ,
+                SearchEnginePaneMenuButton5 , SearchEnginePaneQueryField );
+
+        this.SearchEnginePaneStateInstance = new SearchEnginePaneState( this.SearchEnginePaneViewInstance );
         HookTextFieldListeners(); // hook up the text field listeners
         InitTextFieldsContents() ;
     }
-
 
 //    @FXML
 //    private JFXButton CalculateDiffPaneCalculateDiffButton;
@@ -213,10 +224,45 @@ public class GFXController
             if ( !newS.isBlank() && newS.matches("\\d*") )
                 SettingsPaneStateInstance.setUpdateCost(newS);
         });
+
+        SearchEnginePaneQueryField.textProperty().addListener((observableValue, oldS, newS) ->
+        {
+            if ( !newS.isBlank() )
+                SearchEnginePaneStateInstance.setQueryField(newS);
+        });
     }
 
     private void InitTextFieldsContents()
     {
         this.SettingsPaneViewInstance.initView();
     }
+
+    // Search Engine Tab Pane
+    @FXML
+    private TextArea SearchEnginePaneResultsField;
+
+    @FXML
+    private SplitMenuButton SearchEnginePaneMenuButton1;
+
+    @FXML
+    private SplitMenuButton SearchEnginePaneMenuButton2;
+
+    @FXML
+    private SplitMenuButton SearchEnginePaneMenuButton3;
+
+    @FXML
+    private SplitMenuButton SearchEnginePaneMenuButton4;
+
+    @FXML
+    private SplitMenuButton SearchEnginePaneMenuButton5;
+
+    @FXML
+    private JFXTextField SearchEnginePaneQueryField;
+
+    @FXML
+    void OnSearchEnginePaneSearchPressed()
+    {
+        this.SearchEnginePaneStateInstance.SearchPressed();
+    }
+
 }

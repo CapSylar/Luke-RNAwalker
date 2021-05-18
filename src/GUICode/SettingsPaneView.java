@@ -1,7 +1,9 @@
-package walkerPack;
+package GUICode;
 
 import com.jfoenix.controls.JFXTextField;
 import javafx.scene.text.Text;
+import walkerPack.GraphicalInterface;
+import walkerPack.Utilities;
 
 public class SettingsPaneView
 {
@@ -52,7 +54,7 @@ public class SettingsPaneView
     {
         // do all GUI initializations specific to this pane here
         // Settings pane, gets text field contents from the SettingsManager
-        InsertCostField.setText(""+GraphicalInterface.currentManager.getInsertCost());
+        InsertCostField.setText(""+ GraphicalInterface.currentManager.getInsertCost());
         DeleteCostField.setText(""+GraphicalInterface.currentManager.getDeleteCost());
         UpdateCostField.setText(""+GraphicalInterface.currentManager.getUpdateCost());
     }

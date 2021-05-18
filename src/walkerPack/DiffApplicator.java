@@ -28,7 +28,7 @@ public class DiffApplicator
         currentEditScript.apply( this.PatchedSequence , Progress );
     }
 
-    void SavePatchedSequence( String pathName )
+    public void SavePatchedSequence( String pathName )
     {
         try
         {

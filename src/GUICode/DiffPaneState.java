@@ -1,6 +1,10 @@
-package walkerPack;
+package GUICode;
 
 import javafx.beans.property.DoubleProperty;
+import walkerPack.DiffCreator;
+import walkerPack.GraphicalInterface;
+import walkerPack.InternalApplicationException;
+import walkerPack.Utilities;
 
 public class DiffPaneState
 {

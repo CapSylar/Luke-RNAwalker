@@ -1,4 +1,9 @@
-package walkerPack;
+package GUICode;
+
+import walkerPack.EditScript;
+import walkerPack.GraphicalInterface;
+import walkerPack.InternalApplicationException;
+import walkerPack.Utilities;
 
 public class SettingsPaneState
 {

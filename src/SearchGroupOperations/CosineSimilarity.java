@@ -1,4 +1,6 @@
-package walkerPack;
+package SearchGroupOperations;
+
+import walkerPack.VectorSequence;
 
 public class CosineSimilarity extends VectorSimilarityMethod
 {

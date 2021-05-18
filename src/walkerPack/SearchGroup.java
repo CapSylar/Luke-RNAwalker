@@ -1,16 +1,19 @@
 package walkerPack;
+import SearchGroupOperations.SelectionOperator;
+import SearchGroupOperations.TimeNSimilarity;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.File;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 
 public class SearchGroup
 {
-    ArrayList<SequenceBlock> collection;
+    public ArrayList<SequenceBlock> collection;
     int termCollectionCount[] = new int[9];
 
     private boolean useTF ;
@@ -119,10 +122,11 @@ public class SearchGroup
     {
         // list the ranked collection with last similarity info
         String builder = "Search Group{ last query used: " + (this.lastQuery != null ? this.lastQuery.getSequence() : "none") + "\n";
+        DecimalFormat currentFormat = new DecimalFormat("##.####") ;
 
         for ( int i = 0 ; i < collection.size() ; ++i )
         {
-            builder += "rank "+ i + " : " + collection.get(i).getSequence().getSequence() + " " + collection.get(i).lastSimilarityValue + '\n' ;
+            builder += "rank "+ i + " : " + collection.get(i).getSequence().getSequence() + "  Sim: " + currentFormat.format(collection.get(i).lastSimilarityValue ) + '\n' ;
         }
 
         return builder + "} \n";

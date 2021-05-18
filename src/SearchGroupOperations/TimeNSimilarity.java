@@ -1,4 +1,4 @@
-package walkerPack;
+package SearchGroupOperations;
 
 public class TimeNSimilarity
 {

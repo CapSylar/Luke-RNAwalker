@@ -15,7 +15,7 @@ public class DiffCreator
     }
 
 
-    void BuildDiff ( int costUpdate , int costDelete , int costInsert , DoubleProperty progress )
+    public void BuildDiff ( int costUpdate , int costDelete , int costInsert , DoubleProperty progress )
     {
         // TOFIX: progress is used anymore here, cleanup the whole interface again
 

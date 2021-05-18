@@ -1,4 +1,7 @@
-package walkerPack;
+package SearchGroupOperations;
+
+import walkerPack.SearchGroup;
+import walkerPack.SequenceBlock;
 
 import java.util.ArrayList;
 

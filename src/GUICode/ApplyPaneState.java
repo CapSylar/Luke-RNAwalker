@@ -1,8 +1,12 @@
-package walkerPack;
+package GUICode;
 
 import javafx.beans.property.DoubleProperty;
+import walkerPack.DiffApplicator;
+import walkerPack.GraphicalInterface;
+import walkerPack.InternalApplicationException;
+import walkerPack.Utilities;
 
-class ApplyPaneState
+public class ApplyPaneState
 {
    private String Seq = "" ;
    private String Diff = "" ;

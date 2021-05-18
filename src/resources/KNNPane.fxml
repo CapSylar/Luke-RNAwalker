@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="197.0" prefWidth="369.0" styleClass="popup-background" stylesheets="@solarized.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUICode.KNNPaneController">
+   <children>
+      <JFXButton layoutX="142.0" layoutY="125.0" onAction="#KNNPaneButtonPressed" text="Enter" />
+      <JFXTextField fx:id="KNNPaneTextField" layoutX="62.0" layoutY="68.0" />
+      <Text layoutX="148.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-field" text="Enter K:" />
+   </children>
+</AnchorPane>
