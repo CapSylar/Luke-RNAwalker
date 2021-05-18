@@ -1,12 +1,17 @@
 package GUICode;
 import com.jfoenix.controls.*;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.MenuButton;
 import javafx.scene.control.SplitMenuButton;
 import javafx.scene.control.TextArea;
 import javafx.scene.text.Text;
 
 public class GFXController
 {
+    private SimilarityPaneState SimilarityPaneStateInstance;
+    private SimilarityPaneView SimilarityPaneViewInstance;
+
     private DiffPaneState DiffPaneStateInstance;
     private DiffPaneView DiffPaneViewInstance;
 
@@ -22,6 +27,13 @@ public class GFXController
     @FXML
     public void initialize()
     {
+        // Hook Model and View instance of the Similarity Pane
+        this.SimilarityPaneViewInstance = new SimilarityPaneView( SimilarityPaneMenuButton ,
+                SimilarityPaneSequenceOneField , SimilarityPaneSequenceTwoField ,
+                SimilarityPaneSequenceOneProcessingField , SimilarityPaneSequenceTwoProcessingField,
+                SimilarityPaneTotalTimeField , SimilarityPaneSimilarityText );
+        this.SimilarityPaneStateInstance = new SimilarityPaneState( this.SimilarityPaneViewInstance );
+
         // Hook Model and View instance of the Diff Pane
         this.DiffPaneViewInstance = new DiffPaneView( this.CalculateDiffPaneSequence1Field , this.CalculateDiffPaneSequence2Field ,
                 CalculateDiffPaneTextField , CalculateDiffPaneProgressBar );
@@ -35,7 +47,7 @@ public class GFXController
         // Hook Model and View instance of the Settings Pane
 
         this.SettingsPaneViewInstance = new SettingsPaneView( SettingsPaneInsertCostField , SettingsPaneDeleteCostField ,
-                SettingsPaneUpdateCostField, SettingsPaneDiffField , SettingsPaneSaveReverseField  );
+                SettingsPaneUpdateCostField, SettingsPaneDiffField , SettingsPaneSaveReverseField , SettingsPaneEnableIDFBox , SettingsPaneEnableTFBox  );
         this.SettingsPaneStateInstance = new SettingsPaneState( this.SettingsPaneViewInstance );
 
         // Hook Model and View instance of the Search Engine Pane
@@ -46,17 +58,38 @@ public class GFXController
 
         this.SearchEnginePaneStateInstance = new SearchEnginePaneState( this.SearchEnginePaneViewInstance );
         HookTextFieldListeners(); // hook up the text field listeners
-        InitTextFieldsContents() ;
     }
 
-//    @FXML
-//    private JFXButton CalculateDiffPaneCalculateDiffButton;
-//
-//    @FXML
-//    private JFXButton CalculateDiffPaneBrowse1Button;
-//
-//    @FXML
-//    private JFXButton CalculateDiffPaneBrowse2Button;
+    // Similarity Pane
+
+    @FXML
+    private MenuButton SimilarityPaneMenuButton;
+
+    @FXML
+    private JFXTextField SimilarityPaneSequenceOneField;
+
+    @FXML
+    private JFXTextField SimilarityPaneSequenceTwoField;
+
+    @FXML
+    private Text SimilarityPaneSequenceOneProcessingField;
+
+    @FXML
+    private Text SimilarityPaneSequenceTwoProcessingField;
+
+    @FXML
+    private Text SimilarityPaneTotalTimeField;
+
+    @FXML
+    private Text SimilarityPaneSimilarityText;
+
+    @FXML
+    void onSimilarityPaneComparePressed()
+    {
+        this.SimilarityPaneStateInstance.compareButtonPressed();
+    }
+
+    // Calculate Diff Pane
 
     @FXML
     private Text CalculateDiffPaneSequence1Field;
@@ -66,15 +99,6 @@ public class GFXController
 
     @FXML
     private JFXProgressBar CalculateDiffPaneProgressBar;
-
-//    @FXML
-//    private JFXButton CalculateDiffTabSaveDiffButton;
-
-//    @FXML
-//    private JFXTextField CalculateDiffPaneSequence1Field1;
-//
-//    @FXML
-//    private JFXTextField CalculateDiffPaneSequence2Field1;
 
     @FXML
     private Text CalculateDiffPaneTextField;
@@ -108,15 +132,6 @@ public class GFXController
 
     // ******************************** APPLY DIFF PANE START
 
-//    @FXML
-//    private JFXButton ApplyDiffPaneApplyButton;
-//
-//    @FXML
-//    private JFXButton ApplyDiffPaneBrowseSeqButton;
-//
-//    @FXML
-//    private JFXButton ApplyDiffPaneBrowseScriptButton;
-
     @FXML
     private Text ApplyDiffPaneSeqField;
 
@@ -125,9 +140,6 @@ public class GFXController
 
     @FXML
     private Text ApplyDiffPaneResultField;
-
-//    @FXML
-//    private JFXButton ApplyDiffPaneSaveButton;
 
     @FXML
     private JFXProgressBar ApplyDiffPaneProgressBar;
@@ -171,20 +183,11 @@ public class GFXController
     @FXML
     private JFXTextField SettingsPaneUpdateCostField;
 
-//    @FXML
-//    private JFXButton SettingsPaneLoadDIffButton;
-
     @FXML
     private Text SettingsPaneDiffField;
 
     @FXML
     private Text SettingsPaneSaveReverseField;
-
-//    @FXML
-//    private JFXButton SettingsPaneSaveReverseButton;
-//
-//    @FXML
-//    private JFXButton SettingsPaneReverseDiffButton;
 
     @FXML
     void OnSettingsPaneLoadDIffButtonPressed()
@@ -230,14 +233,37 @@ public class GFXController
             if ( !newS.isBlank() )
                 SearchEnginePaneStateInstance.setQueryField(newS);
         });
+
+        SimilarityPaneSequenceOneField.textProperty().addListener((observableValue, oldS, newS) ->
+        {
+            if ( !newS.isBlank() )
+                SimilarityPaneStateInstance.setSequenceOne(newS);
+        });
+
+        SimilarityPaneSequenceTwoField.textProperty().addListener((observableValue, oldS, newS) ->
+        {
+            if ( !newS.isBlank() )
+                SimilarityPaneStateInstance.setSequenceTwo(newS);
+        });
     }
 
-    private void InitTextFieldsContents()
-    {
-        this.SettingsPaneViewInstance.initView();
+    @FXML
+    private JFXCheckBox SettingsPaneEnableIDFBox;
+
+    @FXML
+    private JFXCheckBox SettingsPaneEnableTFBox;
+
+    @FXML
+    void SettingsPaneEnableIDFPressed() {
+        this.SettingsPaneStateInstance.enableIDFPressed( SettingsPaneEnableIDFBox.isSelected() );
     }
 
-    // Search Engine Tab Pane
+    @FXML
+    void SettingsPaneEnableTFPressed(ActionEvent event) {
+        this.SettingsPaneStateInstance.enableTFPressed(SettingsPaneEnableTFBox.isSelected());
+    }
+
+    // ******************** Search Engine Tab Pane
     @FXML
     private TextArea SearchEnginePaneResultsField;
 
@@ -264,5 +290,7 @@ public class GFXController
     {
         this.SearchEnginePaneStateInstance.SearchPressed();
     }
+
+
 
 }

@@ -4,7 +4,6 @@ import SearchGroupOperations.TimeNSimilarity;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-
 import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.File;
 import java.text.DecimalFormat;
@@ -48,10 +47,16 @@ public class SearchGroup
     {
         calculateCollectionStatistics();
 
-        for ( int i = 0 ; i < this.collection.size() ; ++i )
-        {
-            collection.get(i).process( collection.size() , termCollectionCount , useTF , useIDF ); // gets every Block ready by calculating set and vector for the sequence
-        }
+        if ( useIDF )
+            for ( int i = 0 ; i < this.collection.size() ; ++i )
+            {
+                collection.get(i).process( collection.size() , termCollectionCount , useTF ); // gets every Block ready by calculating set and vector for the sequence
+            }
+        else
+            for ( int i = 0 ; i < this.collection.size() ; ++i )
+            {
+                collection.get(i).process(); // gets every Block ready by calculating set and vector for the sequence
+            }
     }
 
     private void calculateCollectionStatistics ()
@@ -63,7 +68,7 @@ public class SearchGroup
 
         for ( int i = 0 ; i < this.collection.size() ; ++i )
         {
-            int[] fromUpThere = this.collection.get(i).getSequenceAsSet().nucleotides ;
+            double[] fromUpThere = this.collection.get(i).getSequenceAsSet().nucleotides ;
 
             for ( int j = 0; j < termCollectionCount.length ; ++j )
                 this.termCollectionCount[j] += (fromUpThere[j] > 0 ? 1 : 0) ;
@@ -81,7 +86,7 @@ public class SearchGroup
         this.lastQuery = query;
 
         SequenceBlock queryAsSequenceBlock = new SequenceBlock(query);
-        queryAsSequenceBlock.process( collection.size() , termCollectionCount , useTF , useIDF );
+        queryAsSequenceBlock.process(); // always use just TF for query
 
         for ( int i = 0 ; i < collection.size() ; ++i )
         {
@@ -121,7 +126,7 @@ public class SearchGroup
     public String toString()
     {
         // list the ranked collection with last similarity info
-        String builder = "Search Group{ last query used: " + (this.lastQuery != null ? this.lastQuery.getSequence() : "none") + "\n";
+        String builder = "";
         DecimalFormat currentFormat = new DecimalFormat("##.####") ;
 
         for ( int i = 0 ; i < collection.size() ; ++i )
@@ -129,7 +134,7 @@ public class SearchGroup
             builder += "rank "+ i + " : " + collection.get(i).getSequence().getSequence() + "  Sim: " + currentFormat.format(collection.get(i).lastSimilarityValue ) + '\n' ;
         }
 
-        return builder + "} \n";
+        return builder;
     }
 
     public String getPrintableStatistics()

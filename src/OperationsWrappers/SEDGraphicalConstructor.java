@@ -1,12 +1,13 @@
 package OperationsWrappers;
 
+import GUICode.CallablePaneState;
 import GUICode.SearchEnginePaneState;
-import walkerPack.SED;
+import SearchGroupOperations.SED;
 
 public class SEDGraphicalConstructor implements GraphicalConstructor
 {
     @Override
-    public void Construct(SearchEnginePaneState callback, int slotIndex)
+    public void Construct(CallablePaneState callback, int slotIndex)
     {
         callback.setOperationInSlot( new SED() , slotIndex , "SED");
     }

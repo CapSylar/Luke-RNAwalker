@@ -6,13 +6,13 @@ public class WhatTheHellIsThis
 
     // Class Name followed by Display Name, as name used to display this operation in the GUI
     public static String OperationName[][] = {
-            { "OperationsWrappers.KNNGraphicalConstructor" , "KNN"},
-            { "OperationsWrappers.RangeQueryGraphicalConstructor" , "Range"},
             { "OperationsWrappers.DiceGraphicalConstructor" , "Dice"},
             {"OperationsWrappers.JaccardGraphicalConstructor" , "Jaccard"},
             {"OperationsWrappers.PearsonGraphicalConstructor" , "Pearson"},
             {"OperationsWrappers.CosineGraphicalConstructor" , "Cosine"},
             {"OperationsWrappers.SEDGraphicalConstructor" , "SED"},
+            { "OperationsWrappers.KNNGraphicalConstructor" , "KNN"},
+            { "OperationsWrappers.RangeQueryGraphicalConstructor" , "Range"},
             {"OperationsWrappers.NoOperationConstructor" , "Skip Slot"}
     };
 }

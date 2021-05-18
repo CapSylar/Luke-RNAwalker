@@ -1,5 +1,6 @@
 package OperationsWrappers;
 
+import GUICode.CallablePaneState;
 import GUICode.RangePaneController;
 import GUICode.SearchEnginePaneState;
 import SearchGroupOperations.RangeOperator;
@@ -14,11 +15,11 @@ public class RangeQueryGraphicalConstructor implements GraphicalConstructor
     public static RangePaneController controller;
 
     private Stage current;
-    private SearchEnginePaneState Callback;
+    private CallablePaneState Callback;
     private int slotIndex;
 
     @Override
-    public void Construct(SearchEnginePaneState callback, int slotIndex)
+    public void Construct(CallablePaneState callback, int slotIndex)
     {
         current = new Stage();
         current.initStyle(StageStyle.UNDECORATED);

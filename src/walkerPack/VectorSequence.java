@@ -22,7 +22,7 @@ public class VectorSequence
         // use only Term Frequency in this case TF ( Ti , Document )
 
         this.nuclWeights = new double[9];
-        int tf[] = Sequence.countTermFreq( sequence );
+        double tf[] = Sequence.countTermFreq( sequence );
 
         for ( int i = 0 ; i < this.nuclWeights.length ; ++i )
         {
@@ -52,7 +52,7 @@ public class VectorSequence
 
         if ( includeTF ) // use Term frequency as well
         {
-            int[] tf = Sequence.countTermFreq( sequence );
+            double[] tf = Sequence.countTermFreq( sequence );
 
             for ( int i = 0 ; i < tf.length ; ++i )
             {

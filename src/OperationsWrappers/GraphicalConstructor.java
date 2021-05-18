@@ -1,8 +1,8 @@
 package OperationsWrappers;
 
-import GUICode.SearchEnginePaneState;
+import GUICode.CallablePaneState;
 
 public interface GraphicalConstructor
 {
-    void Construct(SearchEnginePaneState callback , int slotIndex);
+    void Construct(CallablePaneState callback , int slotIndex);
 }

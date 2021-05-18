@@ -1,8 +1,8 @@
 package GUICode;
 
+import com.jfoenix.controls.JFXCheckBox;
 import com.jfoenix.controls.JFXTextField;
 import javafx.scene.text.Text;
-import walkerPack.GraphicalInterface;
 import walkerPack.Utilities;
 
 public class SettingsPaneView
@@ -14,15 +14,21 @@ public class SettingsPaneView
     private JFXTextField DeleteCostField;
     private JFXTextField UpdateCostField;
 
+    private JFXCheckBox EnableIDFBox;
+    private JFXCheckBox EnableTFBox;
+
     public SettingsPaneView(JFXTextField settingsPaneInsertCostField, JFXTextField settingsPaneDeleteCostField,
                              JFXTextField settingsPaneUpdateCostField, Text settingsPaneDiffField,
-                             Text settingsPaneSaveReverseField)
+                             Text settingsPaneSaveReverseField , JFXCheckBox enableIDFBox , JFXCheckBox enableTFBox )
     {
         InsertCostField = settingsPaneInsertCostField;
         DeleteCostField = settingsPaneDeleteCostField;
         UpdateCostField = settingsPaneUpdateCostField;
         DiffField = settingsPaneDiffField;
         SaveReverseField = settingsPaneSaveReverseField;
+
+        EnableIDFBox = enableIDFBox;
+        EnableTFBox = enableTFBox;
     }
 
     public void setDiffField(String diffField)
@@ -50,12 +56,13 @@ public class SettingsPaneView
         UpdateCostField.setText(updateCostField);
     }
 
-    public void initView()
+    public void setIDFBoxState( boolean state )
     {
-        // do all GUI initializations specific to this pane here
-        // Settings pane, gets text field contents from the SettingsManager
-        InsertCostField.setText(""+ GraphicalInterface.currentManager.getInsertCost());
-        DeleteCostField.setText(""+GraphicalInterface.currentManager.getDeleteCost());
-        UpdateCostField.setText(""+GraphicalInterface.currentManager.getUpdateCost());
+        this.EnableIDFBox.setSelected(state);
+    }
+
+    public void setTFBoxState( boolean state )
+    {
+        this.EnableTFBox.setSelected(state);
     }
 }

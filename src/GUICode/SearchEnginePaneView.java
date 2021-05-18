@@ -50,14 +50,7 @@ public class SearchEnginePaneView {
         for ( int i = 0 ; i < MenuButtons.size() ; ++i )
         {
             int finalI = i;
-            MenuButtons.get(i).setOnAction(new EventHandler<ActionEvent>()
-            {
-                @Override
-                public void handle(ActionEvent actionEvent)
-                {
-                    state.menuButtonPressed(finalI);
-                }
-            });
+            MenuButtons.get(i).setOnAction(actionEvent -> state.menuButtonPressed(finalI));
         }
 
         for ( int i = 0; i < MenuButtons.size() ; ++i )

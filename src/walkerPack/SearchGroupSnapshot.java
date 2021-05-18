@@ -17,9 +17,6 @@ public class SearchGroupSnapshot
     @Override
     public String toString()
     {
-        return "SearchGroupSnapshot{" +
-                "result='" + result + '\'' +
-                ", time=" + time/1000000.0 + " milliseconds" +
-                '}';
+        return result;
     }
 }

@@ -9,6 +9,8 @@ import java.io.File;
 import java.io.IOException;
 import java.math.BigInteger;
 import java.security.MessageDigest;
+import java.util.HashSet;
+import java.util.Iterator;
 
 public class Sequence
 {
@@ -48,14 +50,14 @@ public class Sequence
 
     public Sequence(String sequence, String accession, String description)
     {
-        this.sequence = sequence;
+        this.sequence = sequence.toUpperCase();
         this.accession = accession;
         this.description = description;
     }
 
     public Sequence( String sequence )
     {
-        this.sequence = sequence;
+        this.sequence = sequence.toUpperCase();
         this.accession = "none";
         this.description = "none";
     }
@@ -83,14 +85,35 @@ public class Sequence
         }
     }
 
-    public static int[] countTermFreq ( String sequence )
+    public static double[] countTermFreq ( String sequence )
     {
-        int tf[] = new int [9];
+        // not only counts term frequency, but also takes into account the ambiguity symbols
+
+        double tf[] = new double [9];
 
         for ( int i = 0 ; i < sequence.length() ; ++i )
         {
-            //TODO: not cleanest way to do it, but performant O(1) every time
             ++tf[EquivalenceManager.NuclMapper(sequence.charAt(i))] ;
+        }
+
+        // do another pass
+        String all = "GAUCRMSVN" ;
+        for ( int i = 0 ; i < all.length(); ++i )
+        {
+            char current = all.charAt(i);
+            HashSet<Character> currentSet =  EquivalenceManager.NuclSets.get(current);
+            int size = currentSet.size();
+
+            if ( size == 1 || tf[EquivalenceManager.NuclMapper(current)] == 0 )
+                continue;
+
+            Iterator itr = currentSet.iterator();
+
+            while ( itr.hasNext() )
+            {
+                char c = (( Character )itr.next());
+                tf[EquivalenceManager.NuclMapper(c)] += ((1.0/size) * tf[EquivalenceManager.NuclMapper(current)]);
+            }
         }
 
         return tf;

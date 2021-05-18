@@ -39,7 +39,7 @@ public class GraphicalInterface extends Application
         GraphicalInterface.Controller = currentLoader.getController(); // store reference to controller
 
         primaryStage.setTitle("RNA-Walker");
-        primaryStage.getIcons().add(new Image("walkerPack/ICON.png"));
+        primaryStage.getIcons().add(new Image("resources/ICON.png"));
         primaryStage.setScene(new Scene(root));
         primaryStage.setResizable(false);
         primaryStage.show();

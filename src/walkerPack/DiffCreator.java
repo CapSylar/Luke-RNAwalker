@@ -1,5 +1,6 @@
 package walkerPack;
 
+import SearchGroupOperations.SED;
 import javafx.beans.property.DoubleProperty;
 
 public class DiffCreator

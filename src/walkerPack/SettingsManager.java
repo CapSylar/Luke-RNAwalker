@@ -10,6 +10,9 @@ public class SettingsManager implements Serializable
     private int deleteCost = 0 ;
     private int updateCost = 0 ;
 
+    private boolean tf = true;
+    private boolean idf = true;
+
     public SettingsManager(int insertCost, int deleteCost, int updateCost)
     {
         this.insertCost = insertCost;
@@ -45,6 +48,26 @@ public class SettingsManager implements Serializable
     public void setUpdateCost(int updateCost)
     {
         this.updateCost = updateCost;
+    }
+
+    public boolean getTf()
+    {
+        return tf;
+    }
+
+    public void setTf(boolean tf)
+    {
+        this.tf = tf;
+    }
+
+    public boolean getIdf()
+    {
+        return idf;
+    }
+
+    public void setIdf(boolean idf)
+    {
+        this.idf = idf;
     }
 
     public void PrintState()

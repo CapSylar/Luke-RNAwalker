@@ -20,8 +20,8 @@ public class LoggingManager
         this.snackBarPanePositive = snackBarPanePositive ;
         this.snackBarPaneNegative = snackBarPaneNegative ;
 
-        this.PositiveText = ( Text ) (( Pane ) snackBarPanePositive.getChildren().get(0) ).getChildren().get(0);
-        this.NegativeText = ( Text ) (( Pane ) snackBarPaneNegative.getChildren().get(0) ).getChildren().get(0);
+        this.PositiveText = ( Text ) (( Pane ) snackBarPanePositive ).getChildren().get(0);
+        this.NegativeText = ( Text ) (( Pane ) snackBarPaneNegative ).getChildren().get(0);
     }
 
     public void logError( String message , double duration_ms )

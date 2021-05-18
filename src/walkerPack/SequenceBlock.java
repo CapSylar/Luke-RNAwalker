@@ -19,12 +19,14 @@ public class SequenceBlock
         lastSimilarityValue = -1; // not yet computed
     }
 
-    public void process( int collectionSize , int[] termCollectionCount , boolean useTF , boolean useIDF ) // TODO: only used to recompute the vectors, change the name !
+    public void process( int collectionSize , int[] termCollectionCount , boolean useTF )
     {
-        if ( useIDF )
-            SequenceAsVector = new VectorSequence(NativeSequence.getSequence() , collectionSize , termCollectionCount , useTF );
-        else
-            SequenceAsVector = new VectorSequence(NativeSequence.getSequence());
+        SequenceAsVector = new VectorSequence(NativeSequence.getSequence() , collectionSize , termCollectionCount , useTF );
+    }
+
+    public void process()
+    {
+        SequenceAsVector = new VectorSequence(NativeSequence.getSequence());
     }
 
     public SetSequence getSequenceAsSet()

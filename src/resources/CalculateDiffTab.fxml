@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
 <?import com.jfoenix.controls.JFXProgressBar?>
 <?import com.jfoenix.controls.JFXTabPane?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.SplitMenuButton?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TextArea?>
@@ -19,6 +21,49 @@
    <children>
       <JFXTabPane prefHeight="504.0" prefWidth="777.0" stylesheets="@solarized.css">
          <tabs>
+            <Tab text="Similarity">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="my-tab-pane" stylesheets="@solarized.css">
+                     <children>
+                        <GridPane alignment="CENTER" layoutX="49.0" layoutY="38.0" prefHeight="413.0" prefWidth="777.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="340.0" minWidth="10.0" prefWidth="124.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="296.0" minWidth="10.0" prefWidth="187.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="259.0" minWidth="10.0" prefWidth="71.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="299.0" minWidth="10.0" prefWidth="234.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="280.0" minWidth="10.0" prefWidth="125.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints maxHeight="90.0" minHeight="10.0" prefHeight="52.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="60.0" minHeight="0.0" prefHeight="38.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="48.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="82.0" minHeight="10.0" prefHeight="77.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="88.0" minHeight="0.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="84.0" minHeight="0.0" prefHeight="33.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="84.0" minHeight="10.0" prefHeight="74.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <MenuButton fx:id="SimilarityPaneMenuButton" mnemonicParsing="false" text="No Operation" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                              <JFXTextField fx:id="SimilarityPaneSequenceOneField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <JFXTextField fx:id="SimilarityPaneSequenceTwoField" prefHeight="40.0" prefWidth="258.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-field" text="Sequence 2:" GridPane.rowIndex="3" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-field" text="Sequence 1:" GridPane.rowIndex="1" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-field" text="Preprocessing Time:" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-field" text="Preprocessing Time:" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                              <Text fx:id="SimilarityPaneSequenceOneProcessingField" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-field" text="None" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                              <Text fx:id="SimilarityPaneSequenceTwoProcessingField" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-field" text="None" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-field" text="Total Time:" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                              <Text fx:id="SimilarityPaneTotalTimeField" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-field" text="None" GridPane.columnIndex="4" GridPane.rowIndex="5" />
+                              <JFXButton onAction="#onSimilarityPaneComparePressed" text="Compare" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-field" text="Similarity:" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                              <Text fx:id="SimilarityPaneSimilarityText" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-field" text="None" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-field" text="Measure:" wrappingWidth="125.2280044555664" GridPane.rowIndex="5" />
+                           </children>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
             <Tab text="Calculate Diff">
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="my-tab-pane" stylesheets="@solarized.css">
@@ -117,6 +162,8 @@
                               <JFXTextField fx:id="SettingsPaneInsertCostField" prefHeight="35.0" prefWidth="85.0" GridPane.columnIndex="5" GridPane.rowIndex="2" />
                               <JFXTextField fx:id="SettingsPaneDeleteCostField" prefHeight="35.0" prefWidth="85.0" GridPane.columnIndex="5" GridPane.rowIndex="4" />
                               <JFXTextField fx:id="SettingsPaneUpdateCostField" prefHeight="35.0" prefWidth="85.0" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+                              <JFXCheckBox fx:id="SettingsPaneEnableIDFBox" onAction="#SettingsPaneEnableIDFPressed" text="Enable IDF" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                              <JFXCheckBox fx:id="SettingsPaneEnableTFBox" onAction="#SettingsPaneEnableTFPressed" stylesheets="@solarized.css" text="Enable TF" GridPane.columnIndex="5" />
                            </children>
                         </GridPane>
                      </children>
@@ -128,7 +175,7 @@
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="my-tab-pane">
                      <children>
                         <TextArea fx:id="SearchEnginePaneResultsField" editable="false" layoutX="12.0" layoutY="10.0" prefHeight="467.0" prefWidth="604.0" />
-                        <JFXButton layoutX="692.0" layoutY="403.0" onAction="#OnSearchEnginePaneSearchPressed" text="SEARCH" />
+                        <JFXButton layoutX="692.0" layoutY="427.0" onAction="#OnSearchEnginePaneSearchPressed" text="SEARCH" />
                         <GridPane layoutX="642.0" layoutY="39.0" prefHeight="281.0" prefWidth="201.0">
                           <columnConstraints>
                             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -141,15 +188,15 @@
                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
-                              <SplitMenuButton fx:id="SearchEnginePaneMenuButton4" layoutX="10.0" layoutY="5.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="225.0" styleClass="root" text="Skip Slot" GridPane.rowIndex="3" />
-                              <SplitMenuButton fx:id="SearchEnginePaneMenuButton3" layoutX="10.0" layoutY="35.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="225.0" styleClass="root" text="Skip Slot" GridPane.rowIndex="2" />
-                              <SplitMenuButton fx:id="SearchEnginePaneMenuButton2" layoutX="10.0" layoutY="65.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="225.0" styleClass="root" text="Skip Slot" GridPane.rowIndex="1" />
-                              <SplitMenuButton fx:id="SearchEnginePaneMenuButton5" layoutX="10.0" layoutY="95.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="225.0" styleClass="root" text="Skip Slot" GridPane.rowIndex="4" />
-                              <SplitMenuButton fx:id="SearchEnginePaneMenuButton1" layoutX="10.0" layoutY="68.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="225.0" styleClass="root" text="Skip Slot" />
+                              <SplitMenuButton fx:id="SearchEnginePaneMenuButton4" layoutX="10.0" layoutY="5.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="225.0" text="Skip Slot" GridPane.rowIndex="3" />
+                              <SplitMenuButton fx:id="SearchEnginePaneMenuButton3" layoutX="10.0" layoutY="35.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="225.0" text="Skip Slot" GridPane.rowIndex="2" />
+                              <SplitMenuButton fx:id="SearchEnginePaneMenuButton2" layoutX="10.0" layoutY="65.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="225.0" text="Skip Slot" GridPane.rowIndex="1" />
+                              <SplitMenuButton fx:id="SearchEnginePaneMenuButton5" layoutX="10.0" layoutY="95.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="225.0" text="Skip Slot" GridPane.rowIndex="4" />
+                              <SplitMenuButton fx:id="SearchEnginePaneMenuButton1" layoutX="10.0" layoutY="68.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="225.0" text="Skip Slot" />
                            </children>
                         </GridPane>
                         <Text layoutX="684.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-field" text="Operations" wrappingWidth="117.84000396728516" />
-                        <JFXTextField fx:id="SearchEnginePaneQueryField" layoutX="638.0" layoutY="337.0" prefHeight="40.0" prefWidth="202.0" />
+                        <JFXTextField fx:id="SearchEnginePaneQueryField" layoutX="642.0" layoutY="320.0" prefHeight="40.0" prefWidth="202.0" />
                      </children>
                   </AnchorPane>
               </content>

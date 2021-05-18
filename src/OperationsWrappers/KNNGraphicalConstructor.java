@@ -1,5 +1,6 @@
 package OperationsWrappers;
 
+import GUICode.CallablePaneState;
 import GUICode.KNNPaneController;
 import GUICode.SearchEnginePaneState;
 import SearchGroupOperations.KNNOperator;
@@ -13,11 +14,11 @@ public class KNNGraphicalConstructor implements GraphicalConstructor
     public static KNNPaneController controller;
 
     private Stage current;
-    private SearchEnginePaneState Callback;
+    private CallablePaneState Callback;
     private int slotIndex;
 
     @Override
-    public void Construct(SearchEnginePaneState Callback , int slotIndex )
+    public void Construct(CallablePaneState Callback , int slotIndex )
     {
         current = new Stage();
         current.initStyle(StageStyle.UNDECORATED);
