@@ -1,11 +1,11 @@
 package GUICode;
 
 import com.jfoenix.controls.JFXTextField;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.SplitMenuButton;
 import javafx.scene.control.TextArea;
+import javafx.scene.text.Text;
+
 
 import java.util.ArrayList;
 
@@ -20,12 +20,16 @@ public class SearchEnginePaneView {
     private SplitMenuButton SearchEnginePaneMenuButton5;
     private JFXTextField SearchEnginePaneQueryField;
 
+    private Text OpTimeText;
+    private javafx.scene.text.Text TotalTimeText;
+
     private ArrayList<SplitMenuButton> MenuButtons = new ArrayList<>() ;
 
     public SearchEnginePaneView(TextArea searchEnginePaneResultsField, SplitMenuButton searchEnginePaneMenuButton1,
                                 SplitMenuButton searchEnginePaneMenuButton2 , SplitMenuButton searchEnginePaneMenuButton3,
                                 SplitMenuButton searchEnginePaneMenuButton4 , SplitMenuButton searchEnginePaneMenuButton5,
-                                JFXTextField searchEnginePaneQueryField)
+                                JFXTextField searchEnginePaneQueryField , Text SearchEnginePaneOpTimeText ,
+                                Text SearchEnginePaneTotalTimeText )
     {
         SearchEnginePaneResultsField = searchEnginePaneResultsField;
         SearchEnginePaneMenuButton1 = searchEnginePaneMenuButton1;
@@ -33,6 +37,9 @@ public class SearchEnginePaneView {
         SearchEnginePaneMenuButton3 = searchEnginePaneMenuButton3;
         SearchEnginePaneMenuButton4 = searchEnginePaneMenuButton4;
         SearchEnginePaneMenuButton5 = searchEnginePaneMenuButton5;
+
+        OpTimeText = SearchEnginePaneOpTimeText;
+        TotalTimeText = SearchEnginePaneTotalTimeText;
 
         SearchEnginePaneQueryField = searchEnginePaneQueryField;
 
@@ -78,5 +85,15 @@ public class SearchEnginePaneView {
     public void changeMenuButtonSelection ( int menuButtonIndex , String message )
     {
         this.MenuButtons.get(menuButtonIndex).setText(message);
+    }
+
+    public void setOpTimeText(String opTimeText)
+    {
+        OpTimeText.setText(opTimeText);
+    }
+
+    public void setTotalTimeText(String totalTimeText)
+    {
+        TotalTimeText.setText(totalTimeText);
     }
 }

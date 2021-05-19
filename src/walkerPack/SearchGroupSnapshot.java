@@ -19,4 +19,14 @@ public class SearchGroupSnapshot
     {
         return result;
     }
+
+    public String getResult()
+    {
+        return result;
+    }
+
+    public long getTime()
+    {
+        return time;
+    }
 }

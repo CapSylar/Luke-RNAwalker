@@ -12,14 +12,15 @@ public class SearchSnapShotHolder
     private SearchGroup group;
     private ArrayList<SearchGroupSnapshot> SnapShots;
 
-    public SearchSnapShotHolder(SearchGroup group )
+    public SearchSnapShotHolder(SearchGroup group)
     {
         this.group = group;
     }
 
-    public void applyOperationStack( Sequence query , SearchGroupOperation stack[] )
+    public long applyOperationStack( Sequence query , SearchGroupOperation stack[] )
     {
         SnapShots = new ArrayList<>();
+        long totalTime = 0 ;
         // apply operations on the stack on by one and create a 'snapshot' each time
         for ( int i = 0 ; i < stack.length; ++i )
         {
@@ -41,8 +42,11 @@ public class SearchSnapShotHolder
             else
                 this.group.filterSelection((SelectionOperator) currentOperation);
 
+            totalTime += timeItTook;
             SnapShots.add(new SearchGroupSnapshot( this.group.toString() , timeItTook));
         }
+
+        return totalTime;
     }
 
     public SearchGroupSnapshot getSnapshot ( int i )

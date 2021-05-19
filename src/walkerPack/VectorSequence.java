@@ -109,7 +109,7 @@ public class VectorSequence
 
         for ( int i = 0 ; i < this.nuclWeights.length ; ++i )
         {
-            product += (this.nuclWeights[i] - avgCurrent) * (otherSeq.nuclWeights[i] - avgOther) ;
+            product += ((this.nuclWeights[i] - avgCurrent) * (otherSeq.nuclWeights[i] - avgOther)) ;
         }
 
         return product;

@@ -2,6 +2,8 @@ package GUICode;
 import OperationsWrappers.GraphicalConstructor;
 import walkerPack.*;
 
+import java.text.DecimalFormat;
+
 public class SearchEnginePaneState implements CallablePaneState
 {
     private SearchEnginePaneView currentView;
@@ -25,6 +27,15 @@ public class SearchEnginePaneState implements CallablePaneState
         if ( this.lastSnapshots == null )
             return;
         this.currentView.printToTextArea(this.lastSnapshots.getSnapshot(slotIndex).toString());
+
+        // tell the view to update the time text
+        if ( this.selectedOperations[slotIndex] != null )
+        {
+            DecimalFormat format = new DecimalFormat("##.###");
+            this.currentView.setOpTimeText(format.format(lastSnapshots.getSnapshot(slotIndex).getTime() / 1000000.0) + " ms");
+        }
+        else
+            this.currentView.setOpTimeText("0 ms");
     }
 
     public void setMenuState( int operationIndex , int slotIndex ) // called when the user selects an operation in a Slot
@@ -81,13 +92,19 @@ public class SearchEnginePaneState implements CallablePaneState
         //TODO: xml loaded every time, peak of stupidity
         SearchGroup group = SearchGroup.fromXML("test-files/FormattedSequences.xml" ,
                 GraphicalInterface.currentManager.getTf(), GraphicalInterface.currentManager.getIdf() );
-        SearchSnapShotHolder holder = new SearchSnapShotHolder(group);
+        this.lastSnapshots = new SearchSnapShotHolder(group);
 
-        holder.applyOperationStack(new Sequence(query) , this.selectedOperations );
+        long totalTime = lastSnapshots.applyOperationStack(new Sequence(query) , this.selectedOperations );
 
-        this.currentView.printToTextArea(holder.getSnapshot(selectedOperations.length-1).toString());
-        this.lastSnapshots = holder ; // save it for later use, if the user wants to view states himself
+        this.currentView.printToTextArea(lastSnapshots.getSnapshot(selectedOperations.length-1).toString());
 
+        // tell the view to update itself
+
+        // get the total time it took
+
+        DecimalFormat format = new DecimalFormat("##.###");
+        this.currentView.setOpTimeText(format.format(lastSnapshots.getSnapshot(0).getTime()/1000000.0) + " ms");
+        this.currentView.setTotalTimeText(format.format(totalTime/1000000.0) + " ms");
         GraphicalInterface.logManager.logMessage("Success!" , 2000 );
     }
 
@@ -96,4 +113,5 @@ public class SearchEnginePaneState implements CallablePaneState
         // TODO: no checking is done if Sequence is valid
         this.query = query;
     }
+
 }

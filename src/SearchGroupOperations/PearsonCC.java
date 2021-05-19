@@ -11,6 +11,7 @@ public class PearsonCC extends VectorSimilarityMethod
         long start = System.nanoTime();
         double sim = seq.getAveragedDotProduct( otherSeq ) / ( seq.getAveragedModule() * otherSeq.getAveragedModule() );
 
+        System.out.println("Got: " + seq.toString() + " and " + otherSeq.toString() + " => sim is " + sim );
         return new TimeNSimilarity( System.nanoTime() - start , sim );
     }
 }

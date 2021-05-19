@@ -180,4 +180,9 @@ public class Sequence
         return getMD5().equals(MD5Hash) ;
     }
 
+    @Override
+    public String toString()
+    {
+        return this.sequence;
+    }
 }
