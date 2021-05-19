@@ -88,7 +88,7 @@ public class SimilarityPaneState implements CallablePaneState
         DecimalFormat currentFormat = new DecimalFormat("##.####");
         this.currentView.setSequenceOneProcessingField(currentFormat.format(PreprocessTimeOne/1000000.0) +" ms");
         this.currentView.setSequenceTwoProcessingField(currentFormat.format(PreprocessTimeTwo/1000000.0) + " ms");
-        this.currentView.setTotalTimeField(currentFormat.format(returned.time/1000000.0) + " ms");
+        this.currentView.setTotalTimeField(currentFormat.format((returned.time + PreprocessTimeOne + PreprocessTimeTwo)/1000000.0) + " ms");
         this.currentView.setSimilarityText(currentFormat.format(returned.similarity));
 
         GraphicalInterface.logManager.logMessage("Success!" , 2000 );
