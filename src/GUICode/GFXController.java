@@ -231,19 +231,16 @@ public class GFXController
 
         SearchEnginePaneQueryField.textProperty().addListener((observableValue, oldS, newS) ->
         {
-            if ( !newS.isBlank() )
                 SearchEnginePaneStateInstance.setQueryField(newS);
         });
 
         SimilarityPaneSequenceOneField.textProperty().addListener((observableValue, oldS, newS) ->
         {
-            if ( !newS.isBlank() )
                 SimilarityPaneStateInstance.setSequenceOne(newS);
         });
 
         SimilarityPaneSequenceTwoField.textProperty().addListener((observableValue, oldS, newS) ->
         {
-            if ( !newS.isBlank() )
                 SimilarityPaneStateInstance.setSequenceTwo(newS);
         });
     }

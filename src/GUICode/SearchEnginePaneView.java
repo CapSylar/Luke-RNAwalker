@@ -6,7 +6,6 @@ import javafx.scene.control.SplitMenuButton;
 import javafx.scene.control.TextArea;
 import javafx.scene.text.Text;
 
-
 import java.util.ArrayList;
 
 public class SearchEnginePaneView {

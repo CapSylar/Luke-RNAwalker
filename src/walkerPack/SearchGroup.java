@@ -131,7 +131,8 @@ public class SearchGroup
 
         for ( int i = 0 ; i < collection.size() ; ++i )
         {
-            builder += "rank "+ i + " : " + collection.get(i).getSequence().getSequence() + "  Sim: " + currentFormat.format(collection.get(i).lastSimilarityValue ) + '\n' ;
+            builder += "rank "+ i + "   Sim: " + currentFormat.format(collection.get(i).lastSimilarityValue ) +
+                    "   " + collection.get(i).getSequence().getSequence() + " " + '\n' ;
         }
 
         return builder;

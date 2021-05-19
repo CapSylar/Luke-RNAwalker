@@ -17,6 +17,9 @@ public class SearchEnginePaneState implements CallablePaneState
         this.currentView = currentView;
         selectedOperations = new SearchGroupOperation[5]; // 5 menu-buttons
 
+        // init text area
+        this.currentView.printToTextArea("No Results To Display...");
+
         // call view to setup menubuttons and set callbacks
         this.currentView.InitAllMenuButtons( this );
     }
@@ -40,6 +43,14 @@ public class SearchEnginePaneState implements CallablePaneState
 
     public void setMenuState( int operationIndex , int slotIndex ) // called when the user selects an operation in a Slot
     {
+        // first all traces remove previous search
+        this.lastSnapshots = null;
+        this.currentView.setTotalTimeText("None");
+        this.currentView.setOpTimeText("None");
+        this.currentView.printToTextArea("No Results To Display...");
+
+        // load new operation next
+
         String OperationClassName = WhatTheHellIsThis.OperationName[operationIndex][0]; // get Class Name from LUT
 
         try

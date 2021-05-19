@@ -1,7 +1,5 @@
 package walkerPack;
 
-import java.util.Arrays;
-
 public class VectorSequence
 {
     // 9 nucleotides:  G A U C R M S V N

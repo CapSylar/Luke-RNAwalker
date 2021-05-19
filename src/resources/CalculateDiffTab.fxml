@@ -174,7 +174,7 @@
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="my-tab-pane">
                      <children>
-                        <TextArea fx:id="SearchEnginePaneResultsField" layoutX="12.0" layoutY="10.0" prefHeight="467.0" prefWidth="583.0" styleClass="text-area" />
+                        <TextArea fx:id="SearchEnginePaneResultsField" editable="false" layoutX="12.0" layoutY="10.0" prefHeight="467.0" prefWidth="583.0" styleClass="text-area" />
                         <JFXButton layoutX="692.0" layoutY="429.0" onAction="#OnSearchEnginePaneSearchPressed" prefHeight="47.0" prefWidth="102.0" text="SEARCH" />
                         <GridPane layoutX="625.0" layoutY="14.0" prefHeight="304.0" prefWidth="207.0">
                           <columnConstraints>

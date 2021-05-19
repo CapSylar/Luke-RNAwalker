@@ -10,8 +10,8 @@ public class SimilarityPaneState implements CallablePaneState
     private SimilarityPaneView currentView;
     private SimilarityMeasure currentMeasure = null;
 
-    private String SequenceOne ;
-    private String SequenceTwo ;
+    private String SequenceOne = "" ;
+    private String SequenceTwo = "" ;
 
     public SimilarityPaneState(SimilarityPaneView currentView)
     {
@@ -46,13 +46,14 @@ public class SimilarityPaneState implements CallablePaneState
 
     public void compareButtonPressed()
     {
+
         if ( currentMeasure == null )
         {
             GraphicalInterface.logManager.logError("Operation is  unspecified" , 2000 );
             return;
         }
 
-        if ( this.SequenceOne == null || this.SequenceTwo == null)
+        if ( this.SequenceOne.isBlank() || this.SequenceTwo.isBlank() )
         {
             GraphicalInterface.logManager.logError("Sequence field empty" , 2000 );
             return;

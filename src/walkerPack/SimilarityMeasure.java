@@ -18,7 +18,6 @@ public abstract class SimilarityMeasure extends SearchGroupOperation
     {
         if ( this instanceof VectorSimilarityMethod)
         {
-            System.out.println("called calculateSimilarity "+ query.getSequence().toString() + ' ' + seq.getSequence().toString() );
             return ((VectorSimilarityMethod) this).getSimilarity( query.getSequenceAsVector() , seq.getSequenceAsVector() );
         }
         else if ( this instanceof SetSimilarityMethod)
