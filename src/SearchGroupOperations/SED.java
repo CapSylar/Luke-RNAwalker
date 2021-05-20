@@ -74,6 +74,7 @@ public class SED extends SimilarityMeasure
         }
 
         double similarity = 1- ((dp[StringSequence1.length()][StringSequence2.length()])/(StringSequence1.length() + StringSequence2.length())) ;
+
         if ( currentScript == null )
         {
             return similarity;

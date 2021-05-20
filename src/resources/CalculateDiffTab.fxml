@@ -44,8 +44,8 @@
                            </rowConstraints>
                            <children>
                               <MenuButton fx:id="SimilarityPaneMenuButton" mnemonicParsing="false" text="No Operation" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                              <JFXTextField fx:id="SimilarityPaneSequenceOneField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                              <JFXTextField fx:id="SimilarityPaneSequenceTwoField" prefHeight="40.0" prefWidth="258.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <JFXTextField fx:id="SimilarityPaneSequenceOneField" promptText="Sequence 1" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <JFXTextField fx:id="SimilarityPaneSequenceTwoField" prefHeight="40.0" prefWidth="258.0" promptText="Sequence 2" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                               <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-field" text="Sequence 2:" GridPane.rowIndex="3" />
                               <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-field" text="Sequence 1:" GridPane.rowIndex="1" />
                               <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-field" text="Preprocessing Time:" GridPane.columnIndex="3" GridPane.rowIndex="1" />
@@ -194,7 +194,7 @@
                               <SplitMenuButton fx:id="SearchEnginePaneMenuButton2" layoutX="10.0" layoutY="65.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="225.0" text="Skip Slot" GridPane.rowIndex="1" />
                               <SplitMenuButton fx:id="SearchEnginePaneMenuButton5" layoutX="10.0" layoutY="95.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="225.0" text="Skip Slot" GridPane.rowIndex="4" />
                               <SplitMenuButton fx:id="SearchEnginePaneMenuButton1" layoutX="10.0" layoutY="68.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="225.0" text="Skip Slot" />
-                              <JFXTextField fx:id="SearchEnginePaneQueryField" prefHeight="40.0" prefWidth="202.0" text="Enter Sequence" GridPane.rowIndex="5" />
+                              <JFXTextField fx:id="SearchEnginePaneQueryField" prefHeight="40.0" prefWidth="202.0" promptText="Enter Sequence" GridPane.rowIndex="5" />
                            </children>
                         </GridPane>
                         <GridPane layoutX="652.0" layoutY="318.0" prefHeight="62.0" prefWidth="224.0">

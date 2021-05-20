@@ -103,6 +103,7 @@ public class DiffPaneState
 
             newCreator.BuildDiff(GraphicalInterface.currentManager.getUpdateCost(),GraphicalInterface.currentManager.getDeleteCost()
                     ,GraphicalInterface.currentManager.getInsertCost() , progress ); // pull costs from settings manager that has the update costs
+
             newCreator.SaveDiffScriptXML(DiffSavePath);
         }
         catch ( InternalApplicationException exp )

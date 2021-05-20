@@ -18,11 +18,9 @@ public class DiffCreator
 
     public void BuildDiff ( int costUpdate , int costDelete , int costInsert , DoubleProperty progress )
     {
-        // TOFIX: progress is used anymore here, cleanup the whole interface again
+        double distance = (new SED()).getSimilarity( RNAsequence1 , RNAsequence2 , this.currentScript );
 
-        double distance = ( new SED()).getSimilarity( RNAsequence1 , RNAsequence1 , this.currentScript );
-        GraphicalInterface.logManager.logMessage("Success! Similarity = " + 1/(1 + distance) , 7000 );
-        System.out.println("Found distance is " + distance );
+        GraphicalInterface.logManager.logMessage("Similarity = " + 1/(1 + distance) , 7000 );
     }
 
     public void SaveDiffScriptXML ( String fileName )

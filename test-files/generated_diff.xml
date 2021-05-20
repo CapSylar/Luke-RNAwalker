@@ -2,49 +2,49 @@
 <!DOCTYPE Diff PUBLIC "hello" "DiffScriptDefinition.dtd">
 <Diff>
     <meta>
-        <SourceString>10d5e3f4f321294416bd6b418773dd67</SourceString>
-        <DestinationString>212e04aaedde8510415d5cfe8c1ba514</DestinationString>
+        <SourceString>212e04aaedde8510415d5cfe8c1ba514</SourceString>
+        <DestinationString>10d5e3f4f321294416bd6b418773dd67</DestinationString>
     </meta>
     <EditScript>
         <Update>
-            <newNucl>G</newNucl>
-            <oldNucl>R</oldNucl>
+            <newNucl>R</newNucl>
+            <oldNucl>G</oldNucl>
             <updateIndex>0</updateIndex>
             <reverseIndex>0</reverseIndex>
         </Update>
-        <Insert>
+        <Delete>
             <nucl>U</nucl>
-            <insertIndex>1</insertIndex>
+            <deleteIndex>1</deleteIndex>
             <reverseIndex>1</reverseIndex>
-        </Insert>
+        </Delete>
         <Update>
-            <newNucl>A</newNucl>
-            <oldNucl>N</oldNucl>
-            <updateIndex>1</updateIndex>
+            <newNucl>N</newNucl>
+            <oldNucl>A</oldNucl>
+            <updateIndex>2</updateIndex>
+            <reverseIndex>1</reverseIndex>
+        </Update>
+        <Update>
+            <newNucl>R</newNucl>
+            <oldNucl>G</oldNucl>
+            <updateIndex>3</updateIndex>
             <reverseIndex>2</reverseIndex>
         </Update>
         <Update>
-            <newNucl>G</newNucl>
-            <oldNucl>R</oldNucl>
-            <updateIndex>2</updateIndex>
+            <newNucl>N</newNucl>
+            <oldNucl>U</oldNucl>
+            <updateIndex>4</updateIndex>
             <reverseIndex>3</reverseIndex>
         </Update>
         <Update>
-            <newNucl>U</newNucl>
-            <oldNucl>N</oldNucl>
-            <updateIndex>3</updateIndex>
+            <newNucl>R</newNucl>
+            <oldNucl>A</oldNucl>
+            <updateIndex>5</updateIndex>
             <reverseIndex>4</reverseIndex>
         </Update>
-        <Update>
-            <newNucl>A</newNucl>
-            <oldNucl>R</oldNucl>
-            <updateIndex>4</updateIndex>
-            <reverseIndex>5</reverseIndex>
-        </Update>
-        <Insert>
+        <Delete>
             <nucl>C</nucl>
-            <insertIndex>5</insertIndex>
-            <reverseIndex>6</reverseIndex>
-        </Insert>
+            <deleteIndex>6</deleteIndex>
+            <reverseIndex>5</reverseIndex>
+        </Delete>
     </EditScript>
 </Diff>
