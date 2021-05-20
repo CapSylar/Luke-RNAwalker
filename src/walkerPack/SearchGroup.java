@@ -131,7 +131,13 @@ public class SearchGroup
 
         for ( int i = 0 ; i < collection.size() ; ++i )
         {
-            builder += "rank "+ i + "   Sim: " + currentFormat.format(collection.get(i).lastSimilarityValue ) +
+            String padding = "";
+            // bye bye performance
+
+            if ( this.lastQuery != null && collection.get(i).getSequence().toString().contains(this.lastQuery.toString()) )
+                padding = "===> " ;
+
+            builder += padding + "rank "+ i + "   Sim: " + currentFormat.format(collection.get(i).lastSimilarityValue ) +
                     "   " + collection.get(i).getSequence().getSequence() + " " + '\n' ;
         }
 

@@ -41,12 +41,18 @@ public class KNNGraphicalConstructor implements GraphicalConstructor
             current.close(); // close window, even if user input is erroneous
             int k = Integer.parseInt(value);
 
+            if ( k < 1 )
+            {
+                GraphicalInterface.logManager.logError("must be larger than 1" , 3000 );
+                return;
+            }
+
             this.Callback.setOperationInSlot( new KNNOperator(k), slotIndex , "KNN("+k+")" ); // construct k and give it back
             System.out.println("from KNNGraphicalContructor , received from Controller: " + value );
         }
         catch ( Exception e )
         {
-            //TODO: handle exception properly
+            GraphicalInterface.logManager.logError("incorrect format" , 3000 );
         }
     }
 }

@@ -1,6 +1,5 @@
 package SearchGroupOperations;
 
-import SearchGroupOperations.TimeNSimilarity;
 import walkerPack.*;
 
 public class SED extends SimilarityMeasure
@@ -52,7 +51,9 @@ public class SED extends SimilarityMeasure
             {
                 // we have to note were we came from , calc each thing separately
 
-                int costUpdate = 1 , costDelete = 1, costInsert = 1;
+                int costUpdate = GraphicalInterface.currentManager.getUpdateCost();
+                int costDelete = GraphicalInterface.currentManager.getDeleteCost();
+                int costInsert = GraphicalInterface.currentManager.getInsertCost();
 
                 double update = dp[i - 1][j - 1] + equivalence.getNormalizedDistance(StringSequence1.charAt(i - 1), StringSequence2.charAt(j - 1) ) * costUpdate  ;
                 double delete = dp[i - 1][j] + costDelete;

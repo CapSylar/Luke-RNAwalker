@@ -2,9 +2,7 @@ package OperationsWrappers;
 
 import GUICode.CallablePaneState;
 import GUICode.RangePaneController;
-import GUICode.SearchEnginePaneState;
 import SearchGroupOperations.RangeOperator;
-import javafx.scene.Scene;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -41,13 +39,21 @@ public class RangeQueryGraphicalConstructor implements GraphicalConstructor
             current.close(); // close window, even if user input is erroneous
 
             double k = Double.parseDouble(value);
+
+            // make sure k is within range
+            if ( k < 0 || k > 1 )
+            {
+                GraphicalInterface.logManager.logError("must be within [0,1]" , 3000 );
+                return;
+            }
+
             this.Callback.setOperationInSlot( new RangeOperator(k) , slotIndex ,
                     "Range(>="+ k + ")");
 
         }
         catch ( Exception e )
         {
-            //TODO: handle exception properly
+            GraphicalInterface.logManager.logError("incorrect format" , 3000 );
         }
     }
 }
