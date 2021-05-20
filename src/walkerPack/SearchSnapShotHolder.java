@@ -1,7 +1,5 @@
 package walkerPack;
-
 import SearchGroupOperations.SelectionOperator;
-
 import java.util.ArrayList;
 
 public class SearchSnapShotHolder

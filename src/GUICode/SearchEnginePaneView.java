@@ -1,6 +1,7 @@
 package GUICode;
 
 import com.jfoenix.controls.JFXTextField;
+import javafx.fxml.FXML;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.SplitMenuButton;
 import javafx.scene.control.TextArea;
@@ -19,6 +20,9 @@ public class SearchEnginePaneView {
     private SplitMenuButton SearchEnginePaneMenuButton5;
     private JFXTextField SearchEnginePaneQueryField;
 
+    private Text SetPreprocessingText;
+    private Text VectorPreprocessingText;
+
     private Text OpTimeText;
     private javafx.scene.text.Text TotalTimeText;
 
@@ -28,7 +32,8 @@ public class SearchEnginePaneView {
                                 SplitMenuButton searchEnginePaneMenuButton2 , SplitMenuButton searchEnginePaneMenuButton3,
                                 SplitMenuButton searchEnginePaneMenuButton4 , SplitMenuButton searchEnginePaneMenuButton5,
                                 JFXTextField searchEnginePaneQueryField , Text SearchEnginePaneOpTimeText ,
-                                Text SearchEnginePaneTotalTimeText )
+                                Text SearchEnginePaneTotalTimeText , Text SearchEnginePaneSetPreprocessingText ,
+                                Text SearchEnginePaneVectorPreprocessingText )
     {
         SearchEnginePaneResultsField = searchEnginePaneResultsField;
         SearchEnginePaneMenuButton1 = searchEnginePaneMenuButton1;
@@ -41,6 +46,9 @@ public class SearchEnginePaneView {
         TotalTimeText = SearchEnginePaneTotalTimeText;
 
         SearchEnginePaneQueryField = searchEnginePaneQueryField;
+
+        SetPreprocessingText = SearchEnginePaneSetPreprocessingText ;
+        VectorPreprocessingText = SearchEnginePaneVectorPreprocessingText ;
 
         MenuButtons.add(SearchEnginePaneMenuButton1);
         MenuButtons.add(SearchEnginePaneMenuButton2);
@@ -94,5 +102,15 @@ public class SearchEnginePaneView {
     public void setTotalTimeText(String totalTimeText)
     {
         TotalTimeText.setText(totalTimeText);
+    }
+
+    public void setSetPreprocessingText(String setPreprocessingText)
+    {
+        SetPreprocessingText.setText(setPreprocessingText);
+    }
+
+    public void setVectorPreprocessingText(String vectorPreprocessingText)
+    {
+        VectorPreprocessingText.setText(vectorPreprocessingText);
     }
 }

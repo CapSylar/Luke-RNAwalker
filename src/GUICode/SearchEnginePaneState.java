@@ -103,6 +103,11 @@ public class SearchEnginePaneState implements CallablePaneState
         //TODO: xml loaded every time, peak of stupidity
         SearchGroup group = SearchGroup.fromXML("test-files/FormattedSequences.xml" ,
                 GraphicalInterface.currentManager.getTf(), GraphicalInterface.currentManager.getIdf() );
+
+        // save times before passing it onto the Snapshot holder
+        long initialSetPreprocessingTime = group.getAllSetPreProcessingTime();
+        long initialVectorPreprocessingTime = group.getAllVectorPreProcessingTime();
+
         this.lastSnapshots = new SearchSnapShotHolder(group);
 
         long totalTime = lastSnapshots.applyOperationStack(new Sequence(query) , this.selectedOperations );
@@ -112,10 +117,13 @@ public class SearchEnginePaneState implements CallablePaneState
         // tell the view to update itself
 
         // get the total time it took
-
         DecimalFormat format = new DecimalFormat("##.###");
         this.currentView.setOpTimeText(format.format(lastSnapshots.getSnapshot(0).getTime()/1000000.0) + " ms");
         this.currentView.setTotalTimeText(format.format(totalTime/1000000.0) + " ms");
+        // set time it took to do all the set preprocessing for all the sets initially
+        this.currentView.setSetPreprocessingText(format.format(initialSetPreprocessingTime/1000000.0) + " ms");
+        // set time it took to do all the set preprocessing for all the vectors initially
+        this.currentView.setVectorPreprocessingText(format.format(initialVectorPreprocessingTime/1000000.0) + " ms");
         GraphicalInterface.logManager.logMessage("Success!" , 2000 );
     }
 

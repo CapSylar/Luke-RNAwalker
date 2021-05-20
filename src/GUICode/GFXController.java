@@ -55,7 +55,8 @@ public class GFXController
         this.SearchEnginePaneViewInstance = new SearchEnginePaneView( SearchEnginePaneResultsField , SearchEnginePaneMenuButton1,
                 SearchEnginePaneMenuButton2 , SearchEnginePaneMenuButton3 , SearchEnginePaneMenuButton4 ,
                 SearchEnginePaneMenuButton5 , SearchEnginePaneQueryField ,
-                SearchEnginePaneOpTimeText , SearchEnginePaneTotalTimeText );
+                SearchEnginePaneOpTimeText , SearchEnginePaneTotalTimeText ,
+                SearchEnginePaneSetPreprocessingText , SearchEnginePaneVectorPreprocessingText );
 
         this.SearchEnginePaneStateInstance = new SearchEnginePaneState( this.SearchEnginePaneViewInstance );
         HookTextFieldListeners(); // hook up the text field listeners
@@ -290,11 +291,14 @@ public class GFXController
     private Text SearchEnginePaneTotalTimeText;
 
     @FXML
+    private Text SearchEnginePaneSetPreprocessingText;
+
+    @FXML
+    private Text SearchEnginePaneVectorPreprocessingText;
+
+    @FXML
     void OnSearchEnginePaneSearchPressed()
     {
         this.SearchEnginePaneStateInstance.SearchPressed();
     }
-
-
-
 }
